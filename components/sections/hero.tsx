@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -15,14 +16,16 @@ export function Hero() {
   return (
     <section className="relative min-h-[700px] flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/brand-banner.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/brand-banner.png"
+          alt="Zero2AI Banner"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/60 circuit-pattern" />
         
         {/* Floating orbs for artistic effect */}

@@ -7,9 +7,29 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
+  // Reduce bundle size in production
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   async headers() {
     return [
+      {
+        // Cache static assets
+        source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif|woff|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
       {
         // Apply these headers to all routes
         source: '/(.*)',
