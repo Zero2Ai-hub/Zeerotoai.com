@@ -81,9 +81,9 @@ export function ServicesClient({ services, isArabic }: ServicesClientProps) {
                       </p>
                       
                       {/* Feature bullets - pushed to bottom */}
-                      {service.bullets && service.bullets.length > 0 && (
+                      {service.bullets && (
                         <ul className="mt-auto space-y-2">
-                          {service.bullets.map((bullet, idx) => (
+                          {(isArabic ? service.bullets.ar : service.bullets.en).map((bullet, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors">
                               <Icons.CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                               <span>{bullet}</span>

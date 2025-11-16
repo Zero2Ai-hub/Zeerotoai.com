@@ -11,11 +11,11 @@ interface AboutData {
   mission: { en: string; ar: string };
   approach: {
     title: { en: string; ar: string };
-    steps: Array<{ en: string; ar: string }>;
+    steps: ReadonlyArray<{ en: string; ar: string }>;
   };
   tools: {
     title: { en: string; ar: string };
-    list: string[];
+    list: readonly string[];
   };
 }
 

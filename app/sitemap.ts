@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const mainPages = routes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : 'weekly' as const,
+    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
     priority: route === '' ? 1 : 0.8,
   }));
 

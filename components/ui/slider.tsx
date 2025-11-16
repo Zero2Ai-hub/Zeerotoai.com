@@ -10,9 +10,10 @@ interface SliderProps {
   max: number;
   step: number;
   className?: string;
+  id?: string;
 }
 
-export function Slider({ value, onValueChange, min, max, step, className }: SliderProps) {
+export function Slider({ value, onValueChange, min, max, step, className, id }: SliderProps) {
   const percentage = ((value[0] - min) / (max - min)) * 100;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,6 +23,7 @@ export function Slider({ value, onValueChange, min, max, step, className }: Slid
   return (
     <div className={cn("relative flex items-center w-full", className)}>
       <input
+        id={id}
         type="range"
         min={min}
         max={max}
