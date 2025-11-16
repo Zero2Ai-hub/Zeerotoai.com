@@ -115,7 +115,7 @@ export default async function LocaleLayout({
     "name": site.brand.name,
     "description": "AI Automation Solutions - We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth.",
     "url": site.brand.domain,
-    "logo": `${site.brand.domain}/Logo-2.png`,
+    "logo": `${site.brand.domain}/Logo-2.webp`,
     "email": site.brand.email,
     "contactPoint": {
       "@type": "ContactPoint",
