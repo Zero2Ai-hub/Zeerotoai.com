@@ -411,7 +411,7 @@ export function FaqClient({ isArabic }: FaqClientProps) {
                         <span className="text-red-500 font-bold text-sm">❌ MYTH</span>
                       </div>
                       <p className="font-semibold text-lg text-foreground/90">
-                        "{isArabic ? item.myth.ar : item.myth.en}"
+                        &ldquo;{isArabic ? item.myth.ar : item.myth.en}&rdquo;
                       </p>
                     </div>
 

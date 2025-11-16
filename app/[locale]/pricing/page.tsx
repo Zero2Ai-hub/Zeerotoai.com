@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { site } from "@/content/site";
 import { PricingClient } from "./pricing-client";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing & Investment Guide - Transparent Automation Costs",
@@ -77,7 +78,7 @@ export default async function PricingPage() {
               
               {/* Calculator CTAs */}
               <div className="flex flex-col sm:flex-row gap-3 text-sm">
-                <a 
+                <Link 
                   href="/calculators/cost" 
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
                   style={{ animation: "glowPulse 2s ease-in-out infinite" }}
@@ -86,8 +87,8 @@ export default async function PricingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                   {isArabic ? "حاسبة التكلفة" : "Cost Calculator"}
-                </a>
-                <a 
+                </Link>
+                <Link 
                   href="/calculators/roi" 
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
                   style={{ animation: "glowPulse 2s ease-in-out infinite", animationDelay: "1s" }}
@@ -96,7 +97,7 @@ export default async function PricingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                   </svg>
                   {isArabic ? "حاسبة العائد على الاستثمار" : "ROI Calculator"}
-                </a>
+                </Link>
               </div>
             </div>
 
