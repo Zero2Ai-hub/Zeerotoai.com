@@ -38,7 +38,84 @@ next-env.d.ts
 # IDE
 .vscode/
 .idea/
+.specstory/
 *.swp
+.swp
 *.swo
 *~
+
+# Generated documentation (keep only source markdown)
+*.html
+*.pdf
+
+# Temporary/backup files
+*~
+*.bak
+*.tmp
+*.temp
+*.orig
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# pnpm
+.pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Internal documentation (not needed for production)
+AI-AUTOMATION-MARKET-PRICING-RESEARCH-2025.md
+MARKET-RESEARCH-SUMMARY.md
+MARKETING-AUDIT-REPORT*.md
+PRICING-RESEARCH-INDEX.md
+PRICING-STRATEGY-EXECUTIVE-SUMMARY.md
+PRICING-QUICK-REFERENCE-GUIDE.md
+START-HERE-PRICING-RESEARCH.md
+SEO-REPORT.md
+SECURITY-REPORT.md
+SECURITY-AUDIT-POST-IMPLEMENTATION.md
+AIRTABLE_SETUP.md
+SUPABASE_SETUP.md
+SETUP.md
+DEPLOYMENT.md
+FINAL-DEPLOYMENT-CHECKLIST.md
+QUICK-START.md
+START-HERE.md
+ADDING_IMAGES_AND_DEMOS_GUIDE.md
+ASSETS-NEEDED.md
+CONTENT-GUIDE.md
+FILE-STRUCTURE.md
+DOCUMENTATION-INDEX.md
+DASHBOARD-ADMIN-GUIDE.md
+DASHBOARD-FINAL-UPDATES.md
+DASHBOARD-UPDATE.md
+IMAGE-OPTIMIZATION-SUCCESS.md
+PERFORMANCE-FIX-PLAN.md
+PERFORMANCE-OPTIMIZATION-GUIDE.md
+REVERT-PERFORMANCE-CHANGES.md
+LLM-OPTIMIZATION-ROADMAP.md
+PROJECT-SUMMARY.md
+Zero2AI-Client-Playbook.md
+GITIGNORE-CLEANUP-SUMMARY.md
+REPO-CLEANUP-SUMMARY.md
+.internal-docs
+
+# n8n workflows internal docs
+n8n-workflows/INDEX.md
+n8n-workflows/PDF-CONTENT-GUIDE.md
+n8n-workflows/PROJECT-SUMMARY.md
+n8n-workflows/QUICKSTART.md
+n8n-workflows/SUPABASE-WEBHOOK-SETUP.md
+n8n-workflows/TROUBLESHOOTING.md
+n8n-workflows/WEBHOOK-APPROACH-UPDATE.md
+n8n-workflows/workflow-diagram.md
 
