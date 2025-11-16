@@ -79,7 +79,7 @@ export function FloatingCalculatorButton() {
         style={{ 
           animation: "glowPulse 2s ease-in-out infinite"
         }}
-        className="w-16 h-16 rounded-full bg-card/80 backdrop-blur-sm border-2 border-primary/40 hover:border-primary/60 hover:bg-card/90 shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all hover:scale-110 flex items-center justify-center group relative overflow-hidden"
+        className="w-16 h-16 rounded-full bg-card/80 backdrop-blur-sm border-2 border-primary/40 hover:border-primary/60 hover:bg-card/90 shadow-xl hover:shadow-2xl hover:shadow-primary/30 transition-all hover:scale-110 flex items-center justify-center group relative overflow-hidden animate-glow"
         aria-label={isArabic ? "الآلات الحاسبة" : "Calculators"}
       >
         {/* Icon */}

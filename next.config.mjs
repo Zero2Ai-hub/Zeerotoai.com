@@ -18,6 +18,10 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Target modern browsers (reduces bundle size)
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'lucide-react'],
+  },
   async headers() {
     return [
       {

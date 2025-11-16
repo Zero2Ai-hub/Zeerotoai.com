@@ -149,6 +149,14 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          as="image"
+          href="/brand-banner.webp"
+          fetchPriority="high"
+        />
+        
         {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
