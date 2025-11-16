@@ -89,7 +89,7 @@ export default function SignupPage() {
           <div className="flex justify-center mb-8">
             <Link href="/" className="flex flex-col items-center gap-3 group">
               <Image
-                src="/Logo-2.png"
+                src="/Logo-2.webp"
                 alt={site.brand.name}
                 width={60}
                 height={60}

@@ -187,7 +187,7 @@ export function SideMenu() {
               <div className="flex items-center justify-between p-6 border-b border-primary/20">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/Logo-2.png"
+                    src="/Logo-2.webp"
                     alt={site.brand.name}
                     width={40}
                     height={40}

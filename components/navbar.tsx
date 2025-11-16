@@ -81,7 +81,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <CircularGlowingBorder className="w-12 h-12">
               <Image
-                src="/Logo-2.png"
+                src="/Logo-2.webp"
                 alt={site.brand.name}
                 width={48}
                 height={48}

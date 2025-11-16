@@ -21,7 +21,7 @@ export function Footer() {
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="relative flex items-center justify-center mx-auto">
                   <Image
-                    src="/Logo-2.png"
+                    src="/Logo-2.webp"
                     alt={site.brand.name}
                     width={80}
                     height={80}
