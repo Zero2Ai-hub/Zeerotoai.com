@@ -1,0 +1,10 @@
+# Target modern browsers only
+# This reduces bundle size by ~12 KiB
+# Excludes IE11 and other legacy browsers
+
+> 0.5%
+last 2 versions
+not dead
+not IE 11
+not op_mini all
+

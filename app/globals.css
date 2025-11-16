@@ -135,3 +135,9 @@ h2 {
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.6), 0 0 30px rgba(0, 217, 255, 0.4);
   }
 }
+
+/* Optimize animations for GPU */
+.animate-glow {
+  will-change: box-shadow;
+  transform: translateZ(0);
+}
