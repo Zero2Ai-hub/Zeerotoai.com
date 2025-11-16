@@ -149,6 +149,10 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* DNS Prefetch for faster resource loading */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        
         {/* Preload critical resources */}
         <link
           rel="preload"
