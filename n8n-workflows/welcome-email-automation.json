@@ -1,0 +1,210 @@
+{
+  "name": "Email Subscriber Welcome Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "email-subscriber-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1e3f5a7b-9c2d-4e1f-8a3b-5c7d9e1f2a4b",
+      "name": "Webhook - New Subscriber",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "auto-generated",
+      "notes": "Receives POST requests from Supabase database trigger"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and format subscriber data from webhook payload\nconst payload = items[0].json;\n\n// Supabase sends data in 'record' or 'new' field depending on setup\nconst subscriber = payload.record || payload.new || payload;\n\n// Extract fields from the new row\nconst email = subscriber.email;\nconst name = subscriber.name || 'there';\nconst source = subscriber.source || 'unknown';\nconst subscribedAt = subscriber.subscribed_at || subscriber.created_at;\n\n// Format name for personalization\nconst firstName = name.split(' ')[0] || 'there';\nconst capitalizedName = firstName.charAt(0).toUpperCase() + firstName.slice(1);\n\n// Log for debugging\nconsole.log('New subscriber from webhook:', { email, name, source });\n\nreturn {\n  email: email,\n  name: name,\n  firstName: capitalizedName,\n  source: source,\n  subscribedAt: subscribedAt,\n  subscriberId: subscriber.id,\n  fullData: subscriber\n};"
+      },
+      "id": "2f4a6b8c-0d3e-5f2a-9b4c-6d8e0f3a5c6d",
+      "name": "Extract Subscriber Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "operation": "sendEmail",
+        "email": "={{ $json.email }}",
+        "fromEmail": "hello@zerotoai.com",
+        "fromName": "Yasser from ZeroToAI",
+        "subject": "🎉 Your Free Automation Playbook is Here!",
+        "emailFormat": "html",
+        "html": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <style>\n    body { \n      margin: 0; \n      padding: 0; \n      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n      background-color: #f5f5f5;\n    }\n    .container { \n      max-width: 600px; \n      margin: 0 auto; \n      background: #ffffff;\n    }\n    .header {\n      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n      padding: 40px 30px;\n      text-align: center;\n      color: white;\n    }\n    .header h1 {\n      margin: 0;\n      font-size: 28px;\n      font-weight: 700;\n    }\n    .content {\n      padding: 40px 30px;\n      color: #333333;\n      line-height: 1.6;\n    }\n    .greeting {\n      font-size: 18px;\n      margin-bottom: 20px;\n    }\n    .benefits {\n      background: #f8f9fa;\n      border-left: 4px solid #667eea;\n      padding: 20px;\n      margin: 25px 0;\n    }\n    .benefits h3 {\n      margin-top: 0;\n      color: #667eea;\n      font-size: 20px;\n    }\n    .benefits ul {\n      margin: 15px 0;\n      padding-left: 20px;\n    }\n    .benefits li {\n      margin: 10px 0;\n      font-size: 16px;\n    }\n    .cta-button {\n      display: inline-block;\n      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n      color: white;\n      padding: 15px 40px;\n      text-decoration: none;\n      border-radius: 8px;\n      font-weight: 600;\n      font-size: 16px;\n      margin: 20px 0;\n      box-shadow: 0 4px 6px rgba(102, 126, 234, 0.3);\n    }\n    .attachment-note {\n      background: #e8f5e9;\n      border: 1px solid #4caf50;\n      border-radius: 6px;\n      padding: 15px;\n      margin: 20px 0;\n      text-align: center;\n    }\n    .attachment-note strong {\n      color: #2e7d32;\n      font-size: 16px;\n    }\n    .footer {\n      background: #f8f9fa;\n      padding: 30px;\n      text-align: center;\n      color: #666666;\n      font-size: 14px;\n      border-top: 1px solid #e0e0e0;\n    }\n    .social-links {\n      margin: 20px 0;\n    }\n    .social-links a {\n      display: inline-block;\n      margin: 0 10px;\n      color: #667eea;\n      text-decoration: none;\n    }\n    .signature {\n      margin-top: 30px;\n      padding-top: 20px;\n      border-top: 2px solid #e0e0e0;\n    }\n    .emoji { font-size: 24px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <h1>Welcome to ZeroToAI! 🚀</h1>\n    </div>\n    \n    <div class=\"content\">\n      <div class=\"greeting\">\n        <strong>Hey {{ $json.firstName }}! 👋</strong>\n      </div>\n      \n      <p>I'm thrilled to have you join our community of automation enthusiasts! You're about to discover how to save 10+ hours per week using smart automation workflows.</p>\n      \n      <div class=\"attachment-note\">\n        <span class=\"emoji\">📎</span>\n        <br>\n        <strong>Your Automation Playbook is attached to this email!</strong>\n        <br>\n        <small>Look for \"ZeroToAI-Automation-Playbook.pdf\" in your attachments</small>\n      </div>\n      \n      <div class=\"benefits\">\n        <h3>🎁 Here's What You're Getting:</h3>\n        <ul>\n          <li><strong>15 Proven Automation Ideas</strong> - Real-world workflows that work</li>\n          <li><strong>5 Ready-to-Use Templates</strong> - Just import and customize</li>\n          <li><strong>ROI Calculator</strong> - See exactly how much time & money you'll save</li>\n          <li><strong>Implementation Roadmap</strong> - Step-by-step guide to get started</li>\n          <li><strong>Priority Access</strong> - Be first to get new templates & resources</li>\n        </ul>\n      </div>\n      \n      <p><strong>Quick Start Guide:</strong></p>\n      <ol>\n        <li>Download the PDF attached to this email</li>\n        <li>Start with the \"Quick Wins\" section (page 5)</li>\n        <li>Pick ONE workflow to implement this week</li>\n        <li>Track your time savings using our calculator</li>\n      </ol>\n      \n      <p style=\"margin-top: 30px;\">Want to fast-track your automation journey? Let's chat about building custom workflows for your specific needs:</p>\n      \n      <center>\n        <a href=\"https://zerotoai.com/contact\" class=\"cta-button\">Schedule a Free Consultation</a>\n      </center>\n      \n      <div class=\"signature\">\n        <p><strong>To your automation success,</strong><br>\n        Yasser<br>\n        Founder, ZeroToAI<br>\n        <a href=\"https://zerotoai.com\">zerotoai.com</a></p>\n        \n        <p style=\"font-size: 13px; color: #888; margin-top: 20px;\">\n          <em>P.S. Got questions? Just hit reply - I read and respond to every email personally! 💬</em>\n        </p>\n      </div>\n    </div>\n    \n    <div class=\"footer\">\n      <p><strong>ZeroToAI</strong> - Automation Made Simple</p>\n      \n      <div class=\"social-links\">\n        <a href=\"https://zerotoai.com\">Website</a> |\n        <a href=\"https://zerotoai.com/portfolio\">Portfolio</a> |\n        <a href=\"https://zerotoai.com/services\">Services</a>\n      </div>\n      \n      <p style=\"margin-top: 20px; font-size: 12px; color: #999;\">\n        You're receiving this because you signed up for our free Automation Playbook.<br>\n        Want to change your email preferences? <a href=\"#\" style=\"color: #667eea;\">Update preferences</a> or <a href=\"#\" style=\"color: #999;\">unsubscribe</a>\n      </p>\n    </div>\n  </div>\n</body>\n</html>",
+        "attachments": "={{ $json.email }},automation-playbook.pdf",
+        "options": {
+          "attachments": [
+            {
+              "property": "pdfAttachment",
+              "fileName": "ZeroToAI-Automation-Playbook.pdf"
+            }
+          ]
+        }
+      },
+      "id": "3g5b7c9d-1e4f-6a3b-0c5d-7e9f1a4b6c8e",
+      "name": "Send Welcome Email with PDF",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [690, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail account"
+        }
+      },
+      "notes": "Sends welcome email with PDF attachment. Replace with SMTP node if not using Gmail."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://YOUR_SUPABASE_PROJECT.supabase.co/rest/v1/email_subscribers",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "supabaseApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Prefer",
+              "value": "return=representation"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "id",
+              "value": "={{ $('Supabase Trigger - New Subscriber').item.json.id || $('Supabase Trigger - New Subscriber').item.json.record.id }}"
+            },
+            {
+              "name": "welcome_email_sent",
+              "value": "true"
+            },
+            {
+              "name": "welcome_email_sent_at",
+              "value": "={{ new Date().toISOString() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4h6c8d0e-2f5a-7b4c-1d6e-8f0a2b5c7d9f",
+      "name": "Update Subscriber Record (Optional)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [910, 300],
+      "credentials": {
+        "supabaseApi": {
+          "id": "YOUR_SUPABASE_CREDENTIAL_ID",
+          "name": "Supabase account"
+        }
+      },
+      "notes": "Optional: Track that welcome email was sent. Requires adding welcome_email_sent column to table.",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "mode": "logOnly",
+        "logLevel": "info",
+        "logMessage": "=Successfully sent welcome email to {{ $('Extract Subscriber Data').item.json.email }} ({{ $('Extract Subscriber Data').item.json.firstName }})"
+      },
+      "id": "5i7d9e1f-3a6b-8c5d-2e7f-9a1b3c6d8e0a",
+      "name": "Log Success",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1130, 200]
+    },
+    {
+      "parameters": {
+        "mode": "logOnly",
+        "logLevel": "error",
+        "logMessage": "=Failed to send welcome email to {{ $('Extract Subscriber Data').item.json.email }}: {{ $json.error }}"
+      },
+      "id": "6j8e0f2a-4b7c-9d6e-3f8a-0b2c4d7e9f1b",
+      "name": "Log Error",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [1130, 400]
+    }
+  ],
+  "connections": {
+    "Webhook - New Subscriber": {
+      "main": [
+        [
+          {
+            "node": "Extract Subscriber Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Subscriber Data": {
+      "main": [
+        [
+          {
+            "node": "Send Welcome Email with PDF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Welcome Email with PDF": {
+      "main": [
+        [
+          {
+            "node": "Update Subscriber Record (Optional)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Subscriber Record (Optional)": {
+      "main": [
+        [
+          {
+            "node": "Log Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-01-15T00:00:00.000Z",
+      "updatedAt": "2025-01-15T00:00:00.000Z",
+      "id": "1",
+      "name": "Email Automation"
+    },
+    {
+      "createdAt": "2025-01-15T00:00:00.000Z",
+      "updatedAt": "2025-01-15T00:00:00.000Z",
+      "id": "2",
+      "name": "Lead Nurture"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-15T00:00:00.000Z",
+  "versionId": "1"
+}
+

@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Build Clever Automations.\nShip Faster.",
+    "subheadline": "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth—no fluff, just working code.",
+    "primaryCta": "Book a free call",
+    "secondaryCta": "See Portfolio",
+    "credibility": "Trusted by teams building with n8n, Voiceflow, Cursor, Runway AI, Make.com & more"
+  },
+  "services": {
+    "title": "What We Build",
+    "subtitle": "End-to-end automation solutions tailored to your workflow"
+  },
+  "portfolio": {
+    "title": "Featured Work",
+    "subtitle": "Real projects, real results",
+    "viewDemo": "View Demo"
+  },
+  "about": {
+    "title": "About Zero2AI",
+    "mission": "We believe every repetitive task is a problem waiting to be solved. Our mission is to build intelligent automations that free up your time so you can focus on what truly matters: growth, creativity, and impact.",
+    "approachTitle": "Our Approach",
+    "toolsTitle": "Tools We Master"
+  },
+  "contact": {
+    "title": "Let's Build Together",
+    "subtitle": "Have a project in mind? Let's talk about how we can automate your workflow.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "company": "Company (Optional)",
+      "message": "Tell us about your project",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "orTitle": "Or reach out directly",
+    "whatsappCta": "Chat on WhatsApp",
+    "emailCta": "Email Us",
+    "success": "Message sent! We'll get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again or email us directly."
+  },
+  "footer": {
+    "tagline": "Build clever automations. Ship faster.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 Zero2AI. All rights reserved."
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms of Service",
+    "lastUpdated": "Last updated"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "backHome": "Back to Home"
+  }
+}
+
