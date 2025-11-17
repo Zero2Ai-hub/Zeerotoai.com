@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/sections/hero";
@@ -8,11 +7,6 @@ import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
 import { PreloadHeroImage } from "@/components/preload-hero-image";
-
-// Lazy load non-critical components (loaded after initial page render)
-const FloatingCalculatorButton = dynamic(
-  () => import("@/components/floating-calculator-button").then(mod => ({ default: mod.FloatingCalculatorButton }))
-);
 
 export default function HomePage() {
   return (
@@ -33,7 +27,6 @@ export default function HomePage() {
         <CtaSection />
       </main>
       <Footer />
-      <FloatingCalculatorButton />
     </>
   );
 }

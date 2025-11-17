@@ -22,12 +22,10 @@ export function CircuitDivider({ className = "" }: CircuitDividerProps) {
         }}
       />
 
-      {/* Multiple horizontal base lines */}
-      <div className="absolute top-1/3 left-0 right-0 h-px bg-primary/5" />
+      {/* Single horizontal base line - center */}
       <div className="absolute top-1/2 left-0 right-0 h-px bg-primary/10" />
-      <div className="absolute top-2/3 left-0 right-0 h-px bg-primary/5" />
       
-      {/* Primary animated glowing wave - center */}
+      {/* Primary animated glowing wave - center only */}
       <motion.div
         className="absolute top-1/2 left-0 right-0"
         style={{ 
@@ -47,50 +45,6 @@ export function CircuitDivider({ className = "" }: CircuitDividerProps) {
           ease: "linear",
         }}
       />
-
-      {/* Secondary animated pulse - top line */}
-      <motion.div
-        className="absolute top-1/3 left-0 right-0"
-        style={{ 
-          height: "2px",
-          background: "linear-gradient(90deg, transparent 0%, rgba(0, 217, 255, 0.3) 20%, rgba(0, 217, 255, 0.6) 50%, rgba(0, 217, 255, 0.3) 80%, transparent 100%)",
-          filter: "blur(1px)",
-          boxShadow: "0 0 12px rgba(0, 217, 255, 0.5)"
-        }}
-        animate={{
-          x: ["200%", "-100%"],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-
-      {/* Tertiary animated pulse - bottom line */}
-      <motion.div
-        className="absolute top-2/3 left-0 right-0"
-        style={{ 
-          height: "2px",
-          background: "linear-gradient(90deg, transparent 0%, rgba(0, 217, 255, 0.3) 20%, rgba(0, 217, 255, 0.6) 50%, rgba(0, 217, 255, 0.3) 80%, transparent 100%)",
-          filter: "blur(1px)",
-          boxShadow: "0 0 12px rgba(0, 217, 255, 0.5)"
-        }}
-        animate={{
-          x: ["-100%", "200%"],
-        }}
-        transition={{
-          duration: 7,
-          repeat: Infinity,
-          ease: "linear",
-          delay: 1.5,
-        }}
-      />
-
-      {/* Vertical connecting lines (subtle) */}
-      <div className="absolute left-1/4 top-1/3 bottom-1/3 w-px bg-primary/5" />
-      <div className="absolute left-1/2 top-1/3 bottom-1/3 w-px bg-primary/8" />
-      <div className="absolute left-3/4 top-1/3 bottom-1/3 w-px bg-primary/5" />
     </div>
   );
 }
