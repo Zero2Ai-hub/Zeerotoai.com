@@ -2,32 +2,21 @@
 
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down (with throttling for better performance)
+  // Show button when page is scrolled down
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
-    
     const toggleVisibility = () => {
-      // Throttle scroll events for better mobile performance
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        if (window.scrollY > 300) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }, 100);
+      setIsVisible(window.scrollY > 300);
     };
 
+    // Check on mount
+    toggleVisibility();
+
     window.addEventListener("scroll", toggleVisibility, { passive: true });
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener("scroll", toggleVisibility);
-    };
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
@@ -38,22 +27,23 @@ export function ScrollToTop() {
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          onClick={scrollToTop}
-          style={{ position: 'fixed', bottom: '2rem', right: '2rem', zIndex: 50 }}
-          className="p-3 rounded-full bg-primary text-background shadow-lg active:scale-95 transition-transform touch-manipulation"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <button
+      onClick={scrollToTop}
+      style={{ 
+        position: 'fixed', 
+        bottom: '2rem', 
+        right: '2rem', 
+        zIndex: 50,
+        opacity: isVisible ? 1 : 0,
+        pointerEvents: isVisible ? 'auto' : 'none',
+        transition: 'opacity 0.2s ease-in-out'
+      }}
+      className="p-3 rounded-full bg-primary text-background shadow-lg active:scale-95 transition-transform touch-manipulation"
+      aria-label="Scroll to top"
+      aria-hidden={!isVisible}
+    >
+      <ArrowUp className="w-5 h-5" />
+    </button>
   );
 }
 
