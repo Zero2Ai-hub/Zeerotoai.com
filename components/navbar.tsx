@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 // import { LanguageSwitch } from "@/components/language-switch";
 // import { ThemeToggle } from "@/components/theme-toggle";
 import { CircularGlowingBorder } from "@/components/circular-glowing-border";
+import { NavbarCalculatorDropdown } from "@/components/navbar-calculator-dropdown";
 import { site } from "@/content/site";
 import { Menu, X, User, LogOut } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -141,6 +142,9 @@ export function Navbar() {
             {/* <ThemeToggle /> */}
             {/* <LanguageSwitch /> */}
             
+            {/* Calculator Dropdown */}
+            <NavbarCalculatorDropdown />
+            
             {!loading && (
               <>
                 {user ? (
@@ -219,6 +223,28 @@ export function Navbar() {
                 {getLinkText(item)}
               </Link>
             ))}
+            
+            {/* Calculator Links for Mobile */}
+            <div className="py-3 border-t space-y-2">
+              <div className="text-xs font-semibold text-muted-foreground px-3 mb-2">
+                {isArabic ? "الآلات الحاسبة" : "Calculators"}
+              </div>
+              <Link
+                href="/calculators/roi"
+                className="flex items-center gap-2 py-2 px-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {isArabic ? "حاسبة العائد" : "ROI Calculator"}
+              </Link>
+              <Link
+                href="/calculators/cost"
+                className="flex items-center gap-2 py-2 px-3 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {isArabic ? "حاسبة التكلفة" : "Cost Calculator"}
+              </Link>
+            </div>
+            
             <div className="flex flex-col gap-3 pt-3 border-t">
               {/* <div className="flex gap-2">
                 <ThemeToggle />

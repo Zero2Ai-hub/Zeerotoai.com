@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import * as Icons from "lucide-react";
-import { GlowingBorder } from "@/components/glowing-border";
 import { projects } from "@/content/projects";
 
 interface Service {
@@ -94,7 +93,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
               <Link
                 key={service.id}
                 href={`#${service.id}`}
-                className="group flex items-center justify-center p-3 rounded-lg bg-card/50 backdrop-blur-sm border border-primary/20 hover:border-primary/50 hover:bg-card/80 transition-all w-12 hover:w-auto hover:justify-start hover:gap-3"
+                className="group flex items-center justify-center p-3 rounded-lg bg-card border border-primary/20 hover:border-primary/50 hover:bg-card transition-all w-12 hover:w-auto hover:justify-start hover:gap-3"
               >
                 <div className="flex-shrink-0 flex items-center justify-center">
                   {IconComponent && <IconComponent className="w-5 h-5 text-primary" />}
@@ -123,7 +122,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
               id={service.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6 }}
               className="relative mb-32 scroll-mt-24"
             >
@@ -199,11 +198,10 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                             key={idx}
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: false }}
+                            viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.4 }}
                           >
-                            <GlowingBorder>
-                              <Card className="h-full bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all">
+                              <Card className="h-full bg-card border-primary/20 hover:border-primary/40 transition-all">
                                 <CardContent className="p-4 space-y-2">
                                   <div className="flex items-center gap-2">
                                     <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
@@ -219,7 +217,6 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                                   </p>
                                 </CardContent>
                               </Card>
-                            </GlowingBorder>
                           </motion.div>
                         );
                       })}
@@ -238,12 +235,11 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                             key={project.id}
                             initial={{ opacity: 0, x: isEven ? 20 : -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false }}
+                            viewport={{ once: true }}
                             transition={{ delay: idx * 0.1, duration: 0.4 }}
                           >
                             <Link href={project.href} className="block group">
-                              <GlowingBorder>
-                                <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all group-hover:-translate-y-1">
+                                <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all group-hover:-translate-y-1">
                                   <CardHeader className="pb-3">
                                     <div className="flex items-start justify-between gap-2">
                                       <CardTitle className="text-base font-bold group-hover:text-primary transition-colors">
@@ -260,7 +256,6 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                                     </CardDescription>
                                   </CardContent>
                                 </Card>
-                              </GlowingBorder>
                             </Link>
                           </motion.div>
                         ))}

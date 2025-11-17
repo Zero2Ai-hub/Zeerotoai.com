@@ -31,16 +31,16 @@ export default async function PricingPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
           <div className="circuit-pattern absolute inset-0 opacity-[0.03]" />
           
-          {/* Floating orbs */}
-          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
+          {/* Floating orbs - Optimized for performance */}
+          <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         </div>
 
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-4 px-4">
           <div className="container mx-auto text-center max-w-5xl">
             <div className="inline-block mb-8">
-              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
+              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold">
                 {isArabic ? "تسعير شفاف ونتائج مثبتة" : "Transparent Pricing • Proven Results"}
               </span>
             </div>

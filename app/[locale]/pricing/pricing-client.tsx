@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { GlowingBorder } from "@/components/glowing-border";
 import {
   Select,
   SelectContent,
@@ -21,7 +20,6 @@ import {
   Building2, 
   ArrowRight,
   Clock,
-  Sparkles,
   Target,
   TrendingUp,
   MessageSquare,
@@ -414,7 +412,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
           id="pain-points"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="mb-20 scroll-mt-24"
         >
           <div className="text-center mb-12">
@@ -527,7 +525,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="mb-20 scroll-mt-24"
         >
           <div className="text-center mb-12">
@@ -548,12 +546,11 @@ export function PricingClient({ isArabic }: PricingClientProps) {
 
               return (
                 <motion.div key={tier.id} variants={item}>
-                  <GlowingBorder>
                     <Card className={`h-full relative overflow-hidden border-2 ${
                       isPopular 
-                        ? 'border-primary/60 bg-gradient-to-br from-primary/10 to-card/80' 
-                        : 'border-primary/30 bg-card/80'
-                    } backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2 flex flex-col`}>
+                        ? 'border-primary/60 bg-gradient-to-br from-primary/10 to-card' 
+                        : 'border-primary/30 bg-card'
+                    } transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-1 flex flex-col`}>
                       {/* Popular badge */}
                       {isPopular && (
                         <div className="absolute top-4 right-4 z-10">
@@ -650,14 +647,13 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                       {/* Bottom glow */}
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                     </Card>
-                  </GlowingBorder>
                 </motion.div>
               );
             })}
           </div>
 
           {/* Calculator CTA Banner */}
-          <Card className="border-2 border-primary/40 bg-gradient-to-br from-primary/20 via-primary/10 to-background backdrop-blur-sm shadow-xl shadow-primary/20 mb-8">
+          <Card className="border-2 border-primary/40 bg-gradient-to-br from-primary/20 via-primary/10 to-background shadow-xl shadow-primary/20 mb-8">
             <CardContent className="p-8 text-center">
               <Calculator className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl md:text-3xl font-black mb-3">
@@ -696,7 +692,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
           </Card>
 
           {/* Disclaimer */}
-          <Card className="border-2 border-primary/20 bg-card/50 backdrop-blur-sm">
+          <Card className="border-2 border-primary/20 bg-card">
             <CardContent className="p-4">
               <div className="flex items-start gap-3">
                 <AlertCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -720,7 +716,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
           id="ready-made-packages"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="mb-20 scroll-mt-24"
         >
           <Card className="border-2 border-cyan-500/30 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-background shadow-2xl shadow-cyan-500/10 relative overflow-hidden">
@@ -780,8 +776,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                   const IconComponent = pkg.icon;
 
                   return (
-                    <GlowingBorder>
-                      <Card className="border-2 border-primary/40 bg-gradient-to-br from-primary/10 to-card shadow-2xl shadow-primary/20">
+                      <Card className="border-2 border-primary/40 bg-gradient-to-br from-primary/10 to-card shadow-xl shadow-primary/20">
                         <CardHeader className="pb-6">
                           <div className="flex items-start gap-4 mb-4">
                             <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40 flex-shrink-0">
@@ -857,7 +852,6 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                           </Button>
                         </CardContent>
                       </Card>
-                    </GlowingBorder>
                   );
                 })()}
               </motion.div>
@@ -871,7 +865,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           className="mb-20"
         >
           <div className="text-center mb-12">
@@ -989,14 +983,13 @@ export function PricingClient({ isArabic }: PricingClientProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/20 via-primary/10 to-card/80 backdrop-blur-sm overflow-hidden relative max-w-3xl mx-auto">
+          <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/20 via-primary/10 to-card overflow-hidden relative max-w-3xl mx-auto">
             <div className="absolute inset-0 circuit-pattern opacity-10" />
             <CardContent className="p-12 relative z-10">
-              <Sparkles className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="text-3xl font-black mb-4">
                 {isArabic ? "جاهز لأتمتة عملك؟" : "Ready to Automate Your Business?"}
               </h2>

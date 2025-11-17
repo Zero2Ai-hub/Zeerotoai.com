@@ -57,15 +57,15 @@ export function CtaSection() {
         }}
       />
       
-      {/* Floating orbs */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* Floating orbs - Optimized for performance */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 right-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           {/* Badge */}
@@ -117,7 +117,7 @@ export function CtaSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-gray-200 relative z-50"
           >

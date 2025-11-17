@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { GlowingBorder } from "@/components/glowing-border";
+import { ArrowRight } from "lucide-react";
 
 interface Project {
   slug: string;
@@ -84,13 +83,7 @@ export function PortfolioGrid({ projects, isArabic }: PortfolioGridProps) {
 
             return (
               <motion.div key={project.id} variants={item} className={cardClass}>
-                <GlowingBorder>
-                  <Card className="h-full relative overflow-hidden border-2 border-primary/30 hover:border-primary/60 bg-card/80 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/30 flex flex-col">
-                    {/* Sparkle effect */}
-                    <div className="absolute top-4 right-4">
-                      <Sparkles className="w-5 h-5 text-primary/40" />
-                    </div>
-
+                  <Card className="h-full relative overflow-hidden border-2 border-primary/30 hover:border-primary/60 bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 flex flex-col">
                     <CardHeader className="relative z-10 space-y-4">
                       <div className="flex items-start justify-between gap-2">
                         <Badge className="bg-primary/20 text-primary border-primary/40 hover:bg-primary/30 font-bold text-xs px-3 py-1">
@@ -156,7 +149,6 @@ export function PortfolioGrid({ projects, isArabic }: PortfolioGridProps) {
                     {/* Bottom glow */}
                     <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                   </Card>
-                </GlowingBorder>
               </motion.div>
             );
           })}
@@ -169,7 +161,7 @@ export function PortfolioGrid({ projects, isArabic }: PortfolioGridProps) {
           transition={{ delay: 0.8 }}
           className="mt-20 text-center"
         >
-          <div className="inline-block p-8 rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 backdrop-blur-sm">
+          <div className="inline-block p-8 rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20">
             <h3 className="text-2xl font-bold mb-3">
               {isArabic ? "هل لديك مشروع في ذهنك؟" : "Have a project in mind?"}
             </h3>

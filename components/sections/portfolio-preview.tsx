@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { GlowingBorder } from "@/components/glowing-border";
 import { site } from "@/content/site";
 import { ArrowRight } from "lucide-react";
 
@@ -32,9 +31,9 @@ export function PortfolioPreview() {
     <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 circuit-pattern opacity-10" />
       
-      {/* Floating orbs */}
-      <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-500" />
-      <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-primary/15 rounded-full blur-3xl animate-pulse delay-1500" />
+      {/* Floating orbs - Optimized for performance */}
+      <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-1/4 w-72 h-72 bg-primary/15 rounded-full blur-3xl" />
       
       {/* Gradient overlays for smooth section transitions */}
       <div 
@@ -59,7 +58,7 @@ export function PortfolioPreview() {
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block mb-12 relative z-30">
-            <span className="px-8 py-4 rounded-full bg-primary/40 text-white border-2 border-primary/60 text-xl font-black backdrop-blur-xl shadow-2xl shadow-primary/30 relative">
+            <span className="px-8 py-4 rounded-full bg-primary/40 text-white border-2 border-primary/60 text-xl font-black shadow-lg shadow-primary/30 relative">
               {isArabic ? "أعمالنا" : "Our Portfolio"}
             </span>
           </div>
@@ -77,7 +76,7 @@ export function PortfolioPreview() {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="mb-12"
         >
           {/* First 3 projects */}
@@ -87,9 +86,8 @@ export function PortfolioPreview() {
               .slice(0, 3)
               .map((project) => (
               <motion.div key={project.id} variants={item}>
-                <GlowingBorder>
                   <Link href={project.href} className="block h-full">
-                    <Card className="h-full hover:shadow-xl hover:shadow-primary/20 transition-all border-2 border-primary/30 hover:border-primary/50 bg-card/80 backdrop-blur flex flex-col cursor-pointer group">
+                    <Card className="h-full hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary/50 bg-card flex flex-col cursor-pointer group">
                       <CardHeader>
                         <div className="mb-3">
                           <Badge variant="secondary" className="text-xs font-bold">
@@ -114,7 +112,6 @@ export function PortfolioPreview() {
                       </CardContent>
                     </Card>
                   </Link>
-                </GlowingBorder>
               </motion.div>
             ))}
           </div>
@@ -126,9 +123,8 @@ export function PortfolioPreview() {
               .slice(3, 5)
               .map((project) => (
               <motion.div key={project.id} variants={item}>
-                <GlowingBorder>
                   <Link href={project.href} className="block h-full">
-                    <Card className="h-full hover:shadow-xl hover:shadow-primary/20 transition-all border-2 border-primary/30 hover:border-primary/50 bg-card/80 backdrop-blur flex flex-col cursor-pointer group">
+                    <Card className="h-full hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 border-2 border-primary/30 hover:border-primary/50 bg-card flex flex-col cursor-pointer group">
                       <CardHeader>
                         <div className="mb-3">
                           <Badge variant="secondary" className="text-xs font-bold">
@@ -153,7 +149,6 @@ export function PortfolioPreview() {
                       </CardContent>
                     </Card>
                   </Link>
-                </GlowingBorder>
               </motion.div>
             ))}
           </div>
@@ -162,7 +157,7 @@ export function PortfolioPreview() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.8 }}
+          viewport={{ once: true, amount: 0.8 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center relative"
         >
