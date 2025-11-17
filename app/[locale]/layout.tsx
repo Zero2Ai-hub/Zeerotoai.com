@@ -20,8 +20,8 @@ type Props = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.brand.domain),
   title: {
-    default: `${site.brand.name} - Build clever automations. Ship faster.`,
-    template: `%s | ${site.brand.name}`,
+    default: "ZeroToAI",
+    template: "%s | ZeroToAI",
   },
   description:
     "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth. Expert automation with n8n, Voiceflow, Make.com, and more.",
@@ -149,6 +149,13 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Favicon - Explicit links for better browser support */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+        
         {/* DNS Prefetch for faster resource loading (GLOBAL) */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
