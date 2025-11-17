@@ -170,3 +170,28 @@ h2 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile for better performance */
+  .animate-pulse {
+    animation-duration: 3s !important; /* Slower = less CPU */
+  }
+  
+  /* Disable expensive blur effects on mobile */
+  .blur-3xl {
+    backdrop-filter: none;
+    filter: none;
+    opacity: 0.5;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    content-visibility: auto;
+  }
+  
+  /* Reduce motion on mobile by default (saves battery) */
+  * {
+    transition-duration: 0.2s !important;
+  }
+}
