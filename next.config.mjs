@@ -35,16 +35,6 @@ const nextConfig = {
         ],
       },
       {
-        // Optimize CSS loading with early hints
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Link',
-            value: '</brand-banner.webp>; rel=preload; as=image; fetchpriority=high',
-          },
-        ],
-      },
-      {
         // Apply these headers to all routes
         source: '/(.*)',
         headers: [

@@ -7,6 +7,7 @@ import { SuccessStoriesPreview } from "@/components/sections/success-stories-pre
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
+import { PreloadHeroImage } from "@/components/preload-hero-image";
 
 // Lazy load non-critical components (loaded after initial page render)
 const FloatingCalculatorButton = dynamic(
@@ -16,6 +17,9 @@ const FloatingCalculatorButton = dynamic(
 export default function HomePage() {
   return (
     <>
+      {/* Preload hero image ONLY on homepage for optimal performance */}
+      <PreloadHeroImage />
+      
       <Navbar />
       <main>
         <Hero />
