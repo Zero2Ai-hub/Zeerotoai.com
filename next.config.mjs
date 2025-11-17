@@ -22,6 +22,10 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
+  // Compression for faster mobile loading
+  compress: true,
+  // Optimize for production
+  productionBrowserSourceMaps: false,
   async headers() {
     return [
       {
