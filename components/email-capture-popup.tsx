@@ -100,35 +100,36 @@ export function EmailCapturePopup() {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
+          {/* Backdrop - Simplified for performance */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] cursor-pointer"
+            className="fixed inset-0 bg-black/70 z-[999] cursor-pointer"
           />
 
-          {/* Popup */}
+          {/* Popup - Optimized animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="fixed inset-0 z-[1000] flex items-center justify-center p-4 pointer-events-none"
           >
-            <Card className="relative w-full max-w-lg border-2 border-primary/40 bg-card/95 backdrop-blur-xl shadow-2xl shadow-primary/30 pointer-events-auto overflow-hidden">
-              {/* Close button */}
+            <Card className="relative w-full max-w-lg border-2 border-primary/40 bg-card shadow-lg pointer-events-auto overflow-hidden">
+              {/* Gradient overlay - Behind content */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent opacity-50 z-0" />
+
+              {/* Close button - Fixed z-index to be on top */}
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
+                className="absolute top-4 right-4 z-50 w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors cursor-pointer"
                 aria-label="Close"
+                type="button"
               >
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4 text-foreground" />
               </button>
-
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent opacity-50" />
 
               <CardContent className="relative z-10 p-8 md:p-12">
                 {!isSubmitted ? (
@@ -209,7 +210,7 @@ export function EmailCapturePopup() {
                   <>
                     {/* Success state */}
                     <div className="text-center py-8">
-                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6 animate-pulse">
+                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
                         <Sparkles className="w-10 h-10 text-primary" />
                       </div>
                       <h2 className="text-3xl font-black mb-4">
