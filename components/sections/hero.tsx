@@ -14,16 +14,13 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[700px] flex items-center overflow-hidden">
-      {/* Background Image with Overlay - Optimized for mobile */}
+      {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: "url('/brand-banner.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          // Force GPU acceleration for smoother mobile performance
-          willChange: "transform",
-          transform: "translateZ(0)",
         }}
       >
         <div className="absolute inset-0 bg-black/60 circuit-pattern" />
