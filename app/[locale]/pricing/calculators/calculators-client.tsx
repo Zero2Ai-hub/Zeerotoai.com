@@ -43,13 +43,15 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
   // ROI Calculator State
   const [hoursPerWeek, setHoursPerWeek] = useState<number>(15);
   const [hourlyRate, setHourlyRate] = useState<number>(50);
-  const [errorRate, setErrorRate] = useState<number>(10);
-  const [errorCost, setErrorCost] = useState<number>(500);
+  const [automationType, setAutomationType] = useState<string>("");
+  const [serviceForROI, setServiceForROI] = useState<string>("");
   const [automationCost, setAutomationCost] = useState<number>(5000);
   const [roiResults, setRoiResults] = useState<{
     currentAnnualCost: number;
     annualSavings: number;
     errorSavings: number;
+    monthlyErrorCost: number;
+    revenueIncrease: number;
     totalAnnualSavings: number;
     paybackMonths: number;
     roi1Year: number;
@@ -148,19 +150,41 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
   };
 
   const calculateROI = () => {
+    if (!automationType || !serviceForROI) {
+      return;
+    }
+
     // Current annual cost (time cost)
     const currentAnnualCost = hoursPerWeek * hourlyRate * 52;
 
-    // Assuming 80% automation (realistic estimate)
-    const hoursSaved = hoursPerWeek * 0.8;
+    // Time reduction based on automation type
+    const timeReductionRate = automationType === "full" ? 0.875 : 0.5; // Full: 87.5% (80-95%), Partial: 50% (40-60%)
+    const hoursSaved = hoursPerWeek * timeReductionRate;
     const annualSavings = hoursSaved * hourlyRate * 52;
 
-    // Error cost savings (assuming automation reduces errors by 95%)
-    const currentAnnualErrorCost = (errorRate / 100) * errorCost * 52; // errors per week
-    const errorSavings = currentAnnualErrorCost * 0.95;
+    // Calculate monthly error cost (10% of current monthly cost)
+    const monthlyErrorCost = (hoursPerWeek * hourlyRate * 4.33) * 0.1;
+    
+    // Error reduction: automation reduces errors by 93% on average (90-99%)
+    const errorReductionRate = 0.93;
+    const errorSavings = monthlyErrorCost * 12 * errorReductionRate;
 
-    // Total annual savings
-    const totalAnnualSavings = annualSavings + errorSavings;
+    // Revenue increase based on service type
+    const revenueIncreaseRates: { [key: string]: number } = {
+      "ai-automation": 0.25,      // 25% - automates repetitive tasks, frees up time
+      "chatbot": 0.35,            // 35% - handles customer inquiries 24/7
+      "lead-gen": 0.45,           // 45% - generates more qualified leads
+      "customer-support": 0.30,   // 30% - improves response times
+      "social-media": 0.20,       // 20% - consistent posting, engagement
+      "ecommerce": 0.40,          // 40% - inventory management, abandoned cart recovery
+      "website": 0.50,            // 50% - professional web presence, sales funnel
+    };
+    
+    const revenueIncreaseRate = revenueIncreaseRates[serviceForROI] || 0.25;
+    const revenueIncrease = currentAnnualCost * revenueIncreaseRate;
+
+    // Total annual savings (time + errors + revenue)
+    const totalAnnualSavings = annualSavings + errorSavings + revenueIncrease;
 
     // Payback period
     const paybackMonths = (automationCost / totalAnnualSavings) * 12;
@@ -173,6 +197,8 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
       currentAnnualCost,
       annualSavings,
       errorSavings,
+      monthlyErrorCost,
+      revenueIncrease,
       totalAnnualSavings,
       paybackMonths,
       roi1Year,
@@ -418,49 +444,109 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
                 />
                 <p className="text-xs text-muted-foreground">
                   {isArabic
-                    ? "تكلفة موظف أو وقتك (راتب + تكاليف إضافية)"
-                    : "Employee cost or your time (salary + overhead)"}
+                    ? "تكلفة موظف أو وقتك بالساعة"
+                    : "Employee cost or your time per hour"}
                 </p>
               </div>
 
-              {/* Error rate */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <Label htmlFor="error-rate" className="text-base font-semibold">
-                    {isArabic ? "معدل الأخطاء (%)" : "Error Rate (%)"}
-                  </Label>
-                  <span className="text-xl font-bold text-primary">{errorRate}%</span>
-                </div>
-                <Slider
-                  id="error-rate"
-                  min={0}
-                  max={50}
-                  step={1}
-                  value={[errorRate]}
-                  onValueChange={(value) => setErrorRate(value[0])}
-                  className="cursor-pointer"
-                />
+              {/* Automation Type */}
+              <div className="space-y-2">
+                <Label htmlFor="automation-type" className="text-base font-semibold">
+                  {isArabic ? "نوع الأتمتة" : "Automation Type"}
+                </Label>
+                <Select value={automationType} onValueChange={setAutomationType}>
+                  <SelectTrigger className="bg-card/50 border-primary/30">
+                    <SelectValue placeholder={isArabic ? "اختر نوع الأتمتة" : "Select automation type"} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="full">
+                      {isArabic ? "أتمتة كاملة" : "Full Automation"}
+                    </SelectItem>
+                    <SelectItem value="partial">
+                      {isArabic ? "أتمتة جزئية" : "Partial Automation"}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+                <p className="text-xs text-muted-foreground">
+                  {automationType === "full"
+                    ? isArabic
+                      ? "توفير الوقت: 80-95%"
+                      : "Time savings: 80-95%"
+                    : automationType === "partial"
+                    ? isArabic
+                      ? "توفير الوقت: 40-60%"
+                      : "Time savings: 40-60%"
+                    : isArabic
+                    ? "اختر كيفية أتمتة عمليتك"
+                    : "Choose how you'll automate your process"}
+                </p>
               </div>
 
-              {/* Error cost */}
+              {/* Service Type for ROI */}
               <div className="space-y-2">
-                <Label htmlFor="error-cost" className="text-base font-semibold">
-                  {isArabic ? "متوسط تكلفة الخطأ ($)" : "Avg. Cost per Error ($)"}
+                <Label htmlFor="service-roi" className="text-base font-semibold">
+                  {isArabic ? "نوع الخدمة" : "Service Type"}
                 </Label>
-                <Input
-                  id="error-cost"
-                  type="number"
-                  min="0"
-                  max="10000"
-                  step="50"
-                  value={errorCost}
-                  onChange={(e) => setErrorCost(Number(e.target.value))}
-                  className="bg-card/50 border-primary/30"
-                />
+                <Select value={serviceForROI} onValueChange={setServiceForROI}>
+                  <SelectTrigger className="bg-card/50 border-primary/30">
+                    <SelectValue placeholder={isArabic ? "اختر خدمة" : "Select a service"} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="ai-automation">
+                      {isArabic ? "سير عمل الأتمتة" : "AI Automation Workflows"}
+                    </SelectItem>
+                    <SelectItem value="chatbot">
+                      {isArabic ? "روبوت الدردشة" : "AI Chatbot"}
+                    </SelectItem>
+                    <SelectItem value="lead-gen">
+                      {isArabic ? "نظام توليد العملاء" : "Lead Generation System"}
+                    </SelectItem>
+                    <SelectItem value="customer-support">
+                      {isArabic ? "وكيل دعم العملاء" : "Customer Support Agent"}
+                    </SelectItem>
+                    <SelectItem value="social-media">
+                      {isArabic ? "أتمتة وسائل التواصل" : "Social Media Automation"}
+                    </SelectItem>
+                    <SelectItem value="ecommerce">
+                      {isArabic ? "أتمتة التجارة الإلكترونية" : "E-commerce Automation"}
+                    </SelectItem>
+                    <SelectItem value="website">
+                      {isArabic ? "تطوير الموقع/SaaS" : "Website/SaaS Development"}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
                 <p className="text-xs text-muted-foreground">
-                  {isArabic
-                    ? "الوقت المستغرق لإصلاح الأخطاء، خسارة العملاء، إلخ."
-                    : "Time to fix errors, lost customers, etc."}
+                  {serviceForROI === "ai-automation"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +25%"
+                      : "Expected revenue increase: +25%"
+                    : serviceForROI === "chatbot"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +35%"
+                      : "Expected revenue increase: +35%"
+                    : serviceForROI === "lead-gen"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +45%"
+                      : "Expected revenue increase: +45%"
+                    : serviceForROI === "customer-support"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +30%"
+                      : "Expected revenue increase: +30%"
+                    : serviceForROI === "social-media"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +20%"
+                      : "Expected revenue increase: +20%"
+                    : serviceForROI === "ecommerce"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +40%"
+                      : "Expected revenue increase: +40%"
+                    : serviceForROI === "website"
+                    ? isArabic
+                      ? "زيادة الإيرادات المتوقعة: +50%"
+                      : "Expected revenue increase: +50%"
+                    : isArabic
+                    ? "كل خدمة تؤثر على الإيرادات بشكل مختلف"
+                    : "Each service impacts revenue differently"}
                 </p>
               </div>
 
@@ -530,6 +616,19 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
                       </div>
                     </div>
 
+                    {/* Monthly Error Cost */}
+                    <div className="p-4 rounded-lg bg-card/50 border border-primary/20">
+                      <div className="text-sm text-muted-foreground mb-1">
+                        {isArabic ? "تكلفة الأخطاء الشهرية" : "Monthly Error Cost"}
+                      </div>
+                      <div className="text-xl font-bold text-orange-500">
+                        {formatCurrency(roiResults.monthlyErrorCost)}
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {isArabic ? "يقلل من الأخطاء بنسبة 93%" : "Reduced by 93% with automation"}
+                      </p>
+                    </div>
+
                     {/* Error Savings */}
                     <div className="p-4 rounded-lg bg-primary/10 border border-primary/30">
                       <div className="text-sm text-muted-foreground mb-1">
@@ -537,6 +636,16 @@ export function CalculatorsClient({ isArabic }: CalculatorsClientProps) {
                       </div>
                       <div className="text-2xl font-black text-green-500">
                         {formatCurrency(roiResults.errorSavings)}
+                      </div>
+                    </div>
+
+                    {/* Revenue Increase */}
+                    <div className="p-4 rounded-lg bg-primary/10 border border-primary/30">
+                      <div className="text-sm text-muted-foreground mb-1">
+                        {isArabic ? "زيادة الإيرادات المتوقعة" : "Expected Revenue Increase"}
+                      </div>
+                      <div className="text-2xl font-black text-green-500">
+                        {formatCurrency(roiResults.revenueIncrease)}
                       </div>
                     </div>
 
