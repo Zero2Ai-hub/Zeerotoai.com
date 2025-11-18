@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { X, Sparkles, Gift, Zap } from "lucide-react";
+import { X, Sparkles, Gift, BookOpen, Lightbulb, Calculator } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useLocale } from "next-intl";
 
@@ -147,26 +147,36 @@ export function EmailCapturePopup() {
                     {/* Description */}
                     <p className="text-center text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
                       {isArabic
-                        ? "احصل على دليل الأتمتة المجاني الخاص بنا + 5 قوالب سير عمل جاهزة للاستخدام توفر 10+ ساعات في الأسبوع"
-                        : "Get our free Automation Playbook + 5 ready-to-use workflow templates that save 10+ hours/week"}
+                        ? "احصل على دليل الأتمتة المجاني الخاص بنا + قالب سير عمل مجاني واحد من اختيارنا + دليل يوفر 10+ ساعات في الأسبوع"
+                        : "Get our free Automation Playbook + 1 free workflow template of our choice + guide that save 10+ hours/week"}
                     </p>
 
                     {/* Benefits */}
                     <div className="space-y-3 mb-8">
-                      {[
-                        { en: "15 proven automation ideas", ar: "15 فكرة أتمتة مثبتة" },
-                        { en: "ROI calculator spreadsheet", ar: "جدول حساب عائد الاستثمار" },
-                        { en: "Priority access to new templates", ar: "وصول مبكر للقوالب الجديدة" },
-                      ].map((benefit, index) => (
-                        <div key={index} className="flex items-center gap-3">
-                          <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                            <Zap className="w-3 h-3 text-primary" />
-                          </div>
-                          <span className="text-sm text-foreground/80">
-                            {isArabic ? benefit.ar : benefit.en}
-                          </span>
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <BookOpen className="w-3 h-3 text-primary" />
                         </div>
-                      ))}
+                        <span className="text-sm text-foreground/80">
+                          {isArabic ? "دليل أتمتة Zero2AI" : "Zero2AI Automation Playbook"}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Lightbulb className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-sm text-foreground/80">
+                          {isArabic ? "فكرة أتمتة مجانية واحدة" : "1 free automation idea"}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Calculator className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-sm text-foreground/80">
+                          {isArabic ? "جدول حساب عائد الاستثمار" : "ROI calculator spreadsheet"}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Form */}
