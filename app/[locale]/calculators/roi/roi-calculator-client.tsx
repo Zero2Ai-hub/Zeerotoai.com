@@ -19,19 +19,35 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
   // Input states
   const [hoursPerWeek, setHoursPerWeek] = useState<number>(10);
   const [hourlyCost, setHourlyCost] = useState<number>(50);
-  const [reductionPercent, setReductionPercent] = useState<number>(80);
+  const [automationType, setAutomationType] = useState<string>("");
+  const [serviceType, setServiceType] = useState<string>("");
   const [projectCost, setProjectCost] = useState<number>(5000);
-  const [errorReductionPercent, setErrorReductionPercent] = useState<number>(90);
-  const [errorCostPerMonth, setErrorCostPerMonth] = useState<number>(500);
-  const [revenueLiftPercent, setRevenueLiftPercent] = useState<number>(0);
-  const [monthlyRevenue, setMonthlyRevenue] = useState<number>(0);
   
   // Calculated results
   const currentAnnualCost = hoursPerWeek * hourlyCost * 52;
-  const hoursSavedPerWeek = (hoursPerWeek * reductionPercent) / 100;
+  
+  // Time savings based on automation type
+  const timeReductionRate = automationType === "full" ? 0.875 : automationType === "partial" ? 0.5 : 0;
+  const hoursSavedPerWeek = hoursPerWeek * timeReductionRate;
   const annualSavings = hoursSavedPerWeek * hourlyCost * 52;
-  const errorSavings = (errorCostPerMonth * errorReductionPercent / 100) * 12;
-  const revenueLift = (monthlyRevenue * revenueLiftPercent / 100) * 12;
+  
+  // Error cost and savings (calculated automatically)
+  const monthlyErrorCost = (hoursPerWeek * hourlyCost * 4.33) * 0.1;
+  const errorSavings = monthlyErrorCost * 12 * 0.93; // 93% error reduction
+  
+  // Revenue increase based on service type
+  const revenueIncreaseRates: { [key: string]: number } = {
+    "ai-automation": 0.25,
+    "chatbot": 0.35,
+    "lead-gen": 0.45,
+    "customer-support": 0.30,
+    "social-media": 0.20,
+    "ecommerce": 0.40,
+    "website": 0.50,
+  };
+  const revenueIncreaseRate = revenueIncreaseRates[serviceType] || 0;
+  const revenueLift = currentAnnualCost * revenueIncreaseRate;
+  
   const totalAnnualBenefit = annualSavings + errorSavings + revenueLift;
   const paybackMonths = totalAnnualBenefit > 0 ? (projectCost / (totalAnnualBenefit / 12)) : 0;
   const threeYearROI = totalAnnualBenefit > 0 ? (((totalAnnualBenefit * 3 - projectCost) / projectCost) * 100) : 0;
@@ -40,12 +56,9 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
   const handleReset = () => {
     setHoursPerWeek(10);
     setHourlyCost(50);
-    setReductionPercent(80);
+    setAutomationType("");
+    setServiceType("");
     setProjectCost(5000);
-    setErrorReductionPercent(90);
-    setErrorCostPerMonth(500);
-    setRevenueLiftPercent(0);
-    setMonthlyRevenue(0);
   };
 
   return (
@@ -97,7 +110,7 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
 
                 <div className="space-y-2">
                   <Label htmlFor="hourlyCost">
-                    {isArabic ? "التكلفة الفعلية للساعة (راتب + نفقات عامة)" : "Effective hourly cost (salary + overhead)"}
+                    {isArabic ? "التكلفة بالساعة" : "Hourly Cost"}
                   </Label>
                   <Input
                     id="hourlyCost"
@@ -113,100 +126,109 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="reductionPercent">
-                    {isArabic ? "نسبة التخفيض المتوقع في الوقت (%)" : "Expected time reduction (%)"}
+                  <Label htmlFor="automationType">
+                    {isArabic ? "نوع الأتمتة" : "Automation Type"}
                   </Label>
-                  <Input
-                    id="reductionPercent"
-                    type="number"
-                    value={reductionPercent}
-                    onChange={(e) => setReductionPercent(Number(e.target.value))}
-                    min={0}
-                    max={100}
-                    className="bg-card/50"
-                  />
+                  <Select value={automationType} onValueChange={setAutomationType}>
+                    <SelectTrigger className="bg-card/50">
+                      <SelectValue placeholder={isArabic ? "اختر نوع الأتمتة" : "Select automation type"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="full">
+                        {isArabic ? "أتمتة كاملة" : "Full Automation"}
+                      </SelectItem>
+                      <SelectItem value="partial">
+                        {isArabic ? "أتمتة جزئية" : "Partial Automation"}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
                   <p className="text-xs text-muted-foreground">
-                    {isArabic ? "نصيحة: الأتمتة الكاملة = 80-95%، الأتمتة الجزئية = 40-60%" : "Tip: Full automation = 80-95%, Partial = 40-60%"}
+                    {automationType === "full"
+                      ? isArabic
+                        ? "توفير الوقت: 80-95%"
+                        : "Time savings: 80-95%"
+                      : automationType === "partial"
+                      ? isArabic
+                        ? "توفير الوقت: 40-60%"
+                        : "Time savings: 40-60%"
+                      : isArabic
+                      ? "نصيحة: الأتمتة الكاملة = 80-95%، الأتمتة الجزئية = 40-60%"
+                      : "Tip: Full automation = 80-95%, Partial = 40-60%"}
                   </p>
                 </div>
               </div>
 
-              {/* Error Reduction Section */}
+              {/* Service Type Selection */}
               <div className="space-y-4 p-4 rounded-lg bg-primary/5 border border-primary/20">
                 <h3 className="font-bold text-lg flex items-center gap-2">
-                  <Icons.ShieldCheck className="w-5 h-5 text-primary" />
-                  {isArabic ? "تقليل الأخطاء" : "Error Reduction"}
+                  <Icons.Briefcase className="w-5 h-5 text-primary" />
+                  {isArabic ? "نوع الخدمة" : "Service Type"}
                 </h3>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="errorCostPerMonth">
-                    {isArabic ? "التكلفة الشهرية للأخطاء/إعادة العمل ($)" : "Monthly cost of errors/rework ($)"}
+                  <Label htmlFor="serviceType">
+                    {isArabic ? "اختر الخدمة التي تحتاجها" : "Select the service you need"}
                   </Label>
-                  <Input
-                    id="errorCostPerMonth"
-                    type="number"
-                    value={errorCostPerMonth}
-                    onChange={(e) => setErrorCostPerMonth(Number(e.target.value))}
-                    min={0}
-                    className="bg-card/50"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="errorReductionPercent">
-                    {isArabic ? "نسبة تقليل الأخطاء المتوقعة (%)" : "Expected error reduction (%)"}
-                  </Label>
-                  <Input
-                    id="errorReductionPercent"
-                    type="number"
-                    value={errorReductionPercent}
-                    onChange={(e) => setErrorReductionPercent(Number(e.target.value))}
-                    min={0}
-                    max={100}
-                    className="bg-card/50"
-                  />
+                  <Select value={serviceType} onValueChange={setServiceType}>
+                    <SelectTrigger className="bg-card/50">
+                      <SelectValue placeholder={isArabic ? "اختر خدمة" : "Select a service"} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ai-automation">
+                        {isArabic ? "سير عمل الأتمتة" : "AI Automation Workflows"}
+                      </SelectItem>
+                      <SelectItem value="chatbot">
+                        {isArabic ? "روبوت الدردشة" : "AI Chatbot"}
+                      </SelectItem>
+                      <SelectItem value="lead-gen">
+                        {isArabic ? "نظام توليد العملاء" : "Lead Generation System"}
+                      </SelectItem>
+                      <SelectItem value="customer-support">
+                        {isArabic ? "وكيل دعم العملاء" : "Customer Support Agent"}
+                      </SelectItem>
+                      <SelectItem value="social-media">
+                        {isArabic ? "أتمتة وسائل التواصل" : "Social Media Automation"}
+                      </SelectItem>
+                      <SelectItem value="ecommerce">
+                        {isArabic ? "أتمتة التجارة الإلكترونية" : "E-commerce Automation"}
+                      </SelectItem>
+                      <SelectItem value="website">
+                        {isArabic ? "تطوير الموقع/SaaS" : "Website/SaaS Development"}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
                   <p className="text-xs text-muted-foreground">
-                    {isArabic ? "نصيحة: الأتمتة تقلل الأخطاء البشرية بنسبة 90-99%" : "Tip: Automation reduces human errors by 90-99%"}
-                  </p>
-                </div>
-              </div>
-
-              {/* Revenue Lift Section */}
-              <div className="space-y-4 p-4 rounded-lg bg-primary/5 border border-primary/20">
-                <h3 className="font-bold text-lg flex items-center gap-2">
-                  <Icons.TrendingUp className="w-5 h-5 text-primary" />
-                  {isArabic ? "زيادة الإيرادات (اختياري)" : "Revenue Lift (Optional)"}
-                </h3>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="monthlyRevenue">
-                    {isArabic ? "الإيرادات الشهرية الحالية ($)" : "Current monthly revenue ($)"}
-                  </Label>
-                  <Input
-                    id="monthlyRevenue"
-                    type="number"
-                    value={monthlyRevenue}
-                    onChange={(e) => setMonthlyRevenue(Number(e.target.value))}
-                    min={0}
-                    className="bg-card/50"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="revenueLiftPercent">
-                    {isArabic ? "زيادة الإيرادات المتوقعة (%)" : "Expected revenue increase (%)"}
-                  </Label>
-                  <Input
-                    id="revenueLiftPercent"
-                    type="number"
-                    value={revenueLiftPercent}
-                    onChange={(e) => setRevenueLiftPercent(Number(e.target.value))}
-                    min={0}
-                    max={100}
-                    className="bg-card/50"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    {isArabic ? "نصيحة: التوليد الآلي للعملاء المحتملين يزيد الإيرادات بنسبة 10-30%" : "Tip: Automated lead gen typically increases revenue by 10-30%"}
+                    {serviceType === "ai-automation"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +25% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +25% | Error reduction: 93%"
+                      : serviceType === "chatbot"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +35% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +35% | Error reduction: 93%"
+                      : serviceType === "lead-gen"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +45% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +45% | Error reduction: 93%"
+                      : serviceType === "customer-support"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +30% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +30% | Error reduction: 93%"
+                      : serviceType === "social-media"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +20% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +20% | Error reduction: 93%"
+                      : serviceType === "ecommerce"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +40% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +40% | Error reduction: 93%"
+                      : serviceType === "website"
+                      ? isArabic
+                        ? "💡 زيادة الإيرادات المتوقعة: +50% | تقليل الأخطاء: 93%"
+                        : "💡 Expected revenue increase: +50% | Error reduction: 93%"
+                      : isArabic
+                      ? "اختر خدمة لرؤية التأثير المتوقع"
+                      : "Select a service to see expected impact"}
                   </p>
                 </div>
               </div>
@@ -301,24 +323,34 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
                   </p>
                 </div>
 
+                <div className="p-4 rounded-lg bg-orange-500/10 border border-orange-500/30">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">{isArabic ? "تكلفة الأخطاء الشهرية" : "Monthly Error Cost"}</span>
+                    <span className="font-bold text-orange-500">${monthlyErrorCost.toLocaleString()}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {isArabic ? "محسوبة تلقائياً (10% من التكلفة الشهرية)" : "Calculated automatically (10% of monthly cost)"}
+                  </p>
+                </div>
+
                 <div className="p-4 rounded-lg bg-card/50 border border-primary/20">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">{isArabic ? "تقليل الأخطاء" : "Error Reduction"}</span>
+                    <span className="text-sm text-muted-foreground">{isArabic ? "توفير تقليل الأخطاء" : "Error Reduction Savings"}</span>
                     <span className="font-bold text-primary">${errorSavings.toLocaleString()}</span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-1">
-                    ${errorCostPerMonth}/mo × {errorReductionPercent}% × 12 {isArabic ? "أشهر" : "months"}
+                    ${monthlyErrorCost.toLocaleString()}/mo × 93% × 12 {isArabic ? "أشهر" : "months"}
                   </p>
                 </div>
 
                 {revenueLift > 0 && (
-                  <div className="p-4 rounded-lg bg-card/50 border border-primary/20">
+                  <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">{isArabic ? "زيادة الإيرادات" : "Revenue Lift"}</span>
-                      <span className="font-bold text-primary">${revenueLift.toLocaleString()}</span>
+                      <span className="text-sm text-muted-foreground">{isArabic ? "زيادة الإيرادات المتوقعة" : "Expected Revenue Increase"}</span>
+                      <span className="font-bold text-green-500">${revenueLift.toLocaleString()}</span>
                     </div>
                     <p className="text-xs text-muted-foreground mt-1">
-                      ${monthlyRevenue}/mo × {revenueLiftPercent}% × 12 {isArabic ? "أشهر" : "months"}
+                      {isArabic ? "محسوبة بناءً على نوع الخدمة" : "Calculated based on service type"}
                     </p>
                   </div>
                 )}

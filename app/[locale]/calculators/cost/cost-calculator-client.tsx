@@ -96,6 +96,17 @@ export function CostCalculatorClient({ isArabic }: CostCalculatorClientProps) {
       setSupport(60); // Auto-upgrade to 60 days for complex projects
     }
   }, [complexity, support]);
+
+  // Auto-adjust integrations when complexity changes
+  useEffect(() => {
+    if (complexity === "simple") {
+      setIntegrations(2);
+    } else if (complexity === "medium") {
+      setIntegrations(4);
+    } else if (complexity === "complex") {
+      setIntegrations(8);
+    }
+  }, [complexity]);
   
   const selectedService = serviceTypes[serviceType as keyof typeof serviceTypes];
   const basePrice = selectedService.basePrices[complexity];
@@ -332,8 +343,8 @@ export function CostCalculatorClient({ isArabic }: CostCalculatorClientProps) {
                 />
                 <p className="text-xs text-muted-foreground">
                   {isArabic 
-                    ? "التكاملات: API، قواعد البيانات، الأدوات الخارجية، إلخ" 
-                    : "Integrations: APIs, databases, external tools, etc."}
+                    ? "التكاملات: API، قواعد البيانات، الأدوات الخارجية، إلخ. إذا لم تكن متأكدًا، اتركه عند 2" 
+                    : "Integrations: APIs, databases, external tools, etc. If you're not sure, keep it at 2"}
                 </p>
               </div>
 
