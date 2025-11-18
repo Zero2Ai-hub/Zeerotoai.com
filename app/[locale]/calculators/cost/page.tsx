@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { site } from "@/content/site";
 import { CostCalculatorClient } from "./cost-calculator-client";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cost Calculator - Estimate Your Project Investment",
@@ -37,20 +38,40 @@ export default async function CostCalculatorPage() {
 
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-12 px-4">
-          <div className="container mx-auto text-center">
-            <div className="inline-block mb-8">
-              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "حاسبة التكلفة" : "Cost Calculator"}
+          <div className="container mx-auto">
+            {/* Back to Pricing Link */}
+            <Link 
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-12 group"
+            >
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:-translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span className="font-medium">
+                {isArabic ? "العودة إلى التسعير" : "Back to Pricing"}
               </span>
+            </Link>
+
+            <div className="text-center">
+              <div className="inline-block mb-8">
+                <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
+                  {isArabic ? "حاسبة التكلفة" : "Cost Calculator"}
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
+                {isArabic ? "احسب تكلفة مشروعك" : "Estimate Your Project Cost"}
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                {isArabic
+                  ? "احصل على تقدير دقيق للاستثمار بناءً على احتياجاتك المحددة"
+                  : "Get an accurate investment estimate based on your specific requirements"}
+              </p>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "احسب تكلفة مشروعك" : "Estimate Your Project Cost"}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {isArabic
-                ? "احصل على تقدير دقيق للاستثمار بناءً على احتياجاتك المحددة"
-                : "Get an accurate investment estimate based on your specific requirements"}
-            </p>
           </div>
         </section>
 
