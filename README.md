@@ -95,17 +95,15 @@ zero2ai-website/
    
    Create a `.env.local` file in the root directory:
    ```env
-   # Supabase (Required - for authentication)
+   # Supabase (Required - for authentication and data storage)
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    
-   # Airtable (Required - for contact form storage)
-   AIRTABLE_API_KEY=your_airtable_api_key_here
-   AIRTABLE_BASE_ID=your_base_id_here
-   AIRTABLE_TABLE_NAME=Contacts
-   
-   # Resend (Optional - for email notifications)
+   # Resend (Required - for email notifications)
    RESEND_API_KEY=your_resend_api_key_here
+   
+   # Notification Email (Optional - defaults to hello@zeerotoai.com)
+   NOTIFICATION_EMAIL=your_email@zeerotoai.com
    ```
    
    **Setting up Supabase (Required):**
@@ -114,24 +112,30 @@ zero2ai-website/
    3. Go to Project Settings → API
    4. Copy your Project URL → `NEXT_PUBLIC_SUPABASE_URL`
    5. Copy your `anon` `public` key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   6. (Optional) Configure email templates in Authentication → Email Templates
-   7. (Optional) Add OAuth providers in Authentication → Providers
+   6. Run the database migrations:
+      ```bash
+      # Option A: Using Supabase CLI
+      supabase db push
+      
+      # Option B: Manual
+      # - Go to SQL Editor in Supabase Dashboard
+      # - Copy and run each file in supabase/migrations/
+      ```
+   7. (Optional) Configure email templates in Authentication → Email Templates
+   8. (Optional) Add OAuth providers in Authentication → Providers
    
-   **Setting up Airtable:**
-   1. Create a free account at [https://airtable.com](https://airtable.com)
-   2. Create a new base (or use existing one)
-   3. Create a table named "Contacts" with these fields:
-      - `Name` (Single line text)
-      - `Email` (Email)
-      - `Company` (Single line text)
-      - `Message` (Long text)
-      - `Submitted At` (Date with time)
-      - `Status` (Single select: New, Contacted, Closed)
-   4. Get your API key from [Account Settings](https://airtable.com/account) → API
-   5. Get your Base ID from the base's API docs (Help → API documentation)
-   
-   **Setting up Resend (Optional):**
-   - Get your API key from [https://resend.com](https://resend.com)
+   **Setting up Resend (Required for email notifications):**
+   1. Create a free account at [https://resend.com](https://resend.com)
+   2. Get your API key → `RESEND_API_KEY`
+   3. Add and verify your domain:
+      - Go to Domains → Add Domain
+      - Add subdomain: `updates.zeerotoai.com`
+      - Add DNS records to your domain provider (see MIGRATION-GUIDE.md)
+      - Wait for verification (10-60 minutes)
+   4. Install Resend package:
+      ```bash
+      npm install resend
+      ```
 
 4. **Add your assets**
    
