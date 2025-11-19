@@ -40,7 +40,7 @@ export default async function PricingPage() {
         <section className="relative z-10 pt-32 pb-4 px-4">
           <div className="container mx-auto text-center max-w-5xl">
             <div className="inline-block mb-8">
-              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold">
+              <span className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
                 {isArabic ? "تسعير شفاف ونتائج مثبتة" : "Transparent Pricing • Proven Results"}
               </span>
             </div>
@@ -58,7 +58,7 @@ export default async function PricingPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="#pain-points" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/60 transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/60 transition-all hover:scale-105"
                 >
                   {isArabic ? "ما هو تحديك؟" : "What's Your Challenge?"}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export default async function PricingPage() {
                 </a>
                 <a 
                   href="#investment-ranges" 
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-background hover:bg-muted border-2 border-primary/30 hover:border-primary/50 text-foreground font-bold text-lg transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-background hover:bg-muted border-2 border-primary/30 hover:border-primary/50 text-foreground font-bold text-lg transition-all hover:scale-105"
                 >
                   {isArabic ? "عرض النطاقات" : "View Ranges"}
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default async function PricingPage() {
               <div className="flex flex-col sm:flex-row gap-3 text-sm">
                 <Link 
                   href="/calculators/cost" 
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
                   style={{ animation: "glowPulse 2s ease-in-out infinite" }}
                 >
                   <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ export default async function PricingPage() {
                 </Link>
                 <Link 
                   href="/calculators/roi" 
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-card/50 hover:bg-card border border-primary/20 hover:border-primary/40 text-foreground font-semibold transition-all hover:scale-105"
                   style={{ animation: "glowPulse 2s ease-in-out infinite", animationDelay: "1s" }}
                 >
                   <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

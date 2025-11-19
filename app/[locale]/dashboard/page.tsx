@@ -110,8 +110,8 @@ export default async function DashboardPage() {
                 
                 <CardHeader className="relative z-10">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30">
-                      <User className="w-6 h-6 text-background" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
+                      <User className="w-7 h-7 text-background" />
                     </div>
                     <CardTitle className="text-2xl">
                       {isArabic ? "معلوماتك الشخصية" : "Your Profile"}
@@ -189,7 +189,7 @@ export default async function DashboardPage() {
 
                   {/* Profile actions */}
                   <div className="pt-4 border-t border-primary/20">
-                    <Button variant="outline" className="w-full" disabled>
+                    <Button variant="outline" className="w-full flex items-center justify-center" disabled>
                       <ImageIcon className="mr-2 h-4 w-4" />
                       {isArabic ? "تحديث الصورة الشخصية (قريبًا)" : "Upload Profile Picture (Coming Soon)"}
                     </Button>
@@ -203,8 +203,8 @@ export default async function DashboardPage() {
                 
                 <CardHeader className="relative z-10">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30">
-                      <Inbox className="w-6 h-6 text-background" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
+                      <Inbox className="w-7 h-7 text-background" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl">
@@ -232,7 +232,7 @@ export default async function DashboardPage() {
                     </p>
                     
                     <Button variant="ghost" size="sm" className="text-xs" asChild>
-                      <a href="#workflow-form">
+                      <a href="#workflow-form" className="flex items-center justify-center">
                         {isArabic ? "إنشاء طلبك الأول" : "Create Your First Request"}
                         <ArrowRight className="ml-2 h-3 w-3" />
                       </a>
@@ -261,8 +261,8 @@ export default async function DashboardPage() {
               <CardHeader className="relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30">
-                      <Gift className="w-6 h-6 text-background" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
+                      <Gift className="w-7 h-7 text-background" />
                     </div>
                     <div>
                       <Badge className="mb-2 bg-amber-500/20 text-amber-300 border-amber-500/40">
@@ -310,10 +310,12 @@ export default async function DashboardPage() {
                 </div>
 
                 <form action="https://forms.gle/your-google-form-id" method="post" target="_blank">
-                  <Button className="w-full group" size="lg">
-                    <Sparkles className="mr-2 h-5 w-5" />
-                    {isArabic ? "انضم إلى قائمة الانتظار - احصل على إشعار عند الإطلاق!" : "Join Waitlist - Get Notified When We Launch!"}
-                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <Button className="w-full group flex items-center justify-center" size="lg">
+                    <Sparkles className="mr-2 h-5 w-5 flex-shrink-0" />
+                    <span className="text-sm sm:text-base">
+                      {isArabic ? "انضم إلى قائمة الانتظار - احصل على إشعار عند الإطلاق!" : "Join Waitlist - Get Notified When We Launch!"}
+                    </span>
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                   </Button>
                 </form>
 
@@ -342,8 +344,8 @@ export default async function DashboardPage() {
                 
                 <CardHeader className="relative z-10">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30">
-                      <Calendar className="w-6 h-6 text-background" />
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
+                      <Calendar className="w-7 h-7 text-background" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl">
@@ -447,7 +449,7 @@ export default async function DashboardPage() {
                   <div className="flex flex-col items-center gap-4">
                     <Button 
                       size="lg" 
-                      className="px-8 py-6 text-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border-2 border-amber-400/50 shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/50 transition-all hover:scale-105"
+                      className="px-8 py-6 text-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border-2 border-amber-400/50 shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/50 transition-all hover:scale-105 flex items-center justify-center"
                       disabled
                     >
                       <Mail className="mr-3 h-6 w-6" />

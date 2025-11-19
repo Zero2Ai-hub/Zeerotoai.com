@@ -113,8 +113,8 @@ export function RequestWorkflowForm({ userEmail, userName, isArabic = false }: R
       
       <CardHeader className="relative z-10">
         <div className="flex items-center gap-3 mb-2">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/30">
-            <Sparkles className="w-6 h-6 text-background" />
+          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
+            <Sparkles className="w-7 h-7 text-background" />
           </div>
           <div>
             <CardTitle className="text-2xl">
@@ -239,7 +239,7 @@ export function RequestWorkflowForm({ userEmail, userName, isArabic = false }: R
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full"
+            className="w-full flex items-center justify-center"
             disabled={isSubmitting}
           >
             {isSubmitting ? (

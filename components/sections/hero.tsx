@@ -90,7 +90,7 @@ export function Hero() {
               size="lg" 
               className="group text-lg bg-gradient-to-r from-primary via-primary to-primary/80 hover:from-primary/90 hover:via-primary hover:to-primary/70 text-background font-bold shadow-xl shadow-primary/50 hover:shadow-2xl hover:shadow-primary/60 transition-all hover:scale-105 relative overflow-hidden"
             >
-              <Link href={site.cta.primary.href} className="flex items-center gap-2">
+              <Link href={site.cta.primary.href} className="flex items-center justify-center gap-2">
                 <span className="relative z-10">{isArabic ? site.cta.primary.label.ar : site.cta.primary.label.en}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/30 to-primary/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
@@ -102,7 +102,7 @@ export function Hero() {
               variant="outline" 
               className="group text-lg bg-white/10 hover:bg-primary/20 text-white border-2 border-primary/50 hover:border-primary transition-all hover:scale-105 backdrop-blur-sm"
             >
-              <Link href={site.cta.secondary.href} className="flex items-center gap-2">
+              <Link href={site.cta.secondary.href} className="flex items-center justify-center gap-2">
                 <Zap className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 {isArabic ? site.cta.secondary.label.ar : site.cta.secondary.label.en}
               </Link>

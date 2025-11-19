@@ -94,7 +94,7 @@ export function CtaSection() {
               size="lg" 
               className="group text-lg bg-primary hover:bg-primary/90 text-background font-bold shadow-xl shadow-primary/50 hover:shadow-2xl hover:shadow-primary/60 transition-all hover:scale-105 relative overflow-hidden"
             >
-              <Link href={site.cta.primary.href} className="flex items-center gap-2">
+              <Link href={site.cta.primary.href} className="flex items-center justify-center gap-2">
                 <span className="relative z-10">{isArabic ? site.cta.primary.label.ar : site.cta.primary.label.en}</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/30 to-primary/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
@@ -106,7 +106,7 @@ export function CtaSection() {
               variant="outline"
               className="group text-lg bg-white/10 hover:bg-primary/20 text-white border-2 border-primary/50 hover:border-primary transition-all hover:scale-105 backdrop-blur-sm"
             >
-              <Link href="/portfolio" className="flex items-center gap-2">
+              <Link href="/portfolio" className="flex items-center justify-center gap-2">
                 <Zap className="h-5 w-5 group-hover:rotate-12 transition-transform" />
                 {isArabic ? "شاهد أعمالنا" : "See Our Work"}
               </Link>
