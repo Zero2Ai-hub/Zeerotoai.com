@@ -55,6 +55,9 @@ next-env.d.ts
 *.temp
 *.orig
 
+# Business materials (ROI calculators, playbooks, proprietary content)
+public/downloads/
+
 # OS files
 .DS_Store
 Thumbs.db
