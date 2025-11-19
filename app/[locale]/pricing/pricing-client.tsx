@@ -442,15 +442,17 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                   onClick={() => setExpandedPainPoint(isExpanded ? null : point.id)}
                 >
                   <CardHeader>
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="w-6 h-6 text-primary" />
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3 flex-1 min-w-0">
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <IconComponent className="w-6 h-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-lg md:text-xl leading-snug">
+                          {isArabic ? point.title.ar : point.title.en}
+                        </CardTitle>
                       </div>
-                      {isExpanded ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-muted-foreground" />}
+                      {isExpanded ? <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" /> : <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />}
                     </div>
-                    <CardTitle className="text-xl">
-                      {isArabic ? point.title.ar : point.title.en}
-                    </CardTitle>
                   </CardHeader>
 
                   <AnimatePresence>
@@ -554,14 +556,14 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                       {/* Popular badge */}
                       {isPopular && (
                         <div className="absolute top-4 right-4 z-10">
-                          <Badge className="bg-primary text-primary-foreground font-bold shadow-lg shadow-primary/50">
+                          <Badge className="bg-primary text-primary-foreground font-bold shadow-lg shadow-primary/50 text-xs">
                             {isArabic ? tier.badge.ar : tier.badge.en}
                           </Badge>
                         </div>
                       )}
 
                       <CardHeader className="relative z-10 pb-6">
-                        <div className="flex items-start gap-4 mb-4">
+                        <div className={`flex items-start gap-4 mb-4 ${isPopular ? 'pr-28' : ''}`}>
                           <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40 flex-shrink-0">
                             <IconComponent className="h-7 w-7 text-background" />
                           </div>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Target, Handshake, Sparkles } from "lucide-react";
 import { GlowingBorder } from "@/components/glowing-border";
 import Link from "next/link";
 
@@ -148,7 +148,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
                   <div className="p-8 md:p-10 relative z-10">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                        <span className="text-2xl">🎯</span>
+                        <Target className="w-6 h-6 text-primary" />
                       </div>
                       <h2 className="text-3xl md:text-4xl font-bold">
                         {isArabic ? "مهمتنا" : "Our Mission"}
@@ -175,7 +175,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
                   <div className="p-8 md:p-10 relative z-10">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                        <span className="text-2xl">🤝</span>
+                        <Handshake className="w-6 h-6 text-primary" />
                       </div>
                       <h2 className="text-3xl md:text-4xl font-bold">
                         {isArabic ? "وعدنا" : "Our Promise"}
@@ -201,7 +201,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
                 <div className="p-8 md:p-10 relative z-10">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="text-2xl">✨</span>
+                      <Sparkles className="w-6 h-6 text-primary" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold">
                       {isArabic ? "لماذا تختارنا" : "Why Choose Us"}
