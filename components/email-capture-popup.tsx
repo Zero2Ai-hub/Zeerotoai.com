@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { X, Sparkles, Gift, BookOpen, Lightbulb, Calculator } from "lucide-react";
+import { X, Mail, Gift, BookOpen, Lightbulb, Calculator } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useLocale } from "next-intl";
 
@@ -61,7 +61,7 @@ export function EmailCapturePopup() {
     try {
       const supabase = createClient();
       
-      // Store email in Supabase
+      // 1. Store email in Supabase
       const { error } = await supabase
         .from("email_subscribers")
         .insert([
@@ -75,13 +75,17 @@ export function EmailCapturePopup() {
 
       if (error) {
         console.error("Error saving email:", error);
-        // If duplicate email, still show success (user already subscribed)
+        // If duplicate email, still show success and send email (user already subscribed)
         if (error.code === "23505") {
+          // Still send welcome email for duplicate (they might have lost it)
+          await sendWelcomeEmail();
           setIsSubmitted(true);
         } else {
           alert(isArabic ? "حدث خطأ. الرجاء المحاولة مرة أخرى." : "Something went wrong. Please try again.");
         }
       } else {
+        // 2. Send welcome email via API
+        await sendWelcomeEmail();
         setIsSubmitted(true);
       }
     } catch (error) {
@@ -89,6 +93,24 @@ export function EmailCapturePopup() {
       alert(isArabic ? "حدث خطأ. الرجاء المحاولة مرة أخرى." : "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const sendWelcomeEmail = async () => {
+    try {
+      await fetch("/api/send-welcome-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.toLowerCase().trim(),
+          name: name.trim() || undefined,
+          type: "exit_intent",
+        }),
+      });
+      console.log("✅ Welcome email sent");
+    } catch (emailError) {
+      console.error("⚠️ Failed to send welcome email:", emailError);
+      // Don't fail the whole process if email fails
     }
   };
 
@@ -148,7 +170,7 @@ export function EmailCapturePopup() {
                     <p className="text-center text-muted-foreground mb-8 text-base md:text-lg leading-relaxed">
                       {isArabic
                         ? "احصل على دليل الأتمتة المجاني الخاص بنا + قالب سير عمل مجاني واحد من اختيارنا + دليل يوفر 10+ ساعات في الأسبوع"
-                        : "Get our free Automation Playbook + 1 free workflow template of our choice + guide that save 10+ hours/week"}
+                        : "Get our free AI Automation Playbook + ROI Calculator + 1 free workflow template of our choice"}
                     </p>
 
                     {/* Benefits */}
@@ -158,15 +180,7 @@ export function EmailCapturePopup() {
                           <BookOpen className="w-3 h-3 text-primary" />
                         </div>
                         <span className="text-sm text-foreground/80">
-                          {isArabic ? "دليل أتمتة Zero2AI" : "Zero2AI Automation Playbook"}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                          <Lightbulb className="w-3 h-3 text-primary" />
-                        </div>
-                        <span className="text-sm text-foreground/80">
-                          {isArabic ? "فكرة أتمتة مجانية واحدة" : "1 free automation idea"}
+                          {isArabic ? "دليل أتمتة Zero2AI" : "AI Automation Playbook (guide with ideas + testimonials)"}
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
@@ -174,7 +188,15 @@ export function EmailCapturePopup() {
                           <Calculator className="w-3 h-3 text-primary" />
                         </div>
                         <span className="text-sm text-foreground/80">
-                          {isArabic ? "جدول حساب عائد الاستثمار" : "ROI calculator spreadsheet"}
+                          {isArabic ? "جدول حساب عائد الاستثمار" : "ROI Calculator Spreadsheet"}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Lightbulb className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-sm text-foreground/80">
+                          {isArabic ? "فكرة أتمتة مجانية واحدة" : "1 Free Workflow Template (our choice)"}
                         </span>
                       </div>
                     </div>
@@ -221,15 +243,15 @@ export function EmailCapturePopup() {
                     {/* Success state */}
                     <div className="text-center py-8">
                       <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                        <Sparkles className="w-10 h-10 text-primary" />
+                        <Mail className="w-10 h-10 text-primary" />
                       </div>
                       <h2 className="text-3xl font-black mb-4">
-                        {isArabic ? "🎉 رائع! تحقق من بريدك الإلكتروني" : "🎉 Awesome! Check Your Email"}
+                        {isArabic ? "رائع! تحقق من بريدك الإلكتروني" : "Awesome! Check Your Email"}
                       </h2>
                       <p className="text-muted-foreground mb-8">
                         {isArabic
                           ? "لقد أرسلنا لك دليل الأتمتة + القوالب. إذا لم تره، تحقق من البريد العشوائي."
-                          : "We've sent you the Automation Playbook + templates. If you don't see it, check your spam folder."}
+                          : "We've sent you the AI Automation Playbook + ROI Calculator. If you don't see it, check your spam folder."}
                       </p>
                       <Button
                         onClick={handleClose}
