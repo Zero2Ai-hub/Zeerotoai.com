@@ -82,16 +82,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Send email notification via Resend (secondary - notification)
+    // Send emails via Resend (secondary - notification + welcome)
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (resendApiKey && supabaseSuccess) {
-      // Use Resend to send email notification
+      // Use Resend to send emails
       try {
         const { Resend } = await import("resend");
         const resend = new Resend(resendApiKey);
+        const { getContactFormWelcomeEmail } = await import("@/lib/email-templates");
 
-        // Send notification to your team
+        // 1. Send notification to your team
         await resend.emails.send({
           from: "notifications@updates.zeerotoai.com", // Your verified Resend domain
           to: process.env.NOTIFICATION_EMAIL || "hello@zeerotoai.com", // Your team email
@@ -166,7 +167,29 @@ Reply to this email to respond directly to the customer
           `,
         });
 
-        console.log("✅ Email notification sent via Resend");
+        console.log("✅ Email notification sent to team via Resend");
+
+        // 2. Send welcome email to the user
+        const welcomeEmail = getContactFormWelcomeEmail({
+          name: validatedData.name,
+          email: validatedData.email,
+          company: validatedData.company,
+          message: validatedData.message,
+        });
+
+        await resend.emails.send({
+          from: "Zero2AI <welcome@updates.zeerotoai.com>",
+          to: validatedData.email,
+          subject: "⚡ Thanks for Reaching Out! We'll Respond Within 24hrs",
+          html: welcomeEmail.html,
+          text: welcomeEmail.text,
+          tags: [
+            { name: "type", value: "welcome" },
+            { name: "source", value: "contact_form" },
+          ],
+        });
+
+        console.log("✅ Welcome email sent to user via Resend");
       } catch (emailError) {
         console.error("⚠️ Resend email error:", emailError);
         // Don't fail the request if email fails - data is already saved

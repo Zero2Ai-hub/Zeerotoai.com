@@ -61,6 +61,23 @@ export default function SignupPage() {
       setError(error.message);
       setIsLoading(false);
     } else {
+      // Send welcome email
+      try {
+        await fetch("/api/send-welcome-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: email.toLowerCase().trim(),
+            name: fullName.trim(),
+            type: "signup",
+          }),
+        });
+        console.log("✅ Signup welcome email sent");
+      } catch (emailError) {
+        console.error("⚠️ Failed to send welcome email:", emailError);
+        // Don't fail signup if email fails
+      }
+
       setSuccess(true);
       setIsLoading(false);
       // Redirect to dashboard after a short delay
