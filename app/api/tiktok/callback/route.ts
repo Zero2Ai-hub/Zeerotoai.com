@@ -13,8 +13,12 @@ export async function GET(request: NextRequest) {
     return new NextResponse('No code received', { status: 400 });
   }
 
-  const clientKey = process.env.TIKTOK_CLIENT_KEY || 'awtjmnwc9n5z6f88';
-  const clientSecret = process.env.TIKTOK_CLIENT_SECRET || 'YGvW9Tr6aaCLSSmmYH6ulig1PbP8bDW7';
+  const clientKey = process.env.TIKTOK_CLIENT_KEY;
+  const clientSecret = process.env.TIKTOK_CLIENT_SECRET;
+
+  if (!clientKey || !clientSecret) {
+    return new NextResponse('TikTok credentials not configured', { status: 500 });
+  }
 
   const tokenRes = await fetch('https://open.tiktokapis.com/v2/oauth/token/', {
     method: 'POST',
