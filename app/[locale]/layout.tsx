@@ -120,7 +120,7 @@ export default async function LocaleLayout({
     "name": site.brand.name,
     "description": "AI Automation Solutions - We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
     "url": site.brand.domain,
-    "logo": `${site.brand.domain}/Logo-2.webp`,
+    "logo": `${site.brand.domain}/Logo-2.png`,
     "email": site.brand.email,
     "contactPoint": {
       "@type": "ContactPoint",
