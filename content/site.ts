@@ -5,8 +5,8 @@ export type Lang = "en" | "ar";
 
 export const site = {
   brand: {
-    name: "Zero2AI",
-    domain: "https://www.zero2ai.com",
+    name: "Zeerotoai",
+    domain: "https://zeerotoai.com",
     email: "founder@zeerotoai.com",
     whatsapp: "https://wa.me/971503385859",
   },
@@ -101,8 +101,8 @@ export const site = {
   },
   footer: {
     copyright: {
-      en: "© 2025 Zero2AI All rights reserved",
-      ar: "© 2025 Zero2AI جميع الحقوق محفوظة",
+      en: "© 2025 Zeerotoai All rights reserved",
+      ar: "© 2025 Zeerotoai جميع الحقوق محفوظة",
     },
     quickLinks: {
       title: { en: "Quick Links", ar: "روابط سريعة" },

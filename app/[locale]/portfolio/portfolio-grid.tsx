@@ -51,7 +51,7 @@ export function PortfolioGrid({ projects, isArabic }: PortfolioGridProps) {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-8"
         >
           {projects.map((project, index) => {
-            // Special case: Last project (Zero2AI website) spans full width
+            // Special case: Last project (Zeerotoai website) spans full width
             const isLastProject = index === projects.length - 1;
             
             // Masonry pattern repeating every 6 cards:

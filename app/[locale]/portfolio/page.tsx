@@ -5,7 +5,7 @@ import { PortfolioGrid } from "./portfolio-grid";
 import { site } from "@/content/site";
 
 export const metadata = {
-  title: "Portfolio | Zero2AI",
+  title: "Portfolio | Zeerotoai",
   description: "Explore our portfolio of AI automation projects",
   alternates: {
     canonical: `${site.brand.domain}/portfolio`,

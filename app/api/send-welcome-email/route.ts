@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
         name: validatedData.name || "",
         email: validatedData.email,
       });
-      subject = "🎉 Welcome to Zero2AI! Let's Get Started";
+      subject = "🎉 Welcome to Zeerotoai! Let's Get Started";
     } else {
       return NextResponse.json(
         { error: "Invalid email type" },
@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
 
     // Send the welcome email
     await resend.emails.send({
-      from: "Zero2AI <welcome@updates.zeerotoai.com>",
+      from: "Zeerotoai <welcome@updates.zeerotoai.com>",
       to: validatedData.email,
       subject: subject,
       html: emailTemplate.html,

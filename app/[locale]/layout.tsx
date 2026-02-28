@@ -20,8 +20,8 @@ type Props = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.brand.domain),
   title: {
-    default: "ZeroToAI",
-    template: "%s | ZeroToAI",
+    default: "Zeerotoai",
+    template: "%s | Zeerotoai",
   },
   description:
     "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth. Expert automation with n8n, Voiceflow, Make.com, and more.",

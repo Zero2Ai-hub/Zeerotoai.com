@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = packageNames[slug] || "Productized Package";
 
   return {
-    title: `${title} | Zero2AI`,
+    title: `${title} | Zeerotoai`,
     description: `Get your automation up and running in days with our ${title}. Fixed price, fast delivery, proven results.`,
     alternates: {
       canonical: `${site.brand.domain}/packages/${slug}`,

@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: PageProps) {
   
   if (!project) {
     return {
-      title: "Project Not Found | Zero2AI",
+      title: "Project Not Found | Zeerotoai",
     };
   }
 
   return {
-    title: `${project.title.en} | Zero2AI Portfolio`,
+    title: `${project.title.en} | Zeerotoai Portfolio`,
     description: project.summary.en,
     alternates: {
       canonical: `${site.brand.domain}/portfolio/${slug}`,

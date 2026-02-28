@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service for Zero2AI services.",
+  description: "Terms of service for Zeerotoai services.",
 };
 
 export default async function TermsPage() {
@@ -46,8 +46,8 @@ export default async function TermsPage() {
               </h2>
               <p>
                 {isArabic
-                  ? "من خلال الوصول إلى واستخدام خدمات Zero2AI، فإنك توافق على الالتزام بشروط الخدمة هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام خدماتنا."
-                  : "By accessing and using Zero2AI services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."}
+                  ? "من خلال الوصول إلى واستخدام خدمات Zeerotoai، فإنك توافق على الالتزام بشروط الخدمة هذه. إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام خدماتنا."
+                  : "By accessing and using Zeerotoai services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."}
               </p>
             </section>
 
@@ -57,8 +57,8 @@ export default async function TermsPage() {
               </h2>
               <p>
                 {isArabic
-                  ? "تقدم Zero2AI خدمات أتمتة الذكاء الاصطناعي بما في ذلك على سبيل المثال لا الحصر: أتمتة توليد العملاء المحتملين، وروبوتات الدردشة الذكية، وسير العمل الوكيل، وأتمتة الفيديو، وخطوط أنابيب البيانات، والتكاملات."
-                  : "Zero2AI provides AI automation services including but not limited to: lead generation automation, AI chatbots, agentic workflows, video automation, data pipelines, and integrations."}
+                  ? "تقدم Zeerotoai خدمات أتمتة الذكاء الاصطناعي بما في ذلك على سبيل المثال لا الحصر: أتمتة توليد العملاء المحتملين، وروبوتات الدردشة الذكية، وسير العمل الوكيل، وأتمتة الفيديو، وخطوط أنابيب البيانات، والتكاملات."
+                  : "Zeerotoai provides AI automation services including but not limited to: lead generation automation, AI chatbots, agentic workflows, video automation, data pipelines, and integrations."}
               </p>
             </section>
 
@@ -79,8 +79,8 @@ export default async function TermsPage() {
               </h2>
               <p>
                 {isArabic
-                  ? "جميع حقوق الملكية الفكرية في خدماتنا ومحتواها محفوظة لـ Zero2AI. لا يجوز لك نسخ أو تعديل أو توزيع أو بيع أي جزء من خدماتنا دون إذن كتابي صريح."
-                  : "All intellectual property rights in our services and content are reserved by Zero2AI. You may not copy, modify, distribute, or sell any part of our services without explicit written permission."}
+                  ? "جميع حقوق الملكية الفكرية في خدماتنا ومحتواها محفوظة لـ Zeerotoai. لا يجوز لك نسخ أو تعديل أو توزيع أو بيع أي جزء من خدماتنا دون إذن كتابي صريح."
+                  : "All intellectual property rights in our services and content are reserved by Zeerotoai. You may not copy, modify, distribute, or sell any part of our services without explicit written permission."}
               </p>
             </section>
 
@@ -112,8 +112,8 @@ export default async function TermsPage() {
               </h2>
               <p>
                 {isArabic
-                  ? "لن تكون Zero2AI مسؤولة عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية ناتجة عن استخدام أو عدم القدرة على استخدام خدماتنا."
-                  : "Zero2AI shall not be liable for any indirect, incidental, special, or consequential damages arising from the use or inability to use our services."}
+                  ? "لن تكون Zeerotoai مسؤولة عن أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية ناتجة عن استخدام أو عدم القدرة على استخدام خدماتنا."
+                  : "Zeerotoai shall not be liable for any indirect, incidental, special, or consequential damages arising from the use or inability to use our services."}
               </p>
             </section>
 

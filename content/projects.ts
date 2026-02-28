@@ -272,8 +272,8 @@ export const projects = [
       ar: "عرض مدعوم بالذكاء الاصطناعي",
     },
     title: {
-      en: "Zero2AI Website - AI-Generated Portfolio & Dashboard",
-      ar: "موقع Zero2AI - محفظة ولوحة تحكم تم إنشاؤها بالذكاء الاصطناعي",
+      en: "Zeerotoai Website - AI-Generated Portfolio & Dashboard",
+      ar: "موقع Zeerotoai - محفظة ولوحة تحكم تم إنشاؤها بالذكاء الاصطناعي",
     },
     summary: {
       en: "A modern, SEO-optimized portfolio website built entirely with AI-powered coding tools. Features a dynamic dashboard, authentication, bilingual support (English/Arabic), and seamless integrations with Supabase, Airtable, and Calendly. Want a similar website for your business? Request one now and we'll build it fast!",
@@ -289,7 +289,7 @@ export const projects = [
     ],
     tags: ["Cursor AI", "Next.js", "Supabase", "Tailwind CSS"],
     href: "/portfolio/zero2ai-website",
-    demoUrl: "https://www.zero2ai.com",
+    demoUrl: "https://zeerotoai.com",
     image: "/portfolio/zero2ai-website.jpg",
     gallery: [],
   }

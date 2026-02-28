@@ -8,7 +8,7 @@ import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Zero2AI services and website.",
+  description: "Privacy policy for Zeerotoai services and website.",
 };
 
 export default async function PrivacyPage() {

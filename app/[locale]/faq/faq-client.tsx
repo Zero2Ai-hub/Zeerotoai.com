@@ -281,8 +281,8 @@ export function FaqClient({ isArabic }: FaqClientProps) {
         ar: "سأحتاج إلى توظيف مبرمج وقضاء أشهر في الإعداد",
       },
       truth: {
-        en: "With the right partner (like Zero2AI), you can have working automation in days, not months",
-        ar: "مع الشريك المناسب (مثل Zero2AI)، يمكن أن يكون لديك أتمتة عاملة في أيام، وليس أشهر",
+        en: "With the right partner (like Zeerotoai), you can have working automation in days, not months",
+        ar: "مع الشريك المناسب (مثل Zeerotoai)، يمكن أن يكون لديك أتمتة عاملة في أيام، وليس أشهر",
       },
     },
     {

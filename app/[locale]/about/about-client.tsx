@@ -48,12 +48,12 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
 
   const ourStory = {
     title: {
-      en: "Why We Started Zero2AI",
-      ar: "لماذا بدأنا Zero2AI",
+      en: "Why We Started Zeerotoai",
+      ar: "لماذا بدأنا Zeerotoai",
     },
     content: {
-      en: "We started Zero2AI because we saw businesses like yours struggling with the same problems: too much manual work, not enough time, and growth that feels impossible. We believe every business deserves access to intelligent automation, not just big corporations.",
-      ar: "بدأنا Zero2AI لأننا رأينا الشركات مثل شركتك تعاني من نفس المشاكل: الكثير من العمل اليدوي، وعدم كفاية الوقت، والنمو الذي يبدو مستحيلاً. نحن نؤمن بأن كل شركة تستحق الوصول إلى الأتمتة الذكية - وليس فقط شركات فورتشن 500.",
+      en: "We started Zeerotoai because we saw businesses like yours struggling with the same problems: too much manual work, not enough time, and growth that feels impossible. We believe every business deserves access to intelligent automation, not just big corporations.",
+      ar: "بدأنا Zeerotoai لأننا رأينا الشركات مثل شركتك تعاني من نفس المشاكل: الكثير من العمل اليدوي، وعدم كفاية الوقت، والنمو الذي يبدو مستحيلاً. نحن نؤمن بأن كل شركة تستحق الوصول إلى الأتمتة الذكية - وليس فقط شركات فورتشن 500.",
     },
   };
 
@@ -261,7 +261,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
               <div className="text-xl md:text-2xl font-semibold text-foreground/90 leading-relaxed relative z-10 space-y-4">
                 {isArabic ? (
                   <>
-                    <p>بدأنا Zero2AI لأننا رأينا الشركات مثل شركتك تعاني من نفس المشاكل: الكثير من العمل اليدوي، وعدم كفاية الوقت، والنمو الذي يبدو مستحيلاً.</p>
+                    <p>بدأنا Zeerotoai لأننا رأينا الشركات مثل شركتك تعاني من نفس المشاكل: الكثير من العمل اليدوي، وعدم كفاية الوقت، والنمو الذي يبدو مستحيلاً.</p>
                     <p>
                       <span className="text-primary font-bold">نحن نؤمن </span>
                       بأن كل شركة تستحق الوصول إلى الأتمتة الذكية،
@@ -275,7 +275,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
                   </>
                 ) : (
                   <>
-                    <p>We started Zero2AI because we saw businesses like yours struggling with the same problems: too much manual work, not enough time, and growth that feels impossible.</p>
+                    <p>We started Zeerotoai because we saw businesses like yours struggling with the same problems: too much manual work, not enough time, and growth that feels impossible.</p>
                     <p>
                       <span className="text-primary font-bold">We believe </span>
                       every business deserves access to intelligent automation,

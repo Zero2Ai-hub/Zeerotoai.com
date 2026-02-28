@@ -402,7 +402,7 @@ export default async function DashboardPage() {
                       <Mail className="w-8 h-8 text-amber-300" />
                     </div>
                     <h3 className="text-4xl font-black bg-gradient-to-r from-amber-400 via-amber-300 to-primary bg-clip-text text-transparent">
-                      {isArabic ? "نشرة Zero2AI" : "Zero2AI Newsletter"}
+                      {isArabic ? "نشرة Zeerotoai" : "Zeerotoai Newsletter"}
                     </h3>
                   </div>
 

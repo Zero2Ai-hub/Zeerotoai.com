@@ -180,7 +180,7 @@ export function EmailCapturePopup() {
                           <BookOpen className="w-3 h-3 text-primary" />
                         </div>
                         <span className="text-sm text-foreground/80">
-                          {isArabic ? "دليل أتمتة Zero2AI" : "AI Automation Playbook (guide with ideas + testimonials)"}
+                          {isArabic ? "دليل أتمتة Zeerotoai" : "AI Automation Playbook (guide with ideas + testimonials)"}
                         </span>
                       </div>
                       <div className="flex items-center gap-3">

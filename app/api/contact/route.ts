@@ -109,7 +109,7 @@ ${validatedData.message}
 🆔 Submission ID: ${submissionId}
 
 ---
-Zero2AI Contact Management System
+Zeerotoai Contact Management System
 Reply to this email to respond directly to the customer
           `,
           html: `
@@ -158,7 +158,7 @@ Reply to this email to respond directly to the customer
                   </div>
                 </div>
                 <div class="footer">
-                  <p>Zero2AI Contact Management System</p>
+                  <p>Zeerotoai Contact Management System</p>
                   <p>Reply to this email to respond directly to the customer</p>
                 </div>
               </div>
@@ -178,7 +178,7 @@ Reply to this email to respond directly to the customer
         });
 
         await resend.emails.send({
-          from: "Zero2AI <welcome@updates.zeerotoai.com>",
+          from: "Zeerotoai <welcome@updates.zeerotoai.com>",
           to: validatedData.email,
           subject: "⚡ Thanks for Reaching Out! We'll Respond Within 24hrs",
           html: welcomeEmail.html,

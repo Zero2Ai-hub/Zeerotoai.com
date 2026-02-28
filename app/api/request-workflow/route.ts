@@ -121,7 +121,7 @@ ${validatedData.projectDetails}
 🆔 Request ID: ${requestId}
 
 ---
-Zero2AI Workflow Management System
+Zeerotoai Workflow Management System
 Reply to this email to respond directly to the customer
           `,
           html: `
@@ -181,7 +181,7 @@ Reply to this email to respond directly to the customer
                   </div>
                 </div>
                 <div class="footer">
-                  <p>Zero2AI Workflow Management System</p>
+                  <p>Zeerotoai Workflow Management System</p>
                   <p>Reply to this email to respond directly to the customer</p>
                 </div>
               </div>

@@ -10,7 +10,7 @@ interface EmailTemplateData {
 }
 
 const BRAND_COLOR = "#00D9FF";
-const BRAND_NAME = "Zero2AI";
+const BRAND_NAME = "Zeerotoai";
 const WEBSITE = "zeerotoai.com";
 const CALENDLY_LINK = "https://calendly.com/zeero-to-ai/website";
 const DASHBOARD_LINK = "https://zeerotoai.com/dashboard";
