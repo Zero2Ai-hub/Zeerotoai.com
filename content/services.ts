@@ -8,32 +8,32 @@ export const services = [
       ar: "أنظمة الأتمتة بالذكاء الاصطناعي",
     },
     description: {
-      en: "Transform repetitive tasks into intelligent workflows. From Telegram bots and Notion integrations to enterprise-grade automation systems tailored to your unique business processes.",
-      ar: "حوّل المهام المتكررة إلى سير عمل ذكي. من روبوتات تيليجرام وتكاملات نوشن إلى أنظمة أتمتة على مستوى المؤسسات مصممة لعمليات عملك الفريدة.",
+      en: "Stop paying people to do what machines should. We map your highest-cost manual processes and replace them with intelligent, self-running workflows — connected across your entire tool stack.",
+      ar: "توقف عن دفع رواتب للأشخاص لأداء ما يجب أن تقوم به الآلات. نرسم عملياتك اليدوية الأكثر تكلفة ونستبدلها بسير عمل ذكي يعمل تلقائياً عبر جميع أدواتك.",
     },
     bullets: [
-      "Simple Telegram bots & Notion sync",
-      "Complex multi-step workflow orchestration",
-      "Custom automation tailored to your needs"
+      "Cross-platform workflow orchestration (n8n, Make)",
+      "AI decision layers that escalate only when needed",
+      "Full audit trail — every action logged and reviewable"
     ],
-    tags: ["n8n", "Make", "Telegram", "Notion"]
+    tags: ["n8n", "Make", "OpenAI", "Supabase"]
   },
   {
     key: "lead-generation",
     id: "lead-generation",
     icon: "Target",
     title: {
-      en: "Automated Lead Generation + Outreach",
-      ar: "توليد العملاء المحتملين + التواصل الآلي",
+      en: "AI Lead Generation & Outreach",
+      ar: "توليد العملاء المحتملين والتواصل بالذكاء الاصطناعي",
     },
     description: {
-      en: "Capture thousands of qualified leads with a few clicks. Find verified emails, craft AI-personalized messages, and launch mass outreach campaigns that actually convert.",
-      ar: "التقط آلاف العملاء المحتملين المؤهلين ببضع نقرات. اعثر على رسائل بريد إلكتروني موثقة، وصمم رسائل مخصصة بالذكاء الاصطناعي، وأطلق حملات تواصل جماعية تحقق النتائج بالفعل.",
+      en: "Your sales team should be closing, not scraping. We build pipelines that find verified decision-makers, craft hyper-personalized outreach, and book meetings on autopilot — at a scale no human team can match.",
+      ar: "فريق مبيعاتك يجب أن يُغلق الصفقات لا يجمع البيانات. نبني خطوط أنابيب تجد صانعي القرار المُتحققين وتصنع تواصلاً مخصصاً وتحجز اجتماعات تلقائياً.",
     },
     bullets: [
-      "Thousands of leads captured in few clicks",
-      "Verified email finding & enrichment",
-      "Mass personalized outreach campaigns"
+      "Verified B2B contact sourcing at scale",
+      "AI-personalized sequences that feel human",
+      "Auto-qualified leads delivered to your CRM"
     ],
     tags: ["Phantombuster", "Instantly", "Apollo", "OpenAI"]
   },
@@ -42,19 +42,19 @@ export const services = [
     id: "ai-websites",
     icon: "Code",
     title: {
-      en: "AI Generated Websites & SaaS",
-      ar: "مواقع ويب وSaaS تم إنشاؤها بالذكاء الاصطناعي",
+      en: "AI-Powered Websites & SaaS",
+      ar: "مواقع ويب وSaaS مدعومة بالذكاء الاصطناعي",
     },
     description: {
-      en: "Build production-ready websites and SaaS platforms in hours, not weeks. Leverage cutting-edge AI tools like Cursor, Bolt.ai, and vibe coding to go from idea to deployed product at lightning speed.",
-      ar: "قم ببناء مواقع ومنصات SaaS جاهزة للإنتاج في ساعات، وليس أسابيع. استفد من أدوات الذكاء الاصطناعي المتطورة مثل Cursor و Bolt.ai و vibe coding للانتقال من الفكرة إلى المنتج المنشور بسرعة البرق.",
+      en: "Ship a production-ready product in weeks, not quarters. We build fast, SEO-optimised web apps and SaaS platforms using AI-augmented engineering — so you get the quality of a 6-month build in a fraction of the time.",
+      ar: "أطلق منتجاً جاهزاً للإنتاج في أسابيع لا أشهر. نبني تطبيقات ويب سريعة ومحسّنة لمحركات البحث ومنصات SaaS باستخدام الهندسة المعززة بالذكاء الاصطناعي.",
     },
     bullets: [
-      "Full-stack web apps with AI-powered coding",
-      "Rapid prototyping with Bolt.ai & Cursor",
-      "Production-ready SaaS platforms in days"
+      "Full-stack Next.js + Supabase production builds",
+      "SEO-first architecture from day one",
+      "Integrated AI features (chat, search, recommendations)"
     ],
-    tags: ["Cursor", "Bolt.ai", "Next.js", "Vibe Coding"]
+    tags: ["Next.js", "Supabase", "Vercel", "TypeScript"]
   },
   {
     key: "ai-support",
@@ -65,56 +65,54 @@ export const services = [
       ar: "وكلاء دعم العملاء بالذكاء الاصطناعي",
     },
     description: {
-      en: "Deploy 24/7 multilingual AI agents that chat, call, and solve customer queries instantly. Capture leads, book appointments, and provide exceptional support without hiring more staff.",
-      ar: "انشر وكلاء ذكاء اصطناعي متعددي اللغات يعملون على مدار الساعة للدردشة والمكالمات وحل استفسارات العملاء فورًا. التقط العملاء المحتملين واحجز المواعيد وقدم دعمًا استثنائيًا دون توظيف المزيد من الموظفين.",
+      en: "Handle 80% of support queries without hiring a single extra person. Our AI agents resolve, escalate, and document — in Arabic and English — 24/7 across WhatsApp, chat, and phone.",
+      ar: "تعامل مع 80% من استفسارات الدعم بدون توظيف شخص إضافي واحد. وكلاؤنا يحلون ويصعّدون ويوثّقون — عربياً وإنجليزياً — على مدار الساعة.",
     },
     bullets: [
-      "Multilingual chat & phone callers",
-      "Query solving & lead capture",
-      "Automated appointment setting"
+      "Arabic + English bilingual by default",
+      "WhatsApp, web chat, and voice channels",
+      "Smart escalation — AI handles it, humans close it"
     ],
-    tags: ["Voiceflow", "Vapi", "RAG", "WhatsApp"]
+    tags: ["Voiceflow", "Vapi", "WhatsApp", "RAG"]
   },
   {
     key: "social-media",
     id: "social-media",
     icon: "Share2",
     title: {
-      en: "AI x Social Media",
-      ar: "الذكاء الاصطناعي × وسائل التواصل",
+      en: "AI-Powered Social Media Operations",
+      ar: "عمليات وسائل التواصل بالذكاء الاصطناعي",
     },
     description: {
-      en: "Put your social media on autopilot. Generate stunning videos, schedule posts automatically, manage DMs at scale, and run intelligent outreach, all powered by AI.",
-      ar: "ضع وسائل التواصل الاجتماعي الخاصة بك على الطيار الآلي. أنشئ مقاطع فيديو مذهلة، وجدول المنشورات تلقائيًا، وأدر الرسائل المباشرة على نطاق واسع، ونفذ التواصل الذكي - كل ذلك مدعوم بالذكاء الاصطناعي.",
+      en: "Consistent content at scale — without a full-time team. We automate content generation, scheduling, DM management, and performance reporting so your brand stays active and growing while you focus on the business.",
+      ar: "محتوى متسق على نطاق واسع — بدون فريق بدوام كامل. نؤتمت إنشاء المحتوى والجدولة وإدارة الرسائل المباشرة وتقارير الأداء.",
     },
     bullets: [
-      "Automated video generation & posting",
-      "Intelligent DM management",
-      "AI-powered social outreach campaigns"
+      "AI video + caption generation (Veo, Runway)",
+      "Auto-schedule and publish across platforms",
+      "DM qualification — warm leads auto-routed to sales"
     ],
-    tags: ["Runway", "Veo", "Buffer", "n8n"]
+    tags: ["Runway", "Veo", "n8n", "Buffer"]
   },
   {
     key: "ecommerce",
     id: "ecommerce",
     icon: "ShoppingCart",
     title: {
-      en: "AI x E-commerce",
-      ar: "الذكاء الاصطناعي × التجارة الإلكترونية",
+      en: "AI E-Commerce Operations",
+      ar: "عمليات التجارة الإلكترونية بالذكاء الاصطناعي",
     },
     description: {
-      en: "Supercharge your online store with AI. From generating compelling product descriptions to automated optimization reports and hands-free PPC campaign management.",
-      ar: "عزز متجرك الإلكتروني بالذكاء الاصطناعي. من إنشاء أوصاف منتجات مقنعة إلى تقارير التحسين الآلي وإدارة حملات PPC دون تدخل يدوي.",
+      en: "Turn your store into a 24/7 sales machine. From automated product imports and AI-written descriptions to smart inventory alerts and order routing — we cut the manual ops so you can focus on growth.",
+      ar: "حوّل متجرك إلى آلة مبيعات تعمل على مدار الساعة. من استيراد المنتجات الآلي والأوصاف المكتوبة بالذكاء الاصطناعي إلى تنبيهات المخزون الذكية وتوجيه الطلبات.",
     },
     bullets: [
-      "AI-generated product descriptions",
-      "Automated optimization reports",
-      "Intelligent PPC campaign management"
+      "Automated product listing & description generation",
+      "AI customer support for order queries",
+      "Smart order routing to CJ, Zara, or custom suppliers"
     ],
-    tags: ["OpenAI", "Google Ads", "Shopify", "Analytics"]
+    tags: ["WooCommerce", "Shopify", "OpenAI", "n8n"]
   }
 ];
 
 export type Service = (typeof services)[number];
-
-

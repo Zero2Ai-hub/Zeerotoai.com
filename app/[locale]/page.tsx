@@ -2,23 +2,31 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/sections/hero";
 import { ServicesPreview } from "@/components/sections/services-preview";
+import { WhyUs } from "@/components/sections/why-us";
+import { CaseStudy } from "@/components/sections/case-study";
+import { TechStack } from "@/components/sections/tech-stack";
 import { SuccessStoriesPreview } from "@/components/sections/success-stories-preview";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
 import { PreloadHeroImage } from "@/components/preload-hero-image";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function HomePage() {
   return (
     <>
-      {/* Preload hero image ONLY on homepage for optimal performance */}
       <PreloadHeroImage />
-      
       <Navbar />
       <main>
         <Hero />
         <CircuitDivider />
         <ServicesPreview />
+        <CircuitDivider />
+        <WhyUs />
+        <CircuitDivider />
+        <CaseStudy />
+        <CircuitDivider />
+        <TechStack />
         <CircuitDivider />
         <SuccessStoriesPreview />
         <CircuitDivider />
@@ -27,7 +35,7 @@ export default function HomePage() {
         <CtaSection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
-
