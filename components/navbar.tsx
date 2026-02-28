@@ -81,13 +81,12 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
             <CircularGlowingBorder className="w-12 h-12">
-              <Image
-                src="/Logo-2.webp"
-                alt={site.brand.name}
-                width={48}
-                height={48}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-primary/20 hover:ring-primary/40 transition-all"
-              />
+              <div
+                className="h-12 w-12 rounded-full flex items-center justify-center ring-2 ring-primary/20 hover:ring-primary/40 transition-all"
+                style={{ background: 'linear-gradient(135deg, rgba(0,217,255,0.15), rgba(0,217,255,0.05))' }}
+              >
+                <span style={{ color: 'rgb(0,217,255)', fontSize: '22px', fontWeight: 900, letterSpacing: '-0.05em' }}>Z</span>
+              </div>
             </CircularGlowingBorder>
             <span 
               className="text-2xl font-black relative transition-all duration-300 group-hover:scale-110"

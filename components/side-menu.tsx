@@ -186,13 +186,12 @@ export function SideMenu() {
               {/* Header with Logo and Close Button */}
               <div className="flex items-center justify-between p-6 border-b border-primary/20">
                 <div className="flex items-center gap-3">
-                  <Image
-                    src="/Logo-2.webp"
-                    alt={site.brand.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full ring-2 ring-primary/30"
-                  />
+                  <div
+                className="h-12 w-12 rounded-full flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, rgba(0,217,255,0.15), rgba(0,217,255,0.05))' }}
+              >
+                <span style={{ color: 'rgb(0,217,255)', fontSize: '22px', fontWeight: 900, letterSpacing: '-0.05em' }}>Z</span>
+              </div>
                   <span className="text-lg font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     {site.brand.name}
                   </span>
