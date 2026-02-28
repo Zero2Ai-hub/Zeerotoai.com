@@ -1,8 +1,1 @@
-{
-  "rewrites": [
-    {
-      "source": "/tiktok-developers-site-verification:path*",
-      "destination": "/api/tiktok-verify"
-    }
-  ]
-}
+{}

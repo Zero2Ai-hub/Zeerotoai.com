@@ -26,14 +26,6 @@ const nextConfig = {
   compress: true,
   // Optimize for production
   productionBrowserSourceMaps: false,
-  async rewrites() {
-    return [
-      {
-        source: '/tiktok-developers-site-verification=Gll3Yhx07amARhGgiLlY0JzandqvbMPD.txt',
-        destination: '/tiktok-developers-site-verification=Gll3Yhx07amARhGgiLlY0JzandqvbMPD.txt',
-      },
-    ];
-  },
   async headers() {
     return [
       {
