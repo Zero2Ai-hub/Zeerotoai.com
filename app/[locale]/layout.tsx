@@ -20,11 +20,11 @@ type Props = {
 export const metadata: Metadata = {
   metadataBase: new URL(site.brand.domain),
   title: {
-    default: "ZeroToAI",
-    template: "%s | ZeroToAI",
+    default: site.brand.name,
+    template: "%s | Zeerotoai",
   },
   description:
-    "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth. Expert automation with n8n, Voiceflow, Make.com, and more.",
+    "We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
   keywords: [
     "AI automation",
     "workflow automation",
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     alternateLocale: "ar_SA",
     url: site.brand.domain,
-    title: `${site.brand.name} - Build clever automations. Ship faster.`,
+    title: `${site.brand.name} - AI Systems That Replace Your SaaS Stack — Built for UAE & GCC Businesses.`,
     description:
-      "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth.",
+      "We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
     siteName: site.brand.name,
     images: [
       {
@@ -69,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.brand.name} - Build clever automations. Ship faster.`,
+    title: `${site.brand.name} - AI Systems That Replace Your SaaS Stack — Built for UAE & GCC Businesses.`,
     description:
-      "We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth.",
+      "We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
     images: ["/brand-banner.png"],
       creator: "@zero2ai",
   },
@@ -118,7 +118,7 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": site.brand.name,
-    "description": "AI Automation Solutions - We design and deploy AI-powered workflows that save hours, eliminate busywork, and unlock growth.",
+    "description": "AI Automation Solutions - We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
     "url": site.brand.domain,
     "logo": `${site.brand.domain}/Logo-2.webp`,
     "email": site.brand.email,
@@ -142,7 +142,11 @@ export default async function LocaleLayout({
       "n8n",
       "Voiceflow",
       "Make.com",
-      "Business Process Automation"
+      "Business Process Automation",
+      "UAE AI Automation",
+      "GCC Digital Transformation",
+      "MCP Protocol",
+      "OpenClaw"
     ]
   };
 
