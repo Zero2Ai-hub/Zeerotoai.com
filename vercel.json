@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/tiktok-developers-site-verification=Gll3Yhx07amARhGgiLlY0JzandqvbMPD.txt",
+      "destination": "/api/tiktok-verify"
+    }
+  ]
+}
