@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     "business automation",
     "no-code automation",
   ],
+  verification: {
+    other: {
+      "tiktok-developers-site-verification": "Gll3Yhx07amARhGgiLlY0JzandqvbMPD",
+    },
+  },
   authors: [{ name: site.brand.name }],
   creator: site.brand.name,
   alternates: {
