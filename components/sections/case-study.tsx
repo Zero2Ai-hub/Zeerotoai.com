@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Zap, CheckCircle2 } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import { Clock, TrendingUp, ShoppingCart, Video, Zap, ArrowRight } from "lucide-react";
@@ -95,7 +96,7 @@ export function CaseStudy() {
 
             <div className="p-6 rounded-2xl border border-primary/20 bg-primary/5">
               <h3 className="text-lg font-bold mb-3 text-primary flex items-center gap-2">
-                <span>⚡</span>
+                <Zap className="w-5 h-5" style={{ color: "rgb(0,217,255)" }} />
                 {isArabic ? "بعد" : "After"}
               </h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
@@ -111,7 +112,7 @@ export function CaseStudy() {
                   "Amazon bids optimize every morning at 9am",
                 ]).map((point, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                     {point}
                   </li>
                 ))}

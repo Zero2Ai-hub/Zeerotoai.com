@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Lock, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -234,8 +234,8 @@ export function EmailCapturePopup() {
                     {/* Trust */}
                     <p className="text-xs text-center text-muted-foreground mt-6">
                       {isArabic
-                        ? "🔒 لن نرسل رسائل غير مرغوب فيها. يمكنك إلغاء الاشتراك في أي وقت."
-                        : "🔒 No spam. Unsubscribe anytime. Your data is secure."}
+                        ? "لن نرسل رسائل غير مرغوب فيها."
+                        : "No spam. Unsubscribe anytime."}
                     </p>
                   </>
                 ) : (

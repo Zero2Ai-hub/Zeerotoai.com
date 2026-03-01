@@ -13,7 +13,7 @@ export function SuccessStoriesPreview() {
 
   const successStories = [
     {
-      icon: "📊",
+      icon: "BarChart3",
       title: {
         en: "Digital Marketing Agency",
         ar: "وكالة التسويق الرقمي",
@@ -77,7 +77,7 @@ export function SuccessStoriesPreview() {
       ],
     },
     {
-      icon: "📊",
+      icon: "BarChart3",
       title: {
         en: "Consulting Firm",
         ar: "شركة استشارية",
