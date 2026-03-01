@@ -128,7 +128,15 @@ export function Hero() {
             </div>
           </motion.div>
         </motion.div>
+
+          {/* SEO Keywords - Screen reader accessible */}
+          <span className="sr-only">
+            AI automation UAE, GCC automation, n8n agency, MCP agents, AI automation agency Dubai, 
+            AI workflow automation UAE, n8n automation GCC, MCP protocol agents UAE
+          </span>
       </div>
     </section>
   );
 }
+
+// SEO note: keywords added above

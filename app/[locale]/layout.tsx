@@ -33,10 +33,16 @@ export const metadata: Metadata = {
     "Amazon automation UAE",
     "dropshipping automation",
     "n8n agency UAE",
+    "n8n agency",
+    "MCP agents",
+    "AI automation",
     "workflow automation",
     "AI agents",
     "business automation",
     "no-code automation",
+    "AI agency UAE",
+    "automation agency Dubai",
+    "GCC digital transformation",
   ],
   verification: {
     other: {
@@ -120,8 +126,9 @@ export default async function LocaleLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": site.brand.name,
+    "name": "Zeerotoai",
     "url": site.brand.domain,
+    "description": "AI automation agency for UAE/GCC businesses",
     "potentialAction": {
       "@type": "SearchAction",
       "target": `${site.brand.domain}/en/portfolio?q={search_term_string}`,
