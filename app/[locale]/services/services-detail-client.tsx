@@ -30,6 +30,7 @@ const serviceProjectsMap: Record<string, string[]> = {
   "ai-websites": ["zero2ai-website"],
   "ai-support": ["multilingual-business-support-chatbot", "ecommerce-presale-chatbot"],
   "social-media": ["veo-social-video-autopost", "notion-to-x-content-engine"],
+  "storefront-creation": ["zero2ai-website"],
   "ecommerce": ["winning-products-daily-scraper"],
 };
 
@@ -64,6 +65,12 @@ const serviceProcessSteps: Record<string, { icon: string; title: { en: string; a
     { icon: "Video", title: { en: "AI Generation", ar: "التوليد بالذكاء الاصطناعي" }, description: { en: "Create videos, captions, and visuals with AI", ar: "إنشاء مقاطع فيديو وتعليقات ومرئيات بالذكاء الاصطناعي" } },
     { icon: "Upload", title: { en: "Auto-Post", ar: "النشر التلقائي" }, description: { en: "Schedule and publish across all platforms", ar: "جدولة ونشر عبر جميع المنصات" } },
     { icon: "MessageCircle", title: { en: "Engage & Monitor", ar: "التفاعل والمراقبة" }, description: { en: "Track performance and respond to DMs", ar: "تتبع الأداء والرد على الرسائل المباشرة" } },
+  ],
+  "storefront-creation": [
+    { icon: "Palette", title: { en: "Design & Branding", ar: "التصميم والهوية البصرية" }, description: { en: "Choose a theme and customize colors, fonts, and layout", ar: "اختر قالباً وخصّص الألوان والخطوط والتخطيط" } },
+    { icon: "Zap", title: { en: "AI Build", ar: "البناء بالذكاء الاصطناعي" }, description: { en: "AI generates pages, copy, and product listings instantly", ar: "يولّد الذكاء الاصطناعي الصفحات والنصوص وقوائم المنتجات فوراً" } },
+    { icon: "CreditCard", title: { en: "Payments & Shipping", ar: "المدفوعات والشحن" }, description: { en: "Configure Stripe, COD, and shipping zones in hours", ar: "تهيئة Stripe والدفع عند الاستلام ومناطق الشحن في ساعات" } },
+    { icon: "Rocket", title: { en: "Go Live", ar: "الإطلاق المباشر" }, description: { en: "Launch on your domain with SEO and analytics ready", ar: "الإطلاق على نطاقك مع SEO والتحليلات جاهزة" } },
   ],
   "ecommerce": [
     { icon: "ShoppingBag", title: { en: "Store Audit", ar: "تدقيق المتجر" }, description: { en: "Analyze your store and identify opportunities", ar: "تحليل متجرك وتحديد الفرص" } },

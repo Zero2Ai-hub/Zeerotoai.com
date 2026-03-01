@@ -95,6 +95,25 @@ export const services = [
     tags: ["Runway", "Veo", "n8n", "Buffer"]
   },
   {
+    key: "storefront-creation",
+    id: "storefront-creation",
+    icon: "Store",
+    title: {
+      en: "AI Storefront & Website Creation",
+      ar: "إنشاء المتاجر والمواقع بالذكاء الاصطناعي",
+    },
+    description: {
+      en: "Launch a professional e-commerce store or business website in days, not months. We use AI-powered tools to design, build, and configure your entire online presence — ready to take orders from day one.",
+      ar: "أطلق متجراً إلكترونياً احترافياً أو موقع أعمال في أيام لا أشهر. نستخدم أدوات مدعومة بالذكاء الاصطناعي لتصميم وبناء وتهيئة حضورك الرقمي الكامل — جاهز لاستقبال الطلبات من اليوم الأول.",
+    },
+    bullets: [
+      "Full store setup: domain, hosting, payments, shipping",
+      "AI-generated product pages, descriptions & SEO",
+      "Mobile-first design that converts visitors into buyers"
+    ],
+    tags: ["WooCommerce", "Shopify", "Bolt.ai", "Next.js", "Stripe"]
+  },
+  {
     key: "ecommerce",
     id: "ecommerce",
     icon: "ShoppingCart",
