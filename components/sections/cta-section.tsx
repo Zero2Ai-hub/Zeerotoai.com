@@ -45,30 +45,30 @@ export function CtaSection() {
             style={{ textShadow: "0 0 40px rgba(0,217,255,0.3)" }}
           >
             {isArabic
-              ? "كل أسبوع تنتظر، منافسك يتقدم."
-              : "Every Week You Wait,"}
+              ? "منافسوك يؤتمتون بالفعل. هل أنت كذلك؟"
+              : "Your Competitors Are Already Automating."}
             <br />
             {isArabic
-              ? "احجز مكالمتك المجانية الآن."
-              : <span className="text-primary">Your Competitor Gains Ground.</span>}
+              ? ""
+              : <span className="text-primary">Are You?</span>}
           </h2>
 
           <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-200 leading-relaxed">
             {isArabic
-              ? "احجز مكالمة استراتيجية مجانية. نراجع عملياتك، نحدد أكبر 3 فرص للذكاء الاصطناعي، ونقترح مساراً واضحاً — بدون التزام."
-              : "Book a free strategy call. We'll audit your operations, identify your top 3 AI opportunities, and map a clear path forward — no commitment required."}
+              ? "كل أسبوع تقضيه في العمليات اليدوية هو أسبوع يتقدمون فيه. ننشر في أسبوعين. احجز تدقيقك المجاني — سنرسم بالضبط ما يجب أتمتته أولاً."
+              : "Every week you spend on manual ops is a week they're scaling ahead. We deploy in 2 weeks. Book your free audit — we'll map exactly what to automate first."}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               asChild
               size="lg"
-              className="group text-lg bg-primary hover:bg-primary/90 text-background font-bold shadow-xl shadow-primary/50 hover:shadow-2xl hover:shadow-primary/60 transition-all hover:scale-105 relative overflow-hidden"
+              className="group text-lg font-bold shadow-xl transition-all hover:scale-105 relative overflow-hidden"
+              style={{ background: "#FF6B35", color: "white" }}
             >
               <Link href={`/${locale}${site.cta.primary.href}`} className="flex items-center justify-center gap-2">
-                <span className="relative z-10">{isArabic ? site.cta.primary.label.ar : site.cta.primary.label.en}</span>
+                <span className="relative z-10">{isArabic ? "احجز تدقيقاً مجانياً للتجارة الإلكترونية ←" : "Book Free E-commerce Audit →"}</span>
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform relative z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-white/30 to-primary/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
               </Link>
             </Button>
             <Button
@@ -79,7 +79,7 @@ export function CtaSection() {
             >
               <Link href={`/${locale}/portfolio`} className="flex items-center justify-center gap-2">
                 <Zap className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                {isArabic ? "شاهد أعمالنا" : "See Our Work"}
+                {isArabic ? "شاهد النتائج الحقيقية" : "See Real Results"}
               </Link>
             </Button>
           </div>
@@ -93,15 +93,19 @@ export function CtaSection() {
           >
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "مكالمة استراتيجية مجانية" : "Free Strategy Call"}</span>
+              <span>{isArabic ? "بدون التزام" : "No commitment"}</span>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "تشغيل في 2-4 أسابيع" : "Live in 2–4 Weeks"}</span>
+              <span>{isArabic ? "مكالمة 30 دقيقة" : "30-minute call"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-primary font-bold">🇦🇪</span>
+              <span>{isArabic ? "مركّز على الإمارات والخليج" : "UAE/GCC focused"}</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "أنت تملك النظام" : "You Own the System"}</span>
+              <span>{isArabic ? "نتائج في 14 يوماً" : "Results in 14 days"}</span>
             </div>
           </motion.div>
         </motion.div>

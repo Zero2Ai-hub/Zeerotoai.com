@@ -51,7 +51,7 @@ export function Footer() {
                     </span>
                   </GlowingTextBorder>
                   <span className="text-xs font-medium text-primary/70 uppercase tracking-widest text-center group-hover:scale-105 transition-transform duration-300">
-                    AI Automation
+                    E-commerce Automation
                   </span>
                 </div>
               </div>
