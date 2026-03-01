@@ -20,12 +20,13 @@ export function Footer() {
             <Link href="/" className="block group">
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="relative flex items-center justify-center mx-auto">
-                  <div
-                className="h-12 w-12 rounded-full flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, rgba(0,217,255,0.15), rgba(0,217,255,0.05))' }}
-              >
-                <span style={{ color: 'rgb(0,217,255)', fontSize: '22px', fontWeight: 900, letterSpacing: '-0.05em' }}>Z</span>
-              </div>
+                  <Image
+                src="/Logo-2.png"
+                alt="Zeerotoai"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover"
+              />
                   {/* Enhanced glow effect */}
                   <div className="absolute inset-0 rounded-full bg-primary/10 group-hover:bg-primary/25 blur-2xl transition-all duration-300 pointer-events-none" />
                   <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/40 blur-3xl transition-all duration-300 pointer-events-none scale-125" />
