@@ -150,6 +150,26 @@ export function FaqClient({ isArabic }: FaqClientProps) {
   ];
 
 
+  const commonMyths = [
+    {
+      myth: { en: "AI automation is too expensive for small stores.", ar: "أتمتة الذكاء الاصطناعي مكلفة جداً للمتاجر الصغيرة." },
+      truth: { en: "Our Starter package starts at 3,000 AED — less than what most stores pay monthly for SaaS tools that do the same job worse.", ar: "حزمتنا الأساسية تبدأ من 3,000 درهم — أقل مما تدفعه معظم المتاجر شهرياً لأدوات SaaS." }
+    },
+    {
+      myth: { en: "You need a technical team to manage AI automations.", ar: "تحتاج إلى فريق تقني لإدارة أتمتة الذكاء الاصطناعي." },
+      truth: { en: "We build it, hand it over, and train you in 30 minutes. If something breaks, we fix it. No technical knowledge required.", ar: "نبنيه ونسلمه لك مع تدريب 30 دقيقة. إذا حدث خطأ، نصلحه نحن." }
+    },
+    {
+      myth: { en: "Automation will make mistakes and hurt my business.", ar: "الأتمتة ستخطئ وتضر بعملي." },
+      truth: { en: "Every system we build has governed autonomy — audit logs, rejection rules, and human escalation paths. It handles the routine, humans handle the edge cases.", ar: "كل نظام نبنيه لديه حوكمة — سجلات تدقيق وقواعد رفض ومسارات تصعيد بشرية." }
+    },
+    {
+      myth: { en: "It will take months to set up and integrate.", ar: "سيستغرق الإعداد والتكامل أشهراً." },
+      truth: { en: "First automation live in 14 days. Full ops stack in 3-4 weeks. We've done this before — Tech1Mart UAE went live in 2 weeks.", ar: "أول أتمتة تعمل في 14 يوماً. المنظومة الكاملة في 3-4 أسابيع." }
+    }
+  ];
+
+
   return (
     <div className="relative z-10 py-16 px-4">
       {/* Circuit Progress Line - FIXED like services page */}
