@@ -67,7 +67,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 shadow-lg shadow-primary/5 relative">
+    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-[#0a1628] shadow-lg shadow-primary/5 relative">
       {/* Bottom cyan glow gradient for blending with hero */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none translate-y-full"
