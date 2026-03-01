@@ -186,7 +186,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                 {/* Right/Left Visual Content */}
                 <div className="flex-1 space-y-8">
                   {/* How It Works */}
-                  <div>
+                  {processSteps.length > 0 && <div>
                     <h3 className="text-2xl font-bold mb-6 text-center">
                       {isArabic ? "كيف يعمل" : "How It Works"}
                     </h3>
