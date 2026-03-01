@@ -77,15 +77,15 @@ export function Navbar() {
         }}
       />
       <div className="w-full px-8 lg:px-12">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group">
             <Image
                 src="/Logo-full.png"
                 alt={site.brand.name}
-                width={220}
-                height={56}
-                className="h-14 w-auto object-contain"
+                width={320}
+                height={80}
+                className="h-20 w-auto object-contain"
                 priority
               />
           </Link>

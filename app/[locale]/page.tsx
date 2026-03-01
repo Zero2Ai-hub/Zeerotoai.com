@@ -5,10 +5,10 @@ import { ServicesPreview } from "@/components/sections/services-preview";
 import { WhyUs } from "@/components/sections/why-us";
 import { CaseStudy } from "@/components/sections/case-study";
 import { TechStack } from "@/components/sections/tech-stack";
-import { SuccessStoriesPreview } from "@/components/sections/success-stories-preview";
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
+import { TrustedBy } from "@/components/sections/trusted-by";
 import { PreloadHeroImage } from "@/components/preload-hero-image";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
@@ -19,6 +19,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <TrustedBy />
         <CircuitDivider />
         <ServicesPreview />
         <CircuitDivider />
@@ -28,7 +29,6 @@ export default function HomePage() {
         <CircuitDivider />
         <TechStack />
         <CircuitDivider />
-        <SuccessStoriesPreview />
         <CircuitDivider />
         <PortfolioPreview />
         <CircuitDivider />

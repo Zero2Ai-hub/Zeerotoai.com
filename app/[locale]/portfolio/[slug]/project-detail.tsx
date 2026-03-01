@@ -57,7 +57,7 @@ export function ProjectDetail({ project, isArabic }: ProjectDetailProps) {
 
   // Check if demo URL is valid (not a placeholder)
   const hasValidDemoUrl = project.demoUrl && 
-    !project.demoUrl.includes('your-demo-link-here') && 
+    project.demoUrl && project.demoUrl !== '/contact' && 
     !project.demoUrl.includes('demo-placeholder') &&
     project.demoUrl !== '#';
 

@@ -57,255 +57,118 @@ export function FaqClient({ isArabic }: FaqClientProps) {
 
   const faqCategories = [
     {
-      id: "general-process",
-      category: { en: "General & Process", ar: "عام والعملية" },
+      id: "getting-started",
+      category: { en: "Getting Started", ar: "البدء" },
       icon: MessageCircle,
       faqs: [
         {
-          question: { 
-            en: "What exactly do you automate?", 
-            ar: "ماذا تقوم بأتمتة بالضبط؟" 
+          question: {
+            en: "How long does it take to automate my store?",
+            ar: "كم يستغرق الأمر لأتمتة متجري؟"
           },
-          answer: { 
-            en: "We automate repetitive business tasks using AI and no-code tools. This includes lead generation, email outreach, social media posting, chatbots, content creation, data sync between tools (Notion, Airtable, CRM), and custom workflows tailored to your business. If it's manual and repetitive, we can probably automate it.",
-            ar: "نقوم بأتمتة المهام التجارية المتكررة باستخدام الذكاء الاصطناعي وأدوات بدون كود. يشمل ذلك توليد العملاء المحتملين، والتواصل عبر البريد الإلكتروني، والنشر على وسائل التواصل الاجتماعي، وروبوتات الدردشة، وإنشاء المحتوى، ومزامنة البيانات بين الأدوات (Notion، Airtable، CRM)، وسير العمل المخصص لعملك. إذا كان يدويًا ومتكررًا، يمكننا على الأرجح أتمتته."
-          },
-        },
-        {
-          question: { 
-            en: "What's your typical process?", 
-            ar: "ما هي عمليتك النموذجية؟" 
-          },
-          answer: { 
-            en: "1) Discovery Call: We analyze your workflow and identify automation opportunities.\n\n2) Custom Proposal: We design a solution with clear timeline and pricing.\n\n3) Build & Test: We develop the automation and test thoroughly.\n\n4) Handoff & Training: We deliver documentation and train your team.\n\n5) Support: We provide ongoing support to ensure everything runs smoothly.",
-            ar: "1) مكالمة اكتشاف: نحلل سير عملك ونحدد فرص الأتمتة.\n\n2) اقتراح مخصص: نصمم حلًا مع جدول زمني واضح وتسعير.\n\n3) البناء والاختبار: نطور الأتمتة ونختبر بدقة.\n\n4) التسليم والتدريب: نقدم الوثائق ونقوم بتدريب فريقك.\n\n5) الدعم: نقدم دعمًا مستمرًا لضمان سير كل شيء بسلاسة."
+          answer: {
+            en: "Most stores go live with their first automation in 14 days. Full ops stack in 3-4 weeks.",
+            ar: "معظم المتاجر تعمل بأتمتتها الأولى في 14 يوماً. مجموعة العمليات الكاملة في 3-4 أسابيع."
           },
         },
         {
-          question: { 
-            en: "Do I need technical knowledge?", 
-            ar: "هل أحتاج إلى معرفة تقنية؟" 
+          question: {
+            en: "Do I need to be technical?",
+            ar: "هل أحتاج إلى خبرة تقنية؟"
           },
-          answer: { 
-            en: "Not at all! That's the whole point. We handle all the technical work and deliver a solution that's easy to use. We provide clear documentation and training so anyone on your team can manage it. You focus on your business, we handle the automation.",
-            ar: "ليس على الإطلاق! هذه هي الفكرة بأكملها. نحن نتعامل مع كل العمل التقني ونقدم حلاً سهل الاستخدام. نقدم وثائق واضحة وتدريبًا حتى يتمكن أي شخص في فريقك من إدارته. أنت تركز على عملك، نحن نتعامل مع الأتمتة."
+          answer: {
+            en: "No. We handle everything. You get a working system and a walkthrough. No code knowledge needed.",
+            ar: "لا. نتولى كل شيء. تحصل على نظام يعمل وشرح كامل. لا حاجة لأي معرفة بالبرمجة."
           },
         },
         {
-          question: { 
-            en: "What tools do you use?", 
-            ar: "ما الأدوات التي تستخدمها؟" 
+          question: {
+            en: "What platforms do you support?",
+            ar: "ما المنصات التي تدعمونها؟"
           },
-          answer: { 
-            en: "We primarily use n8n, Make.com, Zapier for workflow automation; Voiceflow and Vapi for AI chatbots; OpenAI API, Claude, and other LLMs for AI features; Airtable, Notion, Supabase for data management; and modern web frameworks like Next.js for custom applications. We choose the best tool for your specific needs.",
-            ar: "نستخدم بشكل أساسي n8n و Make.com و Zapier لأتمتة سير العمل؛ Voiceflow و Vapi لروبوتات الدردشة بالذكاء الاصطناعي؛ OpenAI API و Claude ونماذج اللغة الكبيرة الأخرى لميزات الذكاء الاصطناعي؛ Airtable و Notion و Supabase لإدارة البيانات؛ وأطر الويب الحديثة مثل Next.js للتطبيقات المخصصة. نختار أفضل أداة لاحتياجاتك المحددة."
+          answer: {
+            en: "WooCommerce, Shopify, Amazon UAE, TikTok, Instagram. We can integrate most platforms with an API.",
+            ar: "WooCommerce وShopify وأمازون الإمارات وTikTok وInstagram. يمكننا دمج معظم المنصات التي لديها API."
           },
         },
       ],
     },
     {
-      id: "pricing-investment",
-      category: { en: "Pricing & Investment", ar: "التسعير والاستثمار" },
-      icon: DollarSign,
-      faqs: [
-        {
-          question: { 
-            en: "How much does automation cost?", 
-            ar: "كم تكلفة الأتمتة؟" 
-          },
-          answer: { 
-            en: "Our projects typically range from $500 for simple single-workflow automations to $5,000+ for enterprise solutions. Most clients invest $2,000-$5,000 for comprehensive automation that saves 10-20 hours per week. Check our Pricing page for detailed breakdown by service type.",
-            ar: "تتراوح مشاريعنا عادةً من 500 دولار لأتمتة سير عمل واحد بسيط إلى 5,000 دولار + للحلول على مستوى المؤسسات. يستثمر معظم العملاء 2,000-5,000 دولار للأتمتة الشاملة التي توفر 10-20 ساعة في الأسبوع. تحقق من صفحة التسعير الخاصة بنا للحصول على تفصيل مفصل حسب نوع الخدمة."
-          },
-        },
-        {
-          question: { 
-            en: "What's the ROI on automation?", 
-            ar: "ما هو عائد الاستثمار على الأتمتة؟" 
-          },
-          answer: { 
-            en: "Most clients see ROI within 1-3 months. For example, a $3,000 automation that saves 15 hours/week equals $780/week saved (at $50/hour rate), or $3,120/month. That's a 100% ROI in the first month alone, not counting the opportunity cost of focusing on higher-value work.",
-            ar: "يرى معظم العملاء عائد الاستثمار خلال 1-3 أشهر. على سبيل المثال، أتمتة بقيمة 3,000 دولار توفر 15 ساعة / أسبوع تساوي 780 دولار / أسبوع محفوظ (بمعدل 50 دولار / ساعة)، أو 3,120 دولار / شهر. هذا عائد استثمار بنسبة 100٪ في الشهر الأول وحده، دون احتساب تكلفة الفرصة البديلة للتركيز على العمل ذي القيمة الأعلى."
-          },
-        },
-        {
-          question: { 
-            en: "Do you offer payment plans?", 
-            ar: "هل تقدمون خطط دفع؟" 
-          },
-          answer: { 
-            en: "Yes! For projects over $2,000, we offer 50% upfront and 50% on delivery. For enterprise clients ($5,000+), we can discuss milestone-based payments. We want automation to be accessible, so we're flexible on payment structure for the right projects.",
-            ar: "نعم! للمشاريع التي تزيد عن 2,000 دولار، نقدم 50٪ مقدمًا و 50٪ عند التسليم. لعملاء المؤسسات (5,000 دولار +)، يمكننا مناقشة المدفوعات القائمة على المعالم. نريد أن تكون الأتمتة متاحة، لذلك نحن مرنون بشأن هيكل الدفع للمشاريع المناسبة."
-          },
-        },
-        {
-          question: { 
-            en: "Are there ongoing costs?", 
-            ar: "هل هناك تكاليف مستمرة؟" 
-          },
-          answer: { 
-            en: "You'll need to cover subscription costs for any tools we use (e.g., Make.com at $10-30/month, OpenAI API usage, etc.). We're transparent about these upfront. Optional: You can add ongoing maintenance ($200-500/month) if you want us to monitor, optimize, and update your automations as your business evolves.",
-            ar: "ستحتاج إلى تغطية تكاليف الاشتراك في أي أدوات نستخدمها (على سبيل المثال، Make.com بسعر 10-30 دولار / شهر، استخدام OpenAI API، وما إلى ذلك). نحن شفافون بشأن هذه التكاليف مقدمًا. اختياري: يمكنك إضافة صيانة مستمرة (200-500 دولار / شهر) إذا كنت تريد منا مراقبة وتحسين وتحديث أتمتتك مع تطور عملك."
-          },
-        },
-      ],
-    },
-    {
-      id: "timeline-delivery",
-      category: { en: "Timeline & Delivery", ar: "الجدول الزمني والتسليم" },
-      icon: Clock,
-      faqs: [
-        {
-          question: { 
-            en: "How fast can you deliver?", 
-            ar: "ما مدى سرعة التسليم؟" 
-          },
-          answer: { 
-            en: "Simple automations (1-2 workflows): 48-72 hours. Standard projects (multi-step workflows): 5-7 days. Complex/enterprise solutions: 2-3 weeks. We're fast because we use AI-powered development tools and have pre-built templates for common use cases. Rush delivery available for urgent needs.",
-            ar: "أتمتة بسيطة (1-2 سير عمل): 48-72 ساعة. مشاريع قياسية (سير عمل متعدد الخطوات): 5-7 أيام. حلول معقدة / على مستوى المؤسسات: 2-3 أسابيع. نحن سريعون لأننا نستخدم أدوات تطوير مدعومة بالذكاء الاصطناعي ولدينا قوالب جاهزة لحالات الاستخدام الشائعة. تسليم سريع متاح للاحتياجات العاجلة."
-          },
-        },
-        {
-          question: { 
-            en: "What if I need changes after delivery?", 
-            ar: "ماذا لو كنت بحاجة إلى تغييرات بعد التسليم؟" 
-          },
-          answer: { 
-            en: "All projects include 1-4 weeks of support (depending on tier) for bug fixes and minor adjustments. After that, changes are billed hourly ($150/hour) or you can add a monthly maintenance package. We want your automation to work perfectly, so we're always available to help.",
-            ar: "تتضمن جميع المشاريع 1-4 أسابيع من الدعم (حسب المستوى) لإصلاحات الأخطاء والتعديلات الطفيفة. بعد ذلك، يتم إصدار فواتير التغييرات بالساعة (150 دولار / ساعة) أو يمكنك إضافة حزمة صيانة شهرية. نريد أن تعمل أتمتتك بشكل مثالي، لذلك نحن متاحون دائمًا للمساعدة."
-          },
-        },
-        {
-          question: { 
-            en: "Can you handle urgent projects?", 
-            ar: "هل يمكنك التعامل مع المشاريع العاجلة؟" 
-          },
-          answer: { 
-            en: "Absolutely. For urgent needs, we offer priority delivery (24-48 hour turnaround for simple projects). There's a 50% rush fee, but we'll get you running fast. Contact us on WhatsApp for immediate response on urgent automation needs.",
-            ar: "بالتأكيد. للاحتياجات العاجلة، نقدم تسليمًا ذا أولوية (تسليم خلال 24-48 ساعة للمشاريع البسيطة). هناك رسوم تعجيل بنسبة 50٪، ولكننا سنجعلك تعمل بسرعة. اتصل بنا على WhatsApp للحصول على رد فوري بشأن احتياجات الأتمتة العاجلة."
-          },
-        },
-      ],
-    },
-    {
-      id: "technical-security",
-      category: { en: "Technical & Security", ar: "التقنية والأمان" },
+      id: "ownership",
+      category: { en: "Ownership & Pricing", ar: "الملكية والتسعير" },
       icon: Shield,
       faqs: [
         {
-          question: { 
-            en: "Is my data secure?", 
-            ar: "هل بياناتي آمنة؟" 
+          question: {
+            en: "Do I own the automations after?",
+            ar: "هل أملك الأتمتة بعد ذلك؟"
           },
-          answer: { 
-            en: "Yes. We follow industry best practices: OAuth authentication (never store passwords), encrypted API keys, GDPR-compliant data handling, and secure webhook connections. For sensitive data, we can implement additional security layers or use your own infrastructure. We sign NDAs if required.",
-            ar: "نعم. نتبع أفضل ممارسات الصناعة: مصادقة OAuth (عدم تخزين كلمات المرور أبدًا)، ومفاتيح API مشفرة، ومعالجة البيانات المتوافقة مع GDPR، واتصالات webhook آمنة. للبيانات الحساسة، يمكننا تنفيذ طبقات أمان إضافية أو استخدام البنية التحتية الخاصة بك. نوقع على اتفاقيات عدم الإفشاء إذا لزم الأمر."
-          },
-        },
-        {
-          question: { 
-            en: "What if an automation breaks?", 
-            ar: "ماذا لو تعطلت الأتمتة؟" 
-          },
-          answer: { 
-            en: "We build robust error handling and monitoring into every workflow. You'll get notifications if something fails. During your support period, we fix issues for free. After that, you can either fix it yourself (we provide documentation) or contact us for paid support. Most automations run for months without issues.",
-            ar: "نبني معالجة أخطاء قوية ومراقبة في كل سير عمل. ستحصل على إشعارات إذا فشل شيء ما. خلال فترة الدعم الخاصة بك، نصلح المشكلات مجانًا. بعد ذلك، يمكنك إما إصلاحه بنفسك (نقدم الوثائق) أو الاتصال بنا للحصول على دعم مدفوع. تعمل معظم الأتمتة لأشهر دون مشاكل."
+          answer: {
+            en: "100%. All code, workflows, and API connections are transferred to you. No monthly licensing fees.",
+            ar: "100%. جميع الكودات وسير العمل وروابط API تُنقل إليك. لا رسوم ترخيص شهرية."
           },
         },
         {
-          question: { 
-            en: "Who owns the automation?", 
-            ar: "من يملك الأتمتة؟" 
+          question: {
+            en: "What is the minimum I need to get started?",
+            ar: "ما الحد الأدنى للبدء؟"
           },
-          answer: { 
-            en: "You do! You own all the code, workflows, and intellectual property. We provide full access to your automation accounts, documentation, and source code. You can modify, duplicate, or hire someone else to work on it. We're building for your success, not vendor lock-in.",
-            ar: "أنت تملكها! أنت تملك كل الكود وسير العمل والملكية الفكرية. نقدم وصولاً كاملاً إلى حسابات الأتمتة الخاصة بك والوثائق والكود المصدري. يمكنك التعديل أو النسخ أو توظيف شخص آخر للعمل عليه. نحن نبني لنجاحك، وليس لحبسك مع بائع معين."
+          answer: {
+            en: "A store with at least 20 products and 10+ orders/month. We will audit it for free and tell you exactly what to automate.",
+            ar: "متجر يحتوي على 20 منتجاً على الأقل و10+ طلبات/شهر. سنراجعه مجاناً ونخبرك بالضبط ما يجب أتمتته."
           },
         },
       ],
     },
     {
-      id: "getting-started",
-      category: { en: "Getting Started", ar: "البدء" },
+      id: "platforms",
+      category: { en: "Amazon & TikTok", ar: "أمازون وتيكتوك" },
       icon: Zap,
       faqs: [
         {
-          question: { 
-            en: "How do I get started?", 
-            ar: "كيف أبدأ؟" 
+          question: {
+            en: "Can you automate my Amazon store?",
+            ar: "هل يمكنكم أتمتة متجري على أمازون؟"
           },
-          answer: { 
-            en: "1) Book a free 30-minute consultation (via our website or WhatsApp).\n\n2) We'll analyze your workflow and recommend solutions.\n\n3) You'll receive a custom proposal with timeline and pricing.\n\n4) Approve the proposal and we start building.\n\n5) Launch and celebrate your new free time!",
-            ar: "1) احجز استشارة مجانية مدتها 30 دقيقة (عبر موقعنا أو WhatsApp).\n\n2) سنحلل سير عملك ونوصي بالحلول.\n\n3) ستتلقى اقتراحًا مخصصًا مع جدول زمني وتسعير.\n\n4) وافق على الاقتراح ونبدأ البناء.\n\n5) أطلق واحتفل بوقتك الحر الجديد!"
-          },
-        },
-        {
-          question: { 
-            en: "What information do you need from me?", 
-            ar: "ما المعلومات التي تحتاجها مني؟" 
-          },
-          answer: { 
-            en: "Just a description of your current manual process and your goals. For example: 'I manually copy leads from LinkedIn to Airtable and want it automated' or 'I need a chatbot that answers customer questions 24/7.' We'll figure out the technical details - you just explain what you need.",
-            ar: "مجرد وصف لعمليتك اليدوية الحالية وأهدافك. على سبيل المثال: 'أنا أنسخ يدويًا العملاء المحتملين من LinkedIn إلى Airtable وأريد أتمتتها' أو 'أحتاج إلى روبوت دردشة يجيب على أسئلة العملاء على مدار الساعة.' سنكتشف التفاصيل التقنية - أنت فقط اشرح ما تحتاجه."
+          answer: {
+            en: "Yes. We use the Amazon SP-API to manage inventory, optimize listings, run and auto-adjust ad campaigns daily.",
+            ar: "نعم. نستخدم Amazon SP-API لإدارة المخزون وتحسين القوائم وتشغيل الحملات الإعلانية وضبطها يومياً تلقائياً."
           },
         },
         {
-          question: { 
-            en: "Do you work with businesses outside the UAE?", 
-            ar: "هل تعمل مع شركات خارج الإمارات؟" 
+          question: {
+            en: "Do you support Arabic?",
+            ar: "هل تدعمون اللغة العربية؟"
           },
-          answer: { 
-            en: "Yes! We work with clients globally. All communication happens online (calls, Slack, WhatsApp), and we deliver everything digitally. We've automated workflows for clients in Europe, Asia, and North America. Time zones are never an issue - we're flexible.",
-            ar: "نعم! نعمل مع عملاء على مستوى العالم. يحدث كل التواصل عبر الإنترنت (المكالمات، Slack، WhatsApp)، ونقدم كل شيء رقميًا. لقد قمنا بأتمتة سير العمل للعملاء في أوروبا وآسيا وأمريكا الشمالية. المناطق الزمنية ليست مشكلة أبدًا - نحن مرنون."
+          answer: {
+            en: "All systems are bilingual by default. Customer support agents, product listings, and reports in both Arabic and English.",
+            ar: "جميع الأنظمة ثنائية اللغة بشكل افتراضي. وكلاء دعم العملاء وقوائم المنتجات والتقارير باللغتين العربية والإنجليزية."
           },
         },
       ],
     },
   ];
 
-  // Common myths from playbook
+
   const commonMyths = [
     {
-      myth: {
-        en: "AI automation is only for big companies with huge budgets",
-        ar: "أتمتة الذكاء الاصطناعي فقط للشركات الكبيرة ذات الميزانيات الضخمة",
-      },
-      truth: {
-        en: "Small businesses benefit the most because every hour saved has bigger impact",
-        ar: "الشركات الصغيرة تستفيد أكثر لأن كل ساعة يتم توفيرها لها تأثير أكبر",
-      },
+      myth: { en: "AI automation is too expensive for small stores.", ar: "أتمتة الذكاء الاصطناعي مكلفة جداً للمتاجر الصغيرة." },
+      truth: { en: "Our Starter package starts at 3,000 AED — less than what most stores pay monthly for SaaS tools that do the same job worse.", ar: "حزمتنا الأساسية تبدأ من 3,000 درهم — أقل مما تدفعه معظم المتاجر شهرياً لأدوات SaaS." }
     },
     {
-      myth: {
-        en: "I'll need to hire a programmer and spend months setting it up",
-        ar: "سأحتاج إلى توظيف مبرمج وقضاء أشهر في الإعداد",
-      },
-      truth: {
-        en: "With the right partner (like Zero2AI), you can have working automation in days, not months",
-        ar: "مع الشريك المناسب (مثل Zero2AI)، يمكن أن يكون لديك أتمتة عاملة في أيام، وليس أشهر",
-      },
+      myth: { en: "You need a technical team to manage AI automations.", ar: "تحتاج إلى فريق تقني لإدارة أتمتة الذكاء الاصطناعي." },
+      truth: { en: "We build it, hand it over, and train you in 30 minutes. If something breaks, we fix it. No technical knowledge required.", ar: "نبنيه ونسلمه لك مع تدريب 30 دقيقة. إذا حدث خطأ، نصلحه نحن." }
     },
     {
-      myth: {
-        en: "AI will replace my team",
-        ar: "سيحل الذكاء الاصطناعي محل فريقي",
-      },
-      truth: {
-        en: "AI handles boring tasks so your team can do more valuable, creative work",
-        ar: "يتعامل الذكاء الاصطناعي مع المهام الممل حتى يتمكن فريقك من القيام بعمل أكثر قيمة وإبداعًا",
-      },
+      myth: { en: "Automation will make mistakes and hurt my business.", ar: "الأتمتة ستخطئ وتضر بعملي." },
+      truth: { en: "Every system we build has governed autonomy — audit logs, rejection rules, and human escalation paths. It handles the routine, humans handle the edge cases.", ar: "كل نظام نبنيه لديه حوكمة — سجلات تدقيق وقواعد رفض ومسارات تصعيد بشرية." }
     },
     {
-      myth: {
-        en: "It's too complicated for my business",
-        ar: "إنه معقد للغاية بالنسبة لعملي",
-      },
-      truth: {
-        en: "If you use email, spreadsheets, or chat apps, you can benefit from automation",
-        ar: "إذا كنت تستخدم البريد الإلكتروني أو جداول البيانات أو تطبيقات الدردشة، يمكنك الاستفادة من الأتمتة",
-      },
-    },
+      myth: { en: "It will take months to set up and integrate.", ar: "سيستغرق الإعداد والتكامل أشهراً." },
+      truth: { en: "First automation live in 14 days. Full ops stack in 3-4 weeks. We've done this before — Tech1Mart UAE went live in 2 weeks.", ar: "أول أتمتة تعمل في 14 يوماً. المنظومة الكاملة في 3-4 أسابيع." }
+    }
   ];
+
 
   return (
     <div className="relative z-10 py-16 px-4">

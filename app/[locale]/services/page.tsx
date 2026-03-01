@@ -6,13 +6,13 @@ import { site } from "@/content/site";
 import { ServicesDetailClient } from "./services-detail-client";
 
 export const metadata: Metadata = {
-  title: "Services - AI Automation Solutions",
-  description: "Explore our comprehensive AI automation services including chatbots, workflows, video automation, and data pipelines.",
+  title: "E-commerce Automation Services — Zeerotoai",
+  description: "Every part of your store operations — automated and running without you. UAE/GCC e-commerce brands.",
   alternates: {
-    canonical: `${site.brand.domain}/services`,
+    canonical: "https://www.zeerotoai.com/services",
     languages: {
-      'en': `${site.brand.domain}/en/services`,
-      'ar': `${site.brand.domain}/ar/services`,
+      en: "https://www.zeerotoai.com/en/services",
+      ar: "https://www.zeerotoai.com/ar/services",
     },
   },
 };
@@ -40,16 +40,16 @@ export default async function ServicesPage() {
           <div className="container mx-auto text-center">
             <div className="inline-block mb-12">
               <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "ما نقدمه" : "What We Offer"}
+                {isArabic ? "خدماتنا" : "Our Services"}
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "حلول الأتمتة التي تحتاجها" : "Automation Solutions You Need"}
+              {isArabic ? "خدمات أتمتة التجارة الإلكترونية" : "E-commerce Automation Services"}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {isArabic
                 ? "حلول شاملة مصممة لتبسيط سير عملك، توفير الوقت، وتعزيز الإنتاجية بشكل كبير"
-                : "Comprehensive solutions designed to streamline your workflow, save time, and boost productivity dramatically"}
+                : "Every part of your store operations — automated and running without you."}
             </p>
           </div>
         </section>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
-import { ArrowRight, Shield, Zap } from "lucide-react";
+import { ArrowRight, Shield, Zap, MapPin } from "lucide-react";
 
 export function Hero() {
   const locale = useLocale();
@@ -116,15 +116,15 @@ export function Hero() {
           >
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "أنظمة محكومة وشفافة" : "Governed & transparent systems"}</span>
+              <span>{isArabic ? "الإمارات · عربي وإنجليزي" : "UAE-based · Arabic + English"}</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "تشغيل في 2-4 أسابيع" : "Live in 2–4 weeks"}</span>
+              <span>{isArabic ? "أنت تملك النظام" : "You own the system"}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-primary font-bold">🇦🇪</span>
-              <span>{isArabic ? "الإمارات والخليج العربي" : "UAE & GCC focused"}</span>
+              <MapPin className="w-4 h-4 text-primary" />
+              <span>{isArabic ? "تشغيل في أسبوعين" : "Live in 2 weeks"}</span>
             </div>
           </motion.div>
         </motion.div>
