@@ -67,6 +67,7 @@ export const site = {
     { slug: "/portfolio", en: "Results", ar: "النتائج" },
     { slug: "/pricing", en: "Pricing", ar: "التسعير" },
     { slug: "/about", en: "About", ar: "من نحن" },
+    { slug: "/blog", en: "Blog", ar: "المدونة" },
     { slug: "/contact", en: "Contact", ar: "تواصل" },
   ],
   services,
