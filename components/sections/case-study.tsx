@@ -100,12 +100,12 @@ export function CaseStudy() {
               </h3>
               <ul className="space-y-3 text-muted-foreground text-sm">
                 {(isArabic ? [
-                  "CJ Dropshipping تزامن الكتالوج يومياً تلقائياً",
+                  "Dropshipping suppliers تزامن الكتالوج يومياً تلقائياً",
                   "الطلبات تُنفَّذ ذاتياً — التتبع يُرسل تلقائياً",
                   "خط إنتاج TikTok ينشئ ويُنشر مقاطع الفيديو",
                   "عروض أسعار أمازون تُحسَّن كل صباح الساعة 9",
                 ] : [
-                  "CJ Dropshipping syncs catalog daily — automatically",
+                  "Dropshipping suppliers syncs catalog daily — automatically",
                   "Orders fulfill themselves — tracking pushed back automatically",
                   "TikTok pipeline generates and posts videos",
                   "Amazon bids optimize every morning at 9am",

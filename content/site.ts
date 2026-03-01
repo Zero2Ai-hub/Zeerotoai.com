@@ -105,7 +105,7 @@ export const site = {
         en: "The Stack",
         ar: "التقنيات",
       },
-      list: ["WooCommerce", "Shopify", "CJ Dropshipping", "Amazon SP-API", "TikTok API", "n8n", "Veo 3.1", "Runway", "OpenClaw + MCP", "Supabase", "Claude + GPT-4o", "Vercel"],
+      list: ["your store", "your store", "Dropshipping suppliers", "Amazon", "TikTok API", "n8n", "AI Video Generation", "Runway", "our agent infrastructure", "Supabase", "Claude + GPT-4o", "Vercel"],
     },
   },
   socials: {

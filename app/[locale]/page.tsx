@@ -9,6 +9,7 @@ import { SuccessStoriesPreview } from "@/components/sections/success-stories-pre
 import { PortfolioPreview } from "@/components/sections/portfolio-preview";
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
+import { TrustedBy } from "@/components/sections/trusted-by";
 import { PreloadHeroImage } from "@/components/preload-hero-image";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <TrustedBy />
         <CircuitDivider />
         <ServicesPreview />
         <CircuitDivider />

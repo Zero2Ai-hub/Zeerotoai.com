@@ -11,8 +11,8 @@ export const projects = [
       ar: "Tech1Mart الإمارات — أتمتة عمليات التجارة الإلكترونية الكاملة",
     },
     summary: {
-      en: "End-to-end automation for a UAE-based e-commerce brand: CJ Dropshipping → WooCommerce catalog sync, Amazon SP-API order management, AI-powered product gallery engine, TikTok video generation pipeline, and daily reporting. Replaced 40+ hours of manual work per week — deployed in 2 weeks.",
-      ar: "أتمتة شاملة لعلامة تجارية للتجارة الإلكترونية في الإمارات: مزامنة كتالوج CJ Dropshipping → WooCommerce، إدارة طلبات Amazon SP-API، محرك معرض منتجات بالذكاء الاصطناعي، خط أنابيب إنشاء فيديو TikTok، وتقارير يومية. استُبدل أكثر من 40 ساعة من العمل اليدوي أسبوعياً — نُشر في أسبوعين.",
+      en: "End-to-end automation for a UAE-based e-commerce brand: Supplier → store catalog auto-sync, Amazon order management, AI-powered product gallery engine, TikTok video generation pipeline, and daily reporting. Replaced 40+ hours of manual work per week — deployed in 2 weeks.",
+      ar: "أتمتة شاملة لعلامة تجارية للتجارة الإلكترونية في الإمارات: مزامنة كتالوج Supplier → store catalog sync، إدارة طلبات Amazon، محرك معرض منتجات بالذكاء الاصطناعي، خط أنابيب إنشاء فيديو TikTok، وتقارير يومية. استُبدل أكثر من 40 ساعة من العمل اليدوي أسبوعياً — نُشر في أسبوعين.",
     },
     metric: {
       en: "40+ hours/week saved from day one",
@@ -23,7 +23,7 @@ export const projects = [
       { label: "Catalog capacity", value: "10×" },
       { label: "Deploy time", value: "2 weeks" },
     ],
-    tags: ["WooCommerce", "Amazon SP-API", "CJ Dropshipping", "n8n", "TikTok"],
+    tags: ["your store", "Amazon", "Dropshipping suppliers", "n8n", "TikTok"],
     href: "/portfolio/tech1mart-ecommerce-automation",
     demoUrl: "/contact",
     image: "/portfolio/tech1mart-automation.jpg",
@@ -41,8 +41,8 @@ export const projects = [
       ar: "خط أنابيب إنشاء ونشر فيديو TikTok بالذكاء الاصطناعي",
     },
     summary: {
-      en: "Automated content engine for e-commerce product launches: generates UGC-style video scripts, produces short-form videos via Veo 3.1 + Runway Gen4, adds animated captions, and auto-posts to TikTok. Each video costs $0.25 and takes under 10 minutes from product image to posted reel. 3 products launched.",
-      ar: "محرك محتوى آلي لإطلاق منتجات التجارة الإلكترونية: يولّد نصوص فيديو بأسلوب UGC وينتج مقاطع قصيرة عبر Veo 3.1 + Runway Gen4 ويضيف تعليقات متحركة وينشر تلقائياً على TikTok. تكلفة كل فيديو 0.25 دولار ويستغرق أقل من 10 دقائق من صورة المنتج إلى ريل منشور.",
+      en: "Automated content engine for e-commerce product launches: generates UGC-style video scripts, produces short-form videos via AI Video Generation Gen4, adds animated captions, and auto-posts to TikTok. Each video costs $0.25 and takes under 10 minutes from product image to posted reel. 3 products launched.",
+      ar: "محرك محتوى آلي لإطلاق منتجات التجارة الإلكترونية: يولّد نصوص فيديو بأسلوب UGC وينتج مقاطع قصيرة عبر AI Video Generation Gen4 ويضيف تعليقات متحركة وينشر تلقائياً على TikTok. تكلفة كل فيديو 0.25 دولار ويستغرق أقل من 10 دقائق من صورة المنتج إلى ريل منشور.",
     },
     metric: {
       en: "$0.25/video — product to posted in minutes",
@@ -53,7 +53,7 @@ export const projects = [
       { label: "Cost per video", value: "$0.25" },
       { label: "Products launched", value: "3" },
     ],
-    tags: ["Veo 3.1", "Runway Gen4", "TikTok", "MoviePy", "n8n"],
+    tags: ["AI Video Generation", "AI Video Generation", "TikTok", "", "n8n"],
     href: "/portfolio/ai-tiktok-content-pipeline",
     demoUrl: "/contact",
     image: "/portfolio/tiktok-pipeline.jpg",
@@ -83,7 +83,7 @@ export const projects = [
       { label: "Daily budget", value: "15 AED" },
       { label: "Management", value: "100% auto" },
     ],
-    tags: ["Amazon Ads", "Amazon SP-API", "n8n", "Bid Optimizer"],
+    tags: ["Amazon Ads", "Amazon", "n8n", "Bid Optimizer"],
     href: "/portfolio/amazon-ads-autopilot",
     demoUrl: "/contact",
     image: "/portfolio/amazon-ads-autopilot.jpg",
