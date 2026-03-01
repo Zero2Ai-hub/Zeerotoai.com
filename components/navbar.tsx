@@ -67,7 +67,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 shadow-lg shadow-primary/5 relative">
+    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-[#0a1628] backdrop-blur-xl shadow-lg shadow-primary/5 relative">
       {/* Bottom cyan glow gradient for blending with hero */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none translate-y-full"
@@ -80,15 +80,13 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <CircularGlowingBorder className="w-12 h-12">
               <Image
                 src="/Logo-2.webp"
                 alt={site.brand.name}
-                width={48}
-                height={48}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-primary/20 hover:ring-primary/40 transition-all"
+                width={52}
+                height={52}
+                className="h-[52px] w-[52px] rounded-full object-cover transition-all"
               />
-            </CircularGlowingBorder>
             <span 
               className="text-2xl font-black relative transition-all duration-300 group-hover:scale-110"
               style={{
