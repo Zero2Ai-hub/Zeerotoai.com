@@ -67,7 +67,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-[#0a1628] shadow-lg shadow-primary/5 relative">
+    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 shadow-lg shadow-primary/5 relative" style={{ background: "#0a0a0f" }}>
       {/* Bottom cyan glow gradient for blending with hero */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none translate-y-full"
@@ -79,13 +79,13 @@ export function Navbar() {
       <div className="w-full px-8 lg:px-12">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Link href="/" className="flex items-center shrink-0 group">
             <Image
                 src="/Logo-full.png"
                 alt={site.brand.name}
-                width={200}
-                height={48}
-                className="h-10 w-auto object-contain"
+                width={220}
+                height={56}
+                className="h-14 w-auto object-contain"
                 priority
               />
           </Link>
