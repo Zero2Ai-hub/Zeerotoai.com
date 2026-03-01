@@ -10,10 +10,10 @@ export const metadata: Metadata = {
   title: "Pricing & Investment Guide - Transparent Automation Costs",
   description: "Pick the operations you want to automate. We build, deploy, and hand over. UAE/GCC e-commerce brands. AED pricing.",
   alternates: {
-    canonical: `${site.brand.domain}/pricing`,
+    canonical: "https://www.zeerotoai.com/pricing",
     languages: {
-      'en': `${site.brand.domain}/en/pricing`,
-      'ar': `${site.brand.domain}/ar/pricing`,
+      'en': "https://www.zeerotoai.com/en/pricing",
+      'ar': "https://www.zeerotoai.com/ar/pricing",
     },
   },
 };

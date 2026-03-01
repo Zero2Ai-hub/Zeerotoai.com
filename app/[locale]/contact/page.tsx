@@ -12,10 +12,10 @@ export const metadata: Metadata = {
   title: "Contact Us - Let's Build Together",
   description: "Get in touch to discuss your automation needs. Book a free call or send us a message.",
   alternates: {
-    canonical: `${site.brand.domain}/contact`,
+    canonical: "https://www.zeerotoai.com/contact",
     languages: {
-      'en': `${site.brand.domain}/en/contact`,
-      'ar': `${site.brand.domain}/ar/contact`,
+      'en': "https://www.zeerotoai.com/en/contact",
+      'ar': "https://www.zeerotoai.com/ar/contact",
     },
   },
 };

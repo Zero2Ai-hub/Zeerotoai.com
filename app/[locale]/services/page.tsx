@@ -7,12 +7,12 @@ import { ServicesDetailClient } from "./services-detail-client";
 
 export const metadata: Metadata = {
   title: "E-commerce Automation Services — Zeerotoai",
-  description: "Every part of your store operations — automated and running without you. UAE/GCC e-commerce brands.",,
+  description: "Every part of your store operations — automated and running without you. UAE/GCC e-commerce brands.",
   alternates: {
-    canonical: `${site.brand.domain}/services`,
+    canonical: "https://www.zeerotoai.com/services",
     languages: {
-      'en': `${site.brand.domain}/en/services`,
-      'ar': `${site.brand.domain}/ar/services`,
+      en: "https://www.zeerotoai.com/en/services",
+      ar: "https://www.zeerotoai.com/ar/services",
     },
   },
 };
