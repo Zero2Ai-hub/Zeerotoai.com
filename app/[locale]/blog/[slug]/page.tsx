@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import { site } from "@/content/site";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -16,12 +16,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
   return {
     title: `${post.title.en} | Zeerotoai Blog`,
     description: post.excerpt.en,
-    alternates: { canonical: `${site.brand.domain}/blog/${params.slug}` },
+    alternates: { canonical: `${site.brand.domain}/blog/${slug}` },
     openGraph: {
       title: post.title.en,
       description: post.excerpt.en,
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = blogPosts.find((p) => p.slug === slug);
   if (!post) notFound();
 
   const locale = await getLocale();
