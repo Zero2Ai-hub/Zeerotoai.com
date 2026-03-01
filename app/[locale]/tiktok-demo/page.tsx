@@ -50,7 +50,7 @@ export default function TikTokDemoPage() {
     setLoading(false);
   };
 
-  const oauthUrl = `https://www.tiktok.com/v2/auth/authorize?client_key=${CLIENT_KEY}&response_type=code&scope=video.upload,video.publish,user.info.basic&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=demo`;
+  const oauthUrl = `https://www.tiktok.com/v2/auth/authorize?client_key=${CLIENT_KEY}&response_type=code&scope=video.upload,video.publish,user.info.basic&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=demo&force_verify=true`;
 
   return (
     <div style={{ background: '#0a0a0f', minHeight: '100vh', padding: '40px 24px', fontFamily: 'Segoe UI, sans-serif', color: '#fff' }}>
