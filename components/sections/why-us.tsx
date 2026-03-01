@@ -98,7 +98,7 @@ export function WhyUs() {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,217,255,0.12)" }}><item.icon className="w-6 h-6" style={{ color: "rgb(0,217,255)" }} /></div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,217,255,0.12)" }}>{(() => { const Icon = item.icon; return <Icon className="w-6 h-6" style={{ color: "rgb(0,217,255)" }} />; })()}</div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                   {isArabic ? item.title.ar : item.title.en}
                 </h3>

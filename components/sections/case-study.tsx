@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, CheckCircle2 } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
-import { Clock, TrendingUp, ShoppingCart, Video, Zap, ArrowRight } from "lucide-react";
+import { Clock, TrendingUp, ShoppingCart, Video, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 const metrics = [

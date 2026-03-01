@@ -1,11 +1,11 @@
 "use client";
 
-import { MapPin, CheckCircle, useLocale } from "next-intl";
+import { useLocale } from "next-intl";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
-import { ArrowRight, Shield, Zap } from "lucide-react";
+import { ArrowRight, Shield, Zap, MapPin } from "lucide-react";
 
 export function Hero() {
   const locale = useLocale();

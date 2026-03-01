@@ -57,7 +57,7 @@ export function TechStack() {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group flex flex-col items-center text-center p-5 rounded-xl border border-primary/10 bg-card/50 backdrop-blur-sm hover:border-primary/40 hover:bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
             >
-              <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform" style={{ background: "rgba(0,217,255,0.12)" }}>{typeof item.icon === "string" ? <span>{item.icon}</span> : (() => { const Icon = item.icon as React.ElementType; return <Icon className="w-5 h-5" style={{ color: "rgb(0,217,255)" }} />; })()}</div>
               <div className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">{item.name}</div>
               <div className="text-xs text-muted-foreground leading-tight">
                 {isArabic ? item.desc.ar : item.desc.en}

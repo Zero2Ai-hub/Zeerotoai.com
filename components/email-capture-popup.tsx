@@ -1,6 +1,7 @@
 "use client";
+import { Lock } from "lucide-react";
 
-import { Lock, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
