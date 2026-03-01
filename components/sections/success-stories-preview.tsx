@@ -55,8 +55,8 @@ export function SuccessStoriesPreview() {
         ar: "+35٪ معدل التحويل",
       },
       challenge: {
-        en: "Growing Shopify store with 500+ products, no time to write descriptions or manage customer inquiries",
-        ar: "متجر Shopify متنامي يحتوي على أكثر من 500 منتج، ولا وقت لكتابة الأوصاف أو إدارة استفسارات العملاء",
+        en: "Growing online store with 500+ products, no time to write descriptions or manage customer inquiries",
+        ar: "متجرك الإلكتروني متنامي يحتوي على أكثر من 500 منتج، ولا وقت لكتابة الأوصاف أو إدارة استفسارات العملاء",
       },
       metrics: [
         {

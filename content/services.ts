@@ -12,7 +12,7 @@ export const services = [
       ar: "مزامنة آلاف المنتجات من Dropshipping suppliers إلى your store أو your store تلقائياً — مع عناوين وأوصاف مكتوبة بالذكاء الاصطناعي ومتغيرات معينة. لا ملفات CSV ضخمة. لا نسخ ولصق. فقط كتالوج حي يتحدث نفسه.",
     },
     bullets: [
-      "Supplier → store catalog sync / your store auto-sync",
+      "Dropshipping Suppliers → your store auto-sync",
       "AI-generated product titles, descriptions & SEO tags",
       "Variant mapping, image import & pricing rules — fully automated"
     ],
@@ -28,10 +28,10 @@ export const services = [
     },
     description: {
       en: "Every order placed in your store is automatically submitted to your supplier, tracking numbers are fetched and sent back, and customers get notified — zero manual steps, zero missed orders.",
-      ar: "كل طلب يُقدَّم في متجرك يُرسل تلقائياً إلى المورد، وأرقام التتبع تُجلب وتُعاد، ويُخطر العملاء — صفر خطوات يدوية، صفر طلبات مفقودة.",
+      ar: "كل طلب يُقدَّم في متجرك يُرسل تلقائياً إلى موردك، وأرقام التتبع تُجلب وتُعاد، ويُخطر العملاء — صفر خطوات يدوية، صفر طلبات مفقودة.",
     },
     bullets: [
-      "your store → Dropshipping suppliers auto-submit on every order",
+      "Order placed in your store → auto-submitted to Dropshipping Suppliers",
       "Tracking number sync back to store & customer notification",
       "Error alerts + retry logic — no silent failures"
     ],
@@ -46,15 +46,15 @@ export const services = [
       ar: "أتمتة Amazon FBA والإعلانات",
     },
     description: {
-      en: "Manage your Amazon store and ad spend on autopilot. We connect SP-API for order management and build daily bid optimizers that cut wasted spend and scale what's working — without you logging into Seller Central.",
-      ar: "أدِر متجرك على Amazon وإنفاقك الإعلاني تلقائياً. نربط SP-API لإدارة الطلبات وننشئ محسنات عروض أسعار يومية تقطع الإنفاق الضائع وتوسع ما ينجح — دون أن تسجل الدخول إلى Seller Central.",
+      en: "Manage your Amazon store and ad spend on autopilot. We connect the Amazon API for order management and build daily bid optimizers that cut wasted spend and scale what's working — without you logging into Seller Central.",
+      ar: "أدِر متجرك على Amazon وإنفاقك الإعلاني تلقائياً. نربط Amazon API لإدارة الطلبات وننشئ محسنات عروض أسعار يومية تقطع الإنفاق الضائع وتوسع ما ينجح — دون أن تسجل الدخول إلى Seller Central.",
     },
     bullets: [
       "Amazon: orders, inventory, listing health — automated",
       "Daily bid optimizer across Exact, Phrase & Discovery campaigns",
       "Negative keyword automation — stop burning budget on bad terms"
     ],
-    tags: ["Amazon", "Amazon Ads", "n8n", "Supabase"]
+    tags: ["Amazon", "Amazon Ads", "n8n"]
   },
   {
     key: "tiktok-content-engine",
@@ -65,11 +65,11 @@ export const services = [
       ar: "محرك محتوى TikTok والسوشيال",
     },
     description: {
-      en: "Turn any product into a ready-to-post TikTok or Reel in under 10 minutes. We generate UGC-style video scripts, produce short-form videos with AI Video Generation Gen4, overlay animated captions, and auto-post to TikTok and Instagram.",
+      en: "Turn any product into a ready-to-post TikTok or Reel in under 10 minutes. We generate UGC-style video scripts, produce short-form videos with AI Video Generation, overlay animated captions, and auto-post to TikTok and Instagram.",
       ar: "حوّل أي منتج إلى TikTok أو Reel جاهز للنشر في أقل من 10 دقائق. نولّد نصوص فيديو بأسلوب UGC وننتج مقاطع قصيرة مع AI Video Generation Gen4 ونضيف تعليقات متحركة وننشر تلقائياً على TikTok وInstagram.",
     },
     bullets: [
-      "AI Video Generation Gen4 video generation — $0.25/video",
+      "AI Video Generation — UGC-style product videos from $0.25",
       "Animated caption overlays — 4 styles, optimised for mobile",
       "Auto-post to TikTok & Instagram on a content schedule"
     ],
