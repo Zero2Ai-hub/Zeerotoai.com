@@ -129,9 +129,9 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
               {/* Background glow */}
               <div className={`absolute ${isEven ? 'left-0' : 'right-0'} top-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10`} />
 
-              <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
+              <div className={`flex flex-col ${(processSteps.length > 0 || relatedProjects.length > 0) ? (isEven ? "lg:flex-row" : "lg:flex-row-reverse") : ""} gap-12 items-start`}>
                 {/* Left/Right Content */}
-                <div className="flex-1 space-y-8">
+                <div className={`${(processSteps.length > 0 || relatedProjects.length > 0) ? "flex-1" : "w-full max-w-3xl mx-auto"} space-y-8`}>
                   {/* Title & Icon */}
                   <div className="flex items-center gap-4">
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary via-primary to-primary/80 flex items-center justify-center shadow-lg shadow-primary/40">
