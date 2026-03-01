@@ -26,11 +26,14 @@ export const metadata: Metadata = {
   description:
     "We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
   keywords: [
-    "AI automation",
+    "AI automation UAE",
+    "GCC automation",
+    "e-commerce automation UAE",
+    "WooCommerce automation",
+    "Amazon automation UAE",
+    "dropshipping automation",
+    "n8n agency UAE",
     "workflow automation",
-    "n8n",
-    "Voiceflow",
-    "chatbots",
     "AI agents",
     "business automation",
     "no-code automation",
@@ -114,6 +117,44 @@ export default async function LocaleLayout({
   const isArabic = locale === 'ar';
 
   // Structured Data (JSON-LD) for SEO
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": site.brand.name,
+    "url": site.brand.domain,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${site.brand.domain}/en/portfolio?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "AI Automation Consulting",
+    "provider": { "@type": "Organization", "name": site.brand.name, "url": site.brand.domain },
+    "areaServed": ["AE", "SA", "QA", "KW", "BH", "OM", "EG"],
+    "description": "Custom AI automation systems for UAE and GCC businesses — replacing manual workflows, SaaS stacks, and repetitive ops with governed AI agents.",
+    "offers": [
+      { "@type": "Offer", "name": "Starter Automation", "priceCurrency": "AED", "price": "3000", "description": "Single workflow automation — deployed in 2 weeks." },
+      { "@type": "Offer", "name": "Growth Stack", "priceCurrency": "AED", "price": "8000", "description": "Full operations automation stack — custom built and owned by you." },
+      { "@type": "Offer", "name": "Enterprise", "priceCurrency": "AED", "price": "0", "description": "Custom scope, custom pricing. Book a free strategy call." }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How long does it take to deploy an AI automation system?", "acceptedAnswer": { "@type": "Answer", "text": "Most projects go live in 2 weeks. Complex multi-system integrations take 4-6 weeks. We always set a clear deadline before starting." } },
+      { "@type": "Question", "name": "Do I own the system you build?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100%. You own the code, the workflows, and the infrastructure. No monthly licensing fees, no vendor lock-in." } },
+      { "@type": "Question", "name": "What businesses do you work with in the UAE?", "acceptedAnswer": { "@type": "Answer", "text": "E-commerce brands, service businesses, agencies, real estate, and any SMB currently paying for 3+ SaaS tools that AI can replace." } },
+      { "@type": "Question", "name": "Do you support Arabic workflows?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All our systems are bilingual (Arabic/English) by default. We understand GCC compliance, WhatsApp-first communication, and local payment rails." } },
+      { "@type": "Question", "name": "How is this different from hiring a developer?", "acceptedAnswer": { "@type": "Answer", "text": "We build AI systems with governed autonomy — audit logs, rejection logging, and guardrails. You get a system that works without babysitting, not just code that needs maintenance." } }
+    ]
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -137,9 +178,15 @@ export default async function LocaleLayout({
     "areaServed": "Worldwide",
     "knowsAbout": [
       "AI Automation",
+      "AI automation UAE",
+      "GCC automation",
+      "e-commerce automation UAE",
+      "WooCommerce automation",
+      "Amazon automation UAE",
+      "dropshipping automation",
+      "n8n agency UAE",
       "Workflow Automation",
       "Chatbot Development",
-      "n8n",
       "Voiceflow",
       "Make.com",
       "Business Process Automation",
@@ -171,10 +218,10 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         
         {/* Structured Data for SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </head>
       <body className="min-h-screen antialiased">
           <ThemeProvider

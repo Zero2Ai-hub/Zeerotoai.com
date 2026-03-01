@@ -6,13 +6,13 @@ import { AboutClient } from "./about-client";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: "About Us - Our Mission & Approach",
-  description: "Learn about our mission to build intelligent automations and our proven approach to solving workflow challenges.",
+  title: "About Zeerotoai — We Are Operators, Not Consultants",
+  description: "We started Zeerotoai running our own e-commerce store. Now we build the same automation systems for other UAE/GCC brands.",
   alternates: {
-    canonical: `${site.brand.domain}/about`,
+    canonical: "https://www.zeerotoai.com/about",
     languages: {
-      'en': `${site.brand.domain}/en/about`,
-      'ar': `${site.brand.domain}/ar/about`,
+      'en': "https://www.zeerotoai.com/en/about",
+      'ar': "https://www.zeerotoai.com/ar/about",
     },
   },
 };
@@ -40,11 +40,11 @@ export default async function AboutPage() {
           <div className="container mx-auto text-center">
             <div className="inline-block mb-12">
               <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "من نحن" : "About Us"}
+                {isArabic ? "عن Zeerotoai" : "About Zeerotoai"}
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "نبني أتمتة ذكية" : "Building Intelligent Automations"}
+              {isArabic ? "نحن مشغّلون، لسنا مستشارين." : "We Are Operators, Not Consultants."}
             </h1>
             
             {/* Enhanced mission statement with visual interest */}

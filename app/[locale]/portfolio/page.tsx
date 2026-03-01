@@ -6,12 +6,12 @@ import { site } from "@/content/site";
 
 export const metadata = {
   title: "Portfolio | Zero2AI",
-  description: "Explore our portfolio of AI automation projects",
+  description: "Live automation systems running for real e-commerce stores in UAE/GCC.",
   alternates: {
-    canonical: `${site.brand.domain}/portfolio`,
+    canonical: "https://www.zeerotoai.com/portfolio",
     languages: {
-      'en': `${site.brand.domain}/en/portfolio`,
-      'ar': `${site.brand.domain}/ar/portfolio`,
+      'en': "https://www.zeerotoai.com/en/portfolio",
+      'ar': "https://www.zeerotoai.com/ar/portfolio",
     },
   },
 };
@@ -39,16 +39,16 @@ export default async function PortfolioPage() {
           <div className="container mx-auto text-center">
             <div className="inline-block mb-12">
               <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "أعمالنا" : "Our Work"}
+                {isArabic ? "النتائج" : "Real Results"}
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "مشاريع تحكي قصص نجاح" : "Projects That Tell Success Stories"}
+              {isArabic ? "نتائج حقيقية" : "Real Results"}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {isArabic
                 ? "حلول أتمتة حقيقية بنتائج قابلة للقياس، من الفكرة إلى التنفيذ الكامل"
-                : "Real automation solutions with measurable results, from idea to full execution"}
+                : "We don't show mockups. These are live systems running for real stores."}
             </p>
           </div>
         </section>

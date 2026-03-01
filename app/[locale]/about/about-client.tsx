@@ -48,12 +48,12 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
 
   const ourStory = {
     title: {
-      en: "Why We Started Zero2AI",
+      en: "Why We Started Zeerotoai",
       ar: "لماذا بدأنا Zero2AI",
     },
     content: {
-      en: "We started Zero2AI because we saw businesses like yours struggling with the same problems: too much manual work, not enough time, and growth that feels impossible. We believe every business deserves access to intelligent automation, not just big corporations.",
-      ar: "بدأنا Zero2AI لأننا رأينا الشركات مثل شركتك تعاني من نفس المشاكل: الكثير من العمل اليدوي، وعدم كفاية الوقت، والنمو الذي يبدو مستحيلاً. نحن نؤمن بأن كل شركة تستحق الوصول إلى الأتمتة الذكية - وليس فقط شركات فورتشن 500.",
+      en: "Zeerotoai started because we were building automation systems for our own e-commerce brand. We got so good at it that other brands wanted the same systems. Now we build them for you. We are not a consulting firm — we are operators who know what it takes to run a store at scale.",
+      ar: "بدأت Zeerotoai لأننا كنا نبني أنظمة أتمتة لعلامتنا التجارية الخاصة في التجارة الإلكترونية. أصبحنا ماهرين جداً في ذلك لدرجة أن العلامات التجارية الأخرى أرادت نفس الأنظمة. الآن نبنيها لك. نحن لسنا شركة استشارات — نحن مشغّلون نعرف ما يتطلبه تشغيل متجر على نطاق واسع.",
     },
   };
 
