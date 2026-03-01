@@ -187,12 +187,12 @@ export function SideMenu() {
               <div className="flex items-center justify-between p-6 border-b border-primary/20">
                 <div className="flex items-center gap-3">
                   <Image
-                    src="/Logo-2.webp"
-                    alt={site.brand.name}
-                    width={40}
-                    height={40}
-                    className="rounded-full ring-2 ring-primary/30"
-                  />
+                src="/Logo-2.png"
+                alt="Zeerotoai"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover"
+              />
                   <span className="text-lg font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     {site.brand.name}
                   </span>

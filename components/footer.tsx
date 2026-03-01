@@ -21,12 +21,12 @@ export function Footer() {
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="relative flex items-center justify-center mx-auto">
                   <Image
-                    src="/Logo-2.webp"
-                    alt={site.brand.name}
-                    width={80}
-                    height={80}
-                    className="h-20 w-20 rounded-full object-cover ring-4 ring-primary/40 group-hover:ring-primary/70 group-hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/30 mx-auto"
-                  />
+                src="/Logo-2.png"
+                alt="Zeerotoai"
+                width={48}
+                height={48}
+                className="h-12 w-12 rounded-full object-cover"
+              />
                   {/* Enhanced glow effect */}
                   <div className="absolute inset-0 rounded-full bg-primary/10 group-hover:bg-primary/25 blur-2xl transition-all duration-300 pointer-events-none" />
                   <div className="absolute inset-0 rounded-full bg-primary/5 group-hover:bg-primary/40 blur-3xl transition-all duration-300 pointer-events-none scale-125" />

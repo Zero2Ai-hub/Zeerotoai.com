@@ -67,7 +67,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-[#0a1628] backdrop-blur-xl shadow-lg shadow-primary/5 relative">
+    <nav className="sticky top-0 z-[100] w-full border-b border-primary/10 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80 shadow-lg shadow-primary/5 relative">
       {/* Bottom cyan glow gradient for blending with hero */}
       <div 
         className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none translate-y-full"
@@ -80,40 +80,14 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-              <Image
-                src="/Logo-2.webp"
+            <Image
+                src="/Logo-full.png"
                 alt={site.brand.name}
-                width={52}
-                height={52}
-                className="h-[52px] w-[52px] rounded-full object-cover transition-all"
+                width={200}
+                height={48}
+                className="h-10 w-auto object-contain"
+                priority
               />
-            <span 
-              className="text-2xl font-black relative transition-all duration-300 group-hover:scale-110"
-              style={{
-                color: 'rgb(0, 217, 255)',
-                textShadow: '0 0 20px rgba(0, 217, 255, 0.3), 0 0 2px rgba(0, 217, 255, 0.8)',
-                letterSpacing: '-0.02em'
-              }}
-            >
-              {/* Background glow */}
-              <span 
-                className="absolute inset-0 rounded-lg transition-all duration-300 -z-10"
-                style={{
-                  background: 'rgba(0, 217, 255, 0.08)',
-                  filter: 'blur(16px)',
-                  transform: 'scale(1.2)',
-                }}
-              />
-              <span 
-                className="absolute inset-0 rounded-lg transition-all duration-300 group-hover:opacity-100 opacity-60 -z-10"
-                style={{
-                  background: 'rgba(0, 217, 255, 0.15)',
-                  filter: 'blur(24px)',
-                  transform: 'scale(1.4)',
-                }}
-              />
-              {site.brand.name}
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
