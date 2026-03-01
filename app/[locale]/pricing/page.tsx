@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pricing & Investment Guide - Transparent Automation Costs",
-  description: "Clear pricing for AI automation services. From simple workflows to enterprise solutions. Investment ranges start from $1,080. All prices are estimates based on your specific needs.",
+  description: "Pick the operations you want to automate. We build, deploy, and hand over. UAE/GCC e-commerce brands. AED pricing.",
   alternates: {
     canonical: `${site.brand.domain}/pricing`,
     languages: {
@@ -41,11 +41,11 @@ export default async function PricingPage() {
           <div className="container mx-auto text-center max-w-5xl">
             <div className="inline-block mb-8">
               <span className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm sm:text-base md:text-lg font-bold whitespace-nowrap">
-                {isArabic ? "تسعير شفاف ونتائج مثبتة" : "Transparent Pricing • Proven Results"}
+                {isArabic ? "حزم الأتمتة" : "Automation Packages"}
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "استثمر في أتمتة تحقق النتائج" : "Invest in Automation That Delivers"}
+              {isArabic ? "حزم الأتمتة" : "Automation Packages"}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
               {isArabic

@@ -6,51 +6,51 @@ import { Badge } from "@/components/ui/badge";
 
 const differentiators = [
   {
-    icon: "🛡️",
-    title: { en: "Governed Autonomy", ar: "الاستقلالية المحكومة" },
-    description: {
-      en: "Every AI action is logged, reviewable, and reversible. Your system runs autonomously — but you stay in control. No surprises, no black boxes.",
-      ar: "كل إجراء للذكاء الاصطناعي مسجل وقابل للمراجعة. نظامك يعمل باستقلالية — لكنك تبقى في السيطرة.",
-    },
-  },
-  {
-    icon: "📊",
-    title: { en: "Outcome Accountability", ar: "المساءلة على النتائج" },
-    description: {
-      en: "We commit to measurable outcomes: hours saved, costs cut, revenue lifted. If it doesn't perform, we fix it.",
-      ar: "نلتزم بنتائج قابلة للقياس: ساعات موفرة وتكاليف مخفضة وإيرادات محسّنة. إذا لم يؤدِّ، نصلحه.",
-    },
-  },
-  {
-    icon: "🔍",
-    title: { en: "Full Rejection Logging", ar: "تسجيل الرفض الكامل" },
-    description: {
-      en: "When AI declines or escalates a task, it's captured and explained. You always know what happened — and why. Compliance-ready from day one.",
-      ar: "عندما يرفض الذكاء الاصطناعي مهمة، يتم تسجيلها وشرحها. أنت تعرف دائماً ما حدث — ولماذا.",
-    },
-  },
-  {
     icon: "🔓",
-    title: { en: "You Own It. Forever.", ar: "أنت تملكه. للأبد." },
+    title: { en: "You Own Everything", ar: "أنت تملك كل شيء" },
     description: {
-      en: "No vendor lock-in, no recurring platform fees. Code, workflows, prompts — all yours. We build it, you own it.",
-      ar: "لا ارتباط بمورد، لا رسوم منصة متكررة. الكود والسير والأوامر — كلها ملكك.",
+      en: "No SaaS subscriptions. The system we build is yours. Code, workflows, data — all transferred to you.",
+      ar: "لا اشتراكات SaaS. النظام الذي نبنيه ملكك. الكود وسير العمل والبيانات — كلها تُنقل إليك.",
     },
   },
   {
-    icon: "🤖",
-    title: { en: "Multi-Model Intelligence", ar: "ذكاء متعدد النماذج" },
+    icon: "⚡",
+    title: { en: "Live in 2 Weeks", ar: "تشغيل في أسبوعين" },
     description: {
-      en: "Claude, GPT-4o, and Gemini — deployed where each performs best. Your system gets the right brain for every task.",
-      ar: "كلاود وGPT-4o وجيميني — كل حيث يتفوق. نظامك يحصل على العقل المناسب لكل مهمة.",
+      en: "Not a 6-month consulting project. We deploy your first automation in 14 days or less.",
+      ar: "ليس مشروع استشارات لمدة 6 أشهر. ننشر أتمتتك الأولى في 14 يوماً أو أقل.",
     },
   },
   {
     icon: "🇦🇪",
-    title: { en: "UAE-First, GCC-Ready", ar: "الإمارات أولاً، الخليج جاهز" },
+    title: { en: "UAE/GCC Native", ar: "مبني للإمارات والخليج" },
     description: {
-      en: "Arabic-English bilingual systems, local compliance, WhatsApp-first workflows, and GCC payment rails. Built for here.",
-      ar: "أنظمة ثنائية اللغة، الامتثال المحلي، سير العمل عبر واتساب، وبوابات الدفع الخليجية.",
+      en: "Arabic workflows, WhatsApp-first, local suppliers, GCC payment rails. Built for here.",
+      ar: "سير عمل عربي، واتساب أولاً، موردون محليون، بوابات دفع خليجية. مبني لهنا.",
+    },
+  },
+  {
+    icon: "📊",
+    title: { en: "Real Proof", ar: "دليل حقيقي" },
+    description: {
+      en: "Tech1Mart UAE runs on our systems. 40 hours of manual work automated per week.",
+      ar: "Tech1Mart الإمارات تعمل على أنظمتنا. 40 ساعة من العمل اليدوي مؤتمتة أسبوعياً.",
+    },
+  },
+  {
+    icon: "🤖",
+    title: { en: "Zero Manual Orders", ar: "صفر طلبات يدوية" },
+    description: {
+      en: "Every order from your store is automatically fulfilled. Tracking pushed back. You never touch it.",
+      ar: "كل طلب من متجرك يتم تنفيذه تلقائياً. التتبع يُرسل تلقائياً. أنت لا تلمسه أبداً.",
+    },
+  },
+  {
+    icon: "🎬",
+    title: { en: "AI Content at $0.25", ar: "محتوى ذكاء اصطناعي بـ $0.25" },
+    description: {
+      en: "TikTok videos generated, captioned, and posted for $0.25 each. No agency, no filming.",
+      ar: "مقاطع TikTok تُنشأ وتُكتب وتُنشر بـ $0.25 لكل منها. لا وكالة، لا تصوير.",
     },
   },
 ];
@@ -75,18 +75,12 @@ export function WhyUs() {
             {isArabic ? "لماذا تختارنا" : "Why Choose Us"}
           </Badge>
           <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-            {isArabic
-              ? "هناك المئات من وكالات الذكاء الاصطناعي."
-              : "There Are Hundreds of AI Agencies."}
-            <br />
-            <span className="text-primary">
-              {isArabic ? "إليك ما يجعلنا مختلفين." : "Here's What Makes Us Different."}
-            </span>
+            {isArabic ? "لماذا تختارنا علامات التجارة الإلكترونية" : "Why E-commerce Brands Choose Us"}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {isArabic
-              ? "لا نبيع خدمات. نبني أنظمة — مع المساءلة والشفافية والملكية الكاملة."
-              : "We don't sell services. We build systems — with accountability, transparency, and full ownership."}
+              ? "لا نبيع استشارات. نبني أنظمة تعمل — ونسلّمها لك."
+              : "We don't sell consulting. We build systems that run — and hand them over to you."}
           </p>
         </motion.div>
 

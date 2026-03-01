@@ -6,7 +6,7 @@ import { site } from "@/content/site";
 import { FaqClient } from "./faq-client";
 
 export const metadata: Metadata = {
-  title: "FAQ - Frequently Asked Questions About AI Automation",
+  title: "FAQ — E-commerce Automation Questions — Zeerotoai",
   description: "Got questions about automation? Find answers about pricing, timelines, process, and more.",
   alternates: {
     canonical: `${site.brand.domain}/faq`,
