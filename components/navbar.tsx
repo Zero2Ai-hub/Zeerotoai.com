@@ -80,42 +80,14 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <CircularGlowingBorder className="w-12 h-12">
-              <Image
-                src="/Logo-2.png"
+            <Image
+                src="/Logo-full.png"
                 alt={site.brand.name}
-                width={48}
+                width={200}
                 height={48}
-                className="h-12 w-12 rounded-full object-cover ring-2 ring-primary/20 hover:ring-primary/40 transition-all"
+                className="h-10 w-auto object-contain"
+                priority
               />
-            </CircularGlowingBorder>
-            <span 
-              className="text-2xl font-black relative transition-all duration-300 group-hover:scale-110"
-              style={{
-                color: 'rgb(0, 217, 255)',
-                textShadow: '0 0 20px rgba(0, 217, 255, 0.3), 0 0 2px rgba(0, 217, 255, 0.8)',
-                letterSpacing: '-0.02em'
-              }}
-            >
-              {/* Background glow */}
-              <span 
-                className="absolute inset-0 rounded-lg transition-all duration-300 -z-10"
-                style={{
-                  background: 'rgba(0, 217, 255, 0.08)',
-                  filter: 'blur(16px)',
-                  transform: 'scale(1.2)',
-                }}
-              />
-              <span 
-                className="absolute inset-0 rounded-lg transition-all duration-300 group-hover:opacity-100 opacity-60 -z-10"
-                style={{
-                  background: 'rgba(0, 217, 255, 0.15)',
-                  filter: 'blur(24px)',
-                  transform: 'scale(1.4)',
-                }}
-              />
-              {site.brand.name}
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
