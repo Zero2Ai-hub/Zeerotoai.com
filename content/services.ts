@@ -1,117 +1,117 @@
 export const services = [
   {
-    key: "ai-automation",
-    id: "ai-automation",
-    icon: "Workflow",
+    key: "catalog-listing",
+    id: "catalog-listing",
+    icon: "Package",
     title: {
-      en: "AI Automation Systems",
-      ar: "أنظمة الأتمتة بالذكاء الاصطناعي",
+      en: "Catalog & Listing Automation",
+      ar: "أتمتة الكتالوج والقوائم",
     },
     description: {
-      en: "Stop paying people to do what machines should. We map your highest-cost manual processes and replace them with intelligent, self-running workflows — connected across your entire tool stack.",
-      ar: "توقف عن دفع رواتب للأشخاص لأداء ما يجب أن تقوم به الآلات. نرسم عملياتك اليدوية الأكثر تكلفة ونستبدلها بسير عمل ذكي يعمل تلقائياً عبر جميع أدواتك.",
+      en: "Sync thousands of products from CJ Dropshipping to WooCommerce or Shopify automatically — with AI-written titles, descriptions, and mapped variants. No bulk CSVs. No copy-paste. Just a live catalog that updates itself.",
+      ar: "مزامنة آلاف المنتجات من CJ Dropshipping إلى WooCommerce أو Shopify تلقائياً — مع عناوين وأوصاف مكتوبة بالذكاء الاصطناعي ومتغيرات معينة. لا ملفات CSV ضخمة. لا نسخ ولصق. فقط كتالوج حي يتحدث نفسه.",
     },
     bullets: [
-      "Cross-platform workflow orchestration (n8n, Make)",
-      "AI decision layers that escalate only when needed",
-      "Full audit trail — every action logged and reviewable"
+      "CJ Dropshipping → WooCommerce / Shopify auto-sync",
+      "AI-generated product titles, descriptions & SEO tags",
+      "Variant mapping, image import & pricing rules — fully automated"
     ],
-    tags: ["n8n", "Make", "OpenAI", "Supabase"]
+    tags: ["WooCommerce", "Shopify", "CJ Dropshipping", "n8n", "OpenAI"]
   },
   {
-    key: "lead-generation",
-    id: "lead-generation",
-    icon: "Target",
+    key: "order-fulfillment",
+    id: "order-fulfillment",
+    icon: "Truck",
     title: {
-      en: "AI Lead Generation & Outreach",
-      ar: "توليد العملاء المحتملين والتواصل بالذكاء الاصطناعي",
+      en: "Order Fulfillment Automation",
+      ar: "أتمتة تنفيذ الطلبات",
     },
     description: {
-      en: "Your sales team should be closing, not scraping. We build pipelines that find verified decision-makers, craft hyper-personalized outreach, and book meetings on autopilot — at a scale no human team can match.",
-      ar: "فريق مبيعاتك يجب أن يُغلق الصفقات لا يجمع البيانات. نبني خطوط أنابيب تجد صانعي القرار المُتحققين وتصنع تواصلاً مخصصاً وتحجز اجتماعات تلقائياً.",
+      en: "Every order placed in your store is automatically submitted to your supplier, tracking numbers are fetched and sent back, and customers get notified — zero manual steps, zero missed orders.",
+      ar: "كل طلب يُقدَّم في متجرك يُرسل تلقائياً إلى المورد، وأرقام التتبع تُجلب وتُعاد، ويُخطر العملاء — صفر خطوات يدوية، صفر طلبات مفقودة.",
     },
     bullets: [
-      "Verified B2B contact sourcing at scale",
-      "AI-personalized sequences that feel human",
-      "Auto-qualified leads delivered to your CRM"
+      "WooCommerce → CJ Dropshipping auto-submit on every order",
+      "Tracking number sync back to store & customer notification",
+      "Error alerts + retry logic — no silent failures"
     ],
-    tags: ["Phantombuster", "Instantly", "Apollo", "OpenAI"]
+    tags: ["WooCommerce", "CJ Dropshipping", "n8n", "Webhooks"]
   },
   {
-    key: "ai-websites",
-    id: "ai-websites",
-    icon: "Code",
+    key: "amazon-fba-ads",
+    id: "amazon-fba-ads",
+    icon: "BarChart2",
     title: {
-      en: "AI-Powered Websites & SaaS",
-      ar: "مواقع ويب وSaaS مدعومة بالذكاء الاصطناعي",
+      en: "Amazon FBA & Ads Automation",
+      ar: "أتمتة Amazon FBA والإعلانات",
     },
     description: {
-      en: "Ship a production-ready product in weeks, not quarters. We build fast, SEO-optimised web apps and SaaS platforms using AI-augmented engineering — so you get the quality of a 6-month build in a fraction of the time.",
-      ar: "أطلق منتجاً جاهزاً للإنتاج في أسابيع لا أشهر. نبني تطبيقات ويب سريعة ومحسّنة لمحركات البحث ومنصات SaaS باستخدام الهندسة المعززة بالذكاء الاصطناعي.",
+      en: "Manage your Amazon store and ad spend on autopilot. We connect SP-API for order management and build daily bid optimizers that cut wasted spend and scale what's working — without you logging into Seller Central.",
+      ar: "أدِر متجرك على Amazon وإنفاقك الإعلاني تلقائياً. نربط SP-API لإدارة الطلبات وننشئ محسنات عروض أسعار يومية تقطع الإنفاق الضائع وتوسع ما ينجح — دون أن تسجل الدخول إلى Seller Central.",
     },
     bullets: [
-      "Full-stack Next.js + Supabase production builds",
-      "SEO-first architecture from day one",
-      "Integrated AI features (chat, search, recommendations)"
+      "Amazon SP-API: orders, inventory, listing health — automated",
+      "Daily bid optimizer across Exact, Phrase & Discovery campaigns",
+      "Negative keyword automation — stop burning budget on bad terms"
     ],
-    tags: ["Next.js", "Supabase", "Vercel", "TypeScript"]
+    tags: ["Amazon SP-API", "Amazon Ads", "n8n", "Supabase"]
   },
   {
-    key: "ai-support",
-    id: "ai-support",
+    key: "tiktok-content-engine",
+    id: "tiktok-content-engine",
+    icon: "Video",
+    title: {
+      en: "TikTok & Social Content Engine",
+      ar: "محرك محتوى TikTok والسوشيال",
+    },
+    description: {
+      en: "Turn any product into a ready-to-post TikTok or Reel in under 10 minutes. We generate UGC-style video scripts, produce short-form videos with Veo 3.1 + Runway Gen4, overlay animated captions, and auto-post to TikTok and Instagram.",
+      ar: "حوّل أي منتج إلى TikTok أو Reel جاهز للنشر في أقل من 10 دقائق. نولّد نصوص فيديو بأسلوب UGC وننتج مقاطع قصيرة مع Veo 3.1 + Runway Gen4 ونضيف تعليقات متحركة وننشر تلقائياً على TikTok وInstagram.",
+    },
+    bullets: [
+      "Veo 3.1 + Runway Gen4 video generation — $0.25/video",
+      "Animated caption overlays — 4 styles, optimised for mobile",
+      "Auto-post to TikTok & Instagram on a content schedule"
+    ],
+    tags: ["Veo 3.1", "Runway Gen4", "TikTok", "Instagram", "n8n"]
+  },
+  {
+    key: "ecommerce-support-agent",
+    id: "ecommerce-support-agent",
     icon: "Headphones",
     title: {
-      en: "AI Customer Support Agents",
-      ar: "وكلاء دعم العملاء بالذكاء الاصطناعي",
+      en: "E-commerce Support Agent",
+      ar: "وكيل دعم التجارة الإلكترونية",
     },
     description: {
-      en: "Handle 80% of support queries without hiring a single extra person. Our AI agents resolve, escalate, and document — in Arabic and English — 24/7 across WhatsApp, chat, and phone.",
-      ar: "تعامل مع 80% من استفسارات الدعم بدون توظيف شخص إضافي واحد. وكلاؤنا يحلون ويصعّدون ويوثّقون — عربياً وإنجليزياً — على مدار الساعة.",
+      en: "A 24/7 AI agent that handles shipping questions, return policies, order status, and product inquiries — in Arabic and English — across WhatsApp and web chat. It resolves. It escalates. It never sleeps.",
+      ar: "وكيل ذكاء اصطناعي على مدار الساعة يتعامل مع أسئلة الشحن وسياسات الإرجاع وحالة الطلبات واستفسارات المنتج — بالعربية والإنجليزية — عبر WhatsApp والدردشة الإلكترونية. يحل. يصعّد. لا ينام.",
     },
     bullets: [
-      "Arabic + English bilingual by default",
-      "WhatsApp, web chat, and voice channels",
-      "Smart escalation — AI handles it, humans close it"
+      "Arabic + English bilingual — WhatsApp & web chat",
+      "Live order status lookup from WooCommerce or Shopify",
+      "Smart escalation to human agents — never drops the ball"
     ],
-    tags: ["Voiceflow", "Vapi", "WhatsApp", "RAG"]
+    tags: ["Voiceflow", "WhatsApp", "WooCommerce", "RAG", "Arabic"]
   },
   {
-    key: "social-media",
-    id: "social-media",
-    icon: "Share2",
+    key: "full-ops-stack",
+    id: "full-ops-stack",
+    icon: "Layers",
     title: {
-      en: "AI-Powered Social Media Operations",
-      ar: "عمليات وسائل التواصل بالذكاء الاصطناعي",
+      en: "Full E-commerce Ops Stack",
+      ar: "حزمة عمليات التجارة الإلكترونية الكاملة",
     },
     description: {
-      en: "Consistent content at scale — without a full-time team. We automate content generation, scheduling, DM management, and performance reporting so your brand stays active and growing while you focus on the business.",
-      ar: "محتوى متسق على نطاق واسع — بدون فريق بدوام كامل. نؤتمت إنشاء المحتوى والجدولة وإدارة الرسائل المباشرة وتقارير الأداء.",
+      en: "All five systems, one team, one build. We become your entire e-commerce operations department — catalog, fulfillment, Amazon, content, and support — running in sync. Most clients save 40+ hours per week from day one.",
+      ar: "خمسة أنظمة، فريق واحد، بناء واحد. نصبح قسم عمليات التجارة الإلكترونية بالكامل — الكتالوج والتنفيذ وAmazon والمحتوى والدعم — تعمل في تناسق. يوفر معظم العملاء أكثر من 40 ساعة في الأسبوع من اليوم الأول.",
     },
     bullets: [
-      "AI video + caption generation (Veo, Runway)",
-      "Auto-schedule and publish across platforms",
-      "DM qualification — warm leads auto-routed to sales"
+      "All 5 systems integrated and running in sync",
+      "2-week deploy — faster than hiring one operations manager",
+      "You own the system. We hand over full docs and training."
     ],
-    tags: ["Runway", "Veo", "n8n", "Buffer"]
-  },
-  {
-    key: "ecommerce",
-    id: "ecommerce",
-    icon: "ShoppingCart",
-    title: {
-      en: "AI E-Commerce Operations",
-      ar: "عمليات التجارة الإلكترونية بالذكاء الاصطناعي",
-    },
-    description: {
-      en: "Turn your store into a 24/7 sales machine. From automated product imports and AI-written descriptions to smart inventory alerts and order routing — we cut the manual ops so you can focus on growth.",
-      ar: "حوّل متجرك إلى آلة مبيعات تعمل على مدار الساعة. من استيراد المنتجات الآلي والأوصاف المكتوبة بالذكاء الاصطناعي إلى تنبيهات المخزون الذكية وتوجيه الطلبات.",
-    },
-    bullets: [
-      "Automated product listing & description generation",
-      "AI customer support for order queries",
-      "Smart order routing to CJ, Zara, or custom suppliers"
-    ],
-    tags: ["WooCommerce", "Shopify", "OpenAI", "n8n"]
+    tags: ["WooCommerce", "Amazon", "TikTok", "CJ Dropshipping", "n8n", "Full-Stack"]
   }
 ];
 
