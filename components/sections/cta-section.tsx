@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import { ArrowRight, Shield, Zap, Clock } from "lucide-react";
@@ -100,7 +101,7 @@ export function CtaSection() {
               <span>{isArabic ? "مكالمة 30 دقيقة" : "30-minute call"}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-primary font-bold">🇦🇪</span>
+              <MapPin className="w-4 h-4 text-primary" />
               <span>{isArabic ? "مركّز على الإمارات والخليج" : "UAE/GCC focused"}</span>
             </div>
             <div className="flex items-center gap-2">

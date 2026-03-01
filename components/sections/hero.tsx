@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { MapPin, CheckCircle, useLocale } from "next-intl";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -116,14 +116,14 @@ export function Hero() {
           >
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
-              <span>{isArabic ? "الإمارات · عربي وإنجليزي" : "🇦🇪 UAE-based · Arabic + English"}</span>
+              <span>{isArabic ? "الإمارات · عربي وإنجليزي" : "UAE-based · Arabic + English"}</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-primary" />
               <span>{isArabic ? "أنت تملك النظام" : "You own the system"}</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-primary font-bold">🇦🇪</span>
+              <MapPin className="w-4 h-4 text-primary" />
               <span>{isArabic ? "تشغيل في أسبوعين" : "Live in 2 weeks"}</span>
             </div>
           </motion.div>

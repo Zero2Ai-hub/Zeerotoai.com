@@ -3,17 +3,18 @@
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
+import { ShoppingBag, Truck, ShoppingCart, Video, Workflow, Cpu, Network, Database, Bot, Globe2 } from "lucide-react";
 
 const stackItems = [
-  { name: "your store / your store", desc: { en: "Your store front", ar: "واجهة متجرك" }, icon: "🛒" },
-  { name: "Dropshipping suppliers", desc: { en: "Supplier pipeline", ar: "خط أنابيب الموردين" }, icon: "📦" },
+  { name: "Online Store", desc: { en: "Your store front", ar: "واجهة متجرك" }, icon: ShoppingBag },
+  { name: "Dropshipping suppliers", desc: { en: "Supplier pipeline", ar: "خط أنابيب الموردين" }, icon: Truck },
   { name: "Amazon", desc: { en: "Marketplace automation", ar: "أتمتة السوق" }, icon: "🏪" },
-  { name: "TikTok API", desc: { en: "Content distribution", ar: "توزيع المحتوى" }, icon: "🎬" },
+  { name: "TikTok API", desc: { en: "Content distribution", ar: "توزيع المحتوى" }, icon: Video },
   { name: "n8n", desc: { en: "Workflow orchestration", ar: "تنسيق سير العمل" }, icon: "🔄" },
   { name: "AI Video Generation", desc: { en: "AI video generation", ar: "توليد الفيديو بالذكاء الاصطناعي" }, icon: "✨" },
-  { name: "our agent infrastructure", desc: { en: "Agent infrastructure", ar: "بنية العملاء التحتية" }, icon: "🤖" },
+  { name: "our agent infrastructure", desc: { en: "Agent infrastructure", ar: "بنية العملاء التحتية" }, icon: Bot },
   { name: "Supabase", desc: { en: "Data & reporting", ar: "البيانات والتقارير" }, icon: "🗄️" },
-  { name: "Claude + GPT-4o", desc: { en: "AI brain", ar: "عقل الذكاء الاصطناعي" }, icon: "🧠" },
+  { name: "Claude + GPT-4o", desc: { en: "AI brain", ar: "عقل الذكاء الاصطناعي" }, icon: Cpu },
   { name: "Vercel", desc: { en: "Always-on deployment", ar: "نشر دائم التشغيل" }, icon: "▲" },
 ];
 

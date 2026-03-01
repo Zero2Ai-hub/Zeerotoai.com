@@ -1,12 +1,14 @@
 "use client";
+import React from "react";
 
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
+import { Lock, Clock, Globe, BarChart3, PackageCheck, Video } from "lucide-react";
 
-const differentiators = [
+const differentiators: { icon: React.ElementType; title: { en: string; ar: string }; description: { en: string; ar: string } }[] = [
   {
-    icon: "🔓",
+    icon: Lock,
     title: { en: "You Own Everything", ar: "أنت تملك كل شيء" },
     description: {
       en: "No SaaS subscriptions. The system we build is yours. Code, workflows, data — all transferred to you.",
@@ -14,7 +16,7 @@ const differentiators = [
     },
   },
   {
-    icon: "⚡",
+    icon: Clock,
     title: { en: "Live in 2 Weeks", ar: "تشغيل في أسبوعين" },
     description: {
       en: "Not a 6-month consulting project. We deploy your first automation in 14 days or less.",
@@ -22,7 +24,7 @@ const differentiators = [
     },
   },
   {
-    icon: "🇦🇪",
+    icon: Globe,
     title: { en: "UAE/GCC Native", ar: "مبني للإمارات والخليج" },
     description: {
       en: "Arabic workflows, WhatsApp-first, local suppliers, GCC payment rails. Built for here.",
@@ -30,7 +32,7 @@ const differentiators = [
     },
   },
   {
-    icon: "📊",
+    icon: BarChart3,
     title: { en: "Real Proof", ar: "دليل حقيقي" },
     description: {
       en: "Tech1Mart UAE runs on our systems. 40 hours of manual work automated per week.",
@@ -38,7 +40,7 @@ const differentiators = [
     },
   },
   {
-    icon: "🤖",
+    icon: PackageCheck,
     title: { en: "Zero Manual Orders", ar: "صفر طلبات يدوية" },
     description: {
       en: "Every order from your store is automatically fulfilled. Tracking pushed back. You never touch it.",
@@ -46,7 +48,7 @@ const differentiators = [
     },
   },
   {
-    icon: "🎬",
+    icon: Video,
     title: { en: "AI Content at $0.25", ar: "محتوى ذكاء اصطناعي بـ $0.25" },
     description: {
       en: "TikTok videos generated, captioned, and posted for $0.25 each. No agency, no filming.",
@@ -96,7 +98,7 @@ export function WhyUs() {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
-                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,217,255,0.12)" }}><item.icon className="w-6 h-6" style={{ color: "rgb(0,217,255)" }} /></div>
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                   {isArabic ? item.title.ar : item.title.en}
                 </h3>
