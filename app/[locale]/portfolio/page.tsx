@@ -8,10 +8,10 @@ export const metadata = {
   title: "Portfolio | Zero2AI",
   description: "Live automation systems running for real e-commerce stores in UAE/GCC.",
   alternates: {
-    canonical: `${site.brand.domain}/portfolio`,
+    canonical: "https://www.zeerotoai.com/portfolio",
     languages: {
-      'en': `${site.brand.domain}/en/portfolio`,
-      'ar': `${site.brand.domain}/ar/portfolio`,
+      'en': "https://www.zeerotoai.com/en/portfolio",
+      'ar': "https://www.zeerotoai.com/ar/portfolio",
     },
   },
 };

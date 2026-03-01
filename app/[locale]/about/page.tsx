@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: "About Zeerotoai — We Are Operators, Not Consultants",
   description: "We started Zeerotoai running our own e-commerce store. Now we build the same automation systems for other UAE/GCC brands.",
   alternates: {
-    canonical: `${site.brand.domain}/about`,
+    canonical: "https://www.zeerotoai.com/about",
     languages: {
-      'en': `${site.brand.domain}/en/about`,
-      'ar': `${site.brand.domain}/ar/about`,
+      'en': "https://www.zeerotoai.com/en/about",
+      'ar': "https://www.zeerotoai.com/ar/about",
     },
   },
 };
