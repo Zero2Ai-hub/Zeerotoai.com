@@ -5,13 +5,13 @@ import { useLocale } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 
 const stackItems = [
-  { name: "WooCommerce / Shopify", desc: { en: "Your store front", ar: "واجهة متجرك" }, icon: "🛒" },
-  { name: "CJ Dropshipping", desc: { en: "Supplier pipeline", ar: "خط أنابيب الموردين" }, icon: "📦" },
-  { name: "Amazon SP-API", desc: { en: "Marketplace automation", ar: "أتمتة السوق" }, icon: "🏪" },
+  { name: "your store / your store", desc: { en: "Your store front", ar: "واجهة متجرك" }, icon: "🛒" },
+  { name: "Dropshipping suppliers", desc: { en: "Supplier pipeline", ar: "خط أنابيب الموردين" }, icon: "📦" },
+  { name: "Amazon", desc: { en: "Marketplace automation", ar: "أتمتة السوق" }, icon: "🏪" },
   { name: "TikTok API", desc: { en: "Content distribution", ar: "توزيع المحتوى" }, icon: "🎬" },
   { name: "n8n", desc: { en: "Workflow orchestration", ar: "تنسيق سير العمل" }, icon: "🔄" },
-  { name: "Veo 3.1 + Runway", desc: { en: "AI video generation", ar: "توليد الفيديو بالذكاء الاصطناعي" }, icon: "✨" },
-  { name: "OpenClaw + MCP", desc: { en: "Agent infrastructure", ar: "بنية العملاء التحتية" }, icon: "🤖" },
+  { name: "AI Video Generation", desc: { en: "AI video generation", ar: "توليد الفيديو بالذكاء الاصطناعي" }, icon: "✨" },
+  { name: "our agent infrastructure", desc: { en: "Agent infrastructure", ar: "بنية العملاء التحتية" }, icon: "🤖" },
   { name: "Supabase", desc: { en: "Data & reporting", ar: "البيانات والتقارير" }, icon: "🗄️" },
   { name: "Claude + GPT-4o", desc: { en: "AI brain", ar: "عقل الذكاء الاصطناعي" }, icon: "🧠" },
   { name: "Vercel", desc: { en: "Always-on deployment", ar: "نشر دائم التشغيل" }, icon: "▲" },

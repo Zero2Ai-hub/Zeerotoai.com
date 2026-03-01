@@ -18,7 +18,7 @@ const packages = [
     features: {
       en: [
         "1 automated workflow (your choice)",
-        "CJ → WooCommerce catalog sync OR",
+        "Supplier → your store catalog sync OR",
         "Order fulfillment automation OR",
         "Amazon ads daily optimizer",
         "Full handover + 30-min training",
@@ -26,7 +26,7 @@ const packages = [
       ],
       ar: [
         "سير عمل واحد آلي (اختيارك)",
-        "مزامنة CJ إلى WooCommerce أو",
+        "مزامنة your supplier إلى your store أو",
         "أتمتة تنفيذ الطلبات أو",
         "محسّن إعلانات أمازون اليومي",
         "تسليم كامل + تدريب 30 دقيقة",
@@ -44,9 +44,9 @@ const packages = [
     description: { en: "Your entire e-commerce operation automated end-to-end. The Tech1Mart package.", ar: "عملياتك التجارية الإلكترونية كاملاً من الألف إلى الياء. حزمة Tech1Mart." },
     features: {
       en: [
-        "CJ Dropshipping → WooCommerce catalog sync",
+        "Supplier → store catalog auto-sync",
         "Order fulfillment — zero manual processing",
-        "Amazon SP-API + daily ads optimizer",
+        "Amazon + daily ads optimizer",
         "TikTok AI video pipeline ($0.25/video)",
         "Daily ops report → Telegram",
         "24/7 WhatsApp support agent (Arabic + English)",
@@ -54,9 +54,9 @@ const packages = [
         "You own everything — no monthly fees",
       ],
       ar: [
-        "مزامنة CJ Dropshipping إلى WooCommerce",
+        "مزامنة Dropshipping suppliers إلى your store",
         "تنفيذ الطلبات — صفر معالجة يدوية",
-        "Amazon SP-API + محسّن إعلانات يومي",
+        "Amazon + محسّن إعلانات يومي",
         "خط إنتاج فيديو TikTok بالذكاء الاصطناعي (0.25$)",
         "تقرير عمليات يومي → Telegram",
         "وكيل دعم WhatsApp 24/7 (عربي + إنجليزي)",

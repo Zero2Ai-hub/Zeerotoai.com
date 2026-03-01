@@ -8,15 +8,15 @@ export const services = [
       ar: "أتمتة الكتالوج والقوائم",
     },
     description: {
-      en: "Sync thousands of products from CJ Dropshipping to WooCommerce or Shopify automatically — with AI-written titles, descriptions, and mapped variants. No bulk CSVs. No copy-paste. Just a live catalog that updates itself.",
-      ar: "مزامنة آلاف المنتجات من CJ Dropshipping إلى WooCommerce أو Shopify تلقائياً — مع عناوين وأوصاف مكتوبة بالذكاء الاصطناعي ومتغيرات معينة. لا ملفات CSV ضخمة. لا نسخ ولصق. فقط كتالوج حي يتحدث نفسه.",
+      en: "Sync thousands of products from Dropshipping suppliers to your store platform automatically — with AI-written titles, descriptions, and mapped variants. No bulk CSVs. No copy-paste. Just a live catalog that updates itself.",
+      ar: "مزامنة آلاف المنتجات من Dropshipping suppliers إلى your store أو your store تلقائياً — مع عناوين وأوصاف مكتوبة بالذكاء الاصطناعي ومتغيرات معينة. لا ملفات CSV ضخمة. لا نسخ ولصق. فقط كتالوج حي يتحدث نفسه.",
     },
     bullets: [
-      "CJ Dropshipping → WooCommerce / Shopify auto-sync",
+      "Supplier → store catalog sync / your store auto-sync",
       "AI-generated product titles, descriptions & SEO tags",
       "Variant mapping, image import & pricing rules — fully automated"
     ],
-    tags: ["WooCommerce", "Shopify", "CJ Dropshipping", "n8n", "OpenAI"]
+    tags: ["your store", "your store", "Dropshipping suppliers", "n8n", "OpenAI"]
   },
   {
     key: "order-fulfillment",
@@ -31,11 +31,11 @@ export const services = [
       ar: "كل طلب يُقدَّم في متجرك يُرسل تلقائياً إلى المورد، وأرقام التتبع تُجلب وتُعاد، ويُخطر العملاء — صفر خطوات يدوية، صفر طلبات مفقودة.",
     },
     bullets: [
-      "WooCommerce → CJ Dropshipping auto-submit on every order",
+      "your store → Dropshipping suppliers auto-submit on every order",
       "Tracking number sync back to store & customer notification",
       "Error alerts + retry logic — no silent failures"
     ],
-    tags: ["WooCommerce", "CJ Dropshipping", "n8n", "Webhooks"]
+    tags: ["your store", "Dropshipping suppliers", "n8n", "Webhooks"]
   },
   {
     key: "amazon-fba-ads",
@@ -50,11 +50,11 @@ export const services = [
       ar: "أدِر متجرك على Amazon وإنفاقك الإعلاني تلقائياً. نربط SP-API لإدارة الطلبات وننشئ محسنات عروض أسعار يومية تقطع الإنفاق الضائع وتوسع ما ينجح — دون أن تسجل الدخول إلى Seller Central.",
     },
     bullets: [
-      "Amazon SP-API: orders, inventory, listing health — automated",
+      "Amazon: orders, inventory, listing health — automated",
       "Daily bid optimizer across Exact, Phrase & Discovery campaigns",
       "Negative keyword automation — stop burning budget on bad terms"
     ],
-    tags: ["Amazon SP-API", "Amazon Ads", "n8n", "Supabase"]
+    tags: ["Amazon", "Amazon Ads", "n8n", "Supabase"]
   },
   {
     key: "tiktok-content-engine",
@@ -65,15 +65,15 @@ export const services = [
       ar: "محرك محتوى TikTok والسوشيال",
     },
     description: {
-      en: "Turn any product into a ready-to-post TikTok or Reel in under 10 minutes. We generate UGC-style video scripts, produce short-form videos with Veo 3.1 + Runway Gen4, overlay animated captions, and auto-post to TikTok and Instagram.",
-      ar: "حوّل أي منتج إلى TikTok أو Reel جاهز للنشر في أقل من 10 دقائق. نولّد نصوص فيديو بأسلوب UGC وننتج مقاطع قصيرة مع Veo 3.1 + Runway Gen4 ونضيف تعليقات متحركة وننشر تلقائياً على TikTok وInstagram.",
+      en: "Turn any product into a ready-to-post TikTok or Reel in under 10 minutes. We generate UGC-style video scripts, produce short-form videos with AI Video Generation Gen4, overlay animated captions, and auto-post to TikTok and Instagram.",
+      ar: "حوّل أي منتج إلى TikTok أو Reel جاهز للنشر في أقل من 10 دقائق. نولّد نصوص فيديو بأسلوب UGC وننتج مقاطع قصيرة مع AI Video Generation Gen4 ونضيف تعليقات متحركة وننشر تلقائياً على TikTok وInstagram.",
     },
     bullets: [
-      "Veo 3.1 + Runway Gen4 video generation — $0.25/video",
+      "AI Video Generation Gen4 video generation — $0.25/video",
       "Animated caption overlays — 4 styles, optimised for mobile",
       "Auto-post to TikTok & Instagram on a content schedule"
     ],
-    tags: ["Veo 3.1", "Runway Gen4", "TikTok", "Instagram", "n8n"]
+    tags: ["AI Video Generation", "AI Video Generation", "TikTok", "Instagram", "n8n"]
   },
   {
     key: "ecommerce-support-agent",
@@ -89,10 +89,10 @@ export const services = [
     },
     bullets: [
       "Arabic + English bilingual — WhatsApp & web chat",
-      "Live order status lookup from WooCommerce or Shopify",
+      "Live order status lookup from your store platform",
       "Smart escalation to human agents — never drops the ball"
     ],
-    tags: ["Voiceflow", "WhatsApp", "WooCommerce", "RAG", "Arabic"]
+    tags: ["Voiceflow", "WhatsApp", "your store", "RAG", "Arabic"]
   },
   {
     key: "full-ops-stack",
@@ -111,7 +111,7 @@ export const services = [
       "2-week deploy — faster than hiring one operations manager",
       "You own the system. We hand over full docs and training."
     ],
-    tags: ["WooCommerce", "Amazon", "TikTok", "CJ Dropshipping", "n8n", "Full-Stack"]
+    tags: ["your store", "Amazon", "TikTok", "Dropshipping suppliers", "n8n", "Full-Stack"]
   }
 ];
 
