@@ -11,43 +11,43 @@ export const site = {
     whatsapp: "https://wa.me/971503385859",
   },
   tagline: {
-    en: "We don't sell software. We build AI systems that replace it.",
+    en: "We Run Your E-commerce Store On Autopilot.",
     ar: "لا نبيع برمجيات. نبني أنظمة ذكاء اصطناعي تحل محلها.",
   },
   hero: {
     headline: {
-      en: "Your Competitors Are Already Using AI. Are You?",
-      ar: "منافسوك يستخدمون الذكاء الاصطناعي بالفعل. وأنت؟",
+      en: "We Run Your E-commerce Store On Autopilot",
+      ar: "ندير متجرك الإلكتروني بالكامل تلقائياً",
     },
     headlineLine1: {
-      en: "Your Competitors Are Already",
-      ar: "منافسوك يستخدمون",
+      en: "We Run Your E-commerce",
+      ar: "ندير متجرك الإلكتروني",
     },
     headlineLine2: {
-      en: "Using AI. Are You?",
-      ar: "الذكاء الاصطناعي. وأنت؟",
+      en: "Store On Autopilot",
+      ar: "بالكامل تلقائياً",
     },
     subheadline: {
-      en: "UAE SMBs pay AED 15,000+ yearly on SaaS tools that don't talk to each other. We replace that stack with one intelligent AI system — built for your business, owned by you.",
-      ar: "الشركات الصغيرة في الإمارات تدفع أكثر من 15,000 درهم سنوياً على أدوات SaaS لا تتكامل. نستبدل ذلك بنظام ذكاء اصطناعي واحد — مبني لعملك، تملكه أنت.",
+      en: "Sourcing. Listings. Fulfillment. Ads. Content. Built for UAE/GCC e-commerce brands — you own the system, we build it.",
+      ar: "التوريد. القوائم. التنفيذ. الإعلانات. المحتوى. مبني لعلامات التجارة الإلكترونية في الإمارات والخليج — تملك النظام، نبنيه نحن.",
     },
     credibility: {
-      en: "Trusted by e-commerce, service & consulting businesses across UAE & GCC",
-      ar: "موثوق به من قبل شركات التجارة الإلكترونية والخدمات والاستشارات في الإمارات والخليج",
+      en: "Trusted by e-commerce brands across UAE & GCC",
+      ar: "موثوق به من علامات التجارة الإلكترونية في الإمارات والخليج",
     },
     badge: {
-      en: "AI Systems for UAE & GCC Businesses",
-      ar: "أنظمة الذكاء الاصطناعي لشركات الإمارات والخليج",
+      en: "E-commerce Automation — UAE & GCC",
+      ar: "أتمتة التجارة الإلكترونية — الإمارات والخليج",
     },
   },
   cta: {
     primary: {
-      label: { en: "Book a Free Strategy Call", ar: "احجز مكالمة استراتيجية مجانية" },
+      label: { en: "See How We Did It →", ar: "شاهد كيف فعلنا ذلك →" },
       href: "/contact",
     },
     secondary: {
-      label: { en: "See Case Studies", ar: "شاهد دراسات الحالة" },
-      href: "/portfolio",
+      label: { en: "Book a Free Call", ar: "احجز مكالمة مجانية" },
+      href: "/contact",
     },
   },
   nav: [
