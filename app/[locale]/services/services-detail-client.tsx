@@ -221,7 +221,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
                         );
                       })}
                     </div>
-                  </div>
+                  </div>}
 
                   {/* Related Projects */}
                   {relatedProjects.length > 0 && (
