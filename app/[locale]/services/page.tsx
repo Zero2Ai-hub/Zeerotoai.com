@@ -35,25 +35,6 @@ export default async function ServicesPage() {
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-700" />
         </div>
 
-        {/* Hero Section */}
-        <section className="relative z-10 pt-32 pb-12 px-4">
-          <div className="container mx-auto text-center">
-            <div className="inline-block mb-12">
-              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "خدماتنا" : "Our Services"}
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "خدمات أتمتة التجارة الإلكترونية" : "E-commerce Automation Services"}
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              {isArabic
-                ? "حلول شاملة مصممة لتبسيط سير عملك، توفير الوقت، وتعزيز الإنتاجية بشكل كبير"
-                : "Every part of your store operations — automated and running without you."}
-            </p>
-          </div>
-        </section>
-
         {/* Services Detail Sections */}
         <ServicesDetailClient services={site.services} />
       </main>
