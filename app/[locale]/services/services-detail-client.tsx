@@ -115,7 +115,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
 
                   {/* CTA */}
                   <Link
-                    href="/contact"
+                    href="/book"
                     className="inline-flex items-center gap-2 text-sm font-bold transition-all"
                     style={{ color: "rgb(0,217,255)" }}
                   >
@@ -138,7 +138,7 @@ export function ServicesDetailClient({ services }: ServicesDetailClientProps) {
               {isArabic ? "غير متأكد من أين تبدأ؟ نقوم بتدقيق مجاني لعملياتك." : "Not sure where to start? We'll audit your operations for free."}
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-black text-base transition-all hover:scale-105"
               style={{ background: "rgb(0,217,255)", color: "#0a0a0f", boxShadow: "0 0 30px rgba(0,217,255,0.3)" }}
             >

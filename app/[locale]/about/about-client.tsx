@@ -471,7 +471,7 @@ export function AboutClient({ isArabic, about }: AboutClientProps) {
                 : "Let's discuss how we can build the perfect solution for you"}
             </p>
             <Link
-              href="/contact"
+              href="/book"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105"
             >
               {isArabic ? "تواصل معنا" : "Get in Touch"}

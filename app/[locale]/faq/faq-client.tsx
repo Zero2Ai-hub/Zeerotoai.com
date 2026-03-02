@@ -409,7 +409,7 @@ export function FaqClient({ isArabic }: FaqClientProps) {
                   size="lg"
                   className="text-lg px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/40"
                 >
-                  <Link href="/contact" className="flex items-center gap-2">
+                  <Link href="/book" className="flex items-center gap-2">
                     {isArabic ? "احجز استشارة مجانية" : "Book Free Consultation"}
                     <ArrowRight className="w-5 h-5" />
                   </Link>

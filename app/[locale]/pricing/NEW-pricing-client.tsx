@@ -388,7 +388,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
 
                             <div className="flex gap-2 pt-3">
                               <Button asChild size="sm" className="flex-1">
-                                <Link href="/contact">
+                                <Link href="/book">
                                   {isArabic ? "احصل على عرض" : "Get Quote"}
                                 </Link>
                               </Button>
@@ -513,7 +513,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                           }`}
                           size="sm"
                         >
-                          <Link href="/contact" className="flex items-center justify-center gap-2">
+                          <Link href="/book" className="flex items-center justify-center gap-2">
                             {isArabic ? "احصل على عرض مخصص" : "Get Custom Quote"}
                             <ArrowRight className="w-4 h-4" />
                           </Link>
@@ -657,7 +657,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
                   size="lg"
                   className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/60 transition-all hover:scale-105"
                 >
-                  <Link href="/contact" className="flex items-center gap-2">
+                  <Link href="/book" className="flex items-center gap-2">
                     {isArabic ? "احجز استشارة مجانية" : "Book Free Consultation"}
                     <Calendar className="w-5 h-5" />
                   </Link>

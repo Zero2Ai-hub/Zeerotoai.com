@@ -194,7 +194,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
 
                     {/* CTA */}
                     <Link
-                      href="/contact"
+                      href="/book"
                       className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm transition-all hover:scale-105"
                       style={pkg.highlight
                         ? { background: "rgb(0,217,255)", color: "#0a0a0f" }
@@ -253,7 +253,7 @@ export function PricingClient({ isArabic }: PricingClientProps) {
               : "Book a free audit. We'll map exactly what to automate first — no commitment."}
           </p>
           <Link
-            href="/contact"
+            href="/book"
             className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-lg transition-all hover:scale-105"
             style={{ background: "rgb(0,217,255)", color: "#0a0a0f", boxShadow: "0 0 40px rgba(0,217,255,0.4)" }}
           >

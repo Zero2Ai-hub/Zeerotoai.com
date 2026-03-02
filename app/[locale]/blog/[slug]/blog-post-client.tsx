@@ -143,7 +143,7 @@ export function BlogPostClient({ post, isArabic }: BlogPostClientProps) {
             size="lg"
             className="bg-gradient-to-r from-primary via-primary to-primary/80 text-primary-foreground font-bold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 transition-all"
           >
-            <Link href="/contact">
+            <Link href="/book">
               {isArabic ? "احجز تدقيق مجاني →" : "Book a Free Audit →"}
             </Link>
           </Button>

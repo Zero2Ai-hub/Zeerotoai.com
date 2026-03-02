@@ -689,7 +689,7 @@ export function CostCalculatorClient({ isArabic }: CostCalculatorClientProps) {
               {/* CTA Buttons */}
               <div className="flex flex-col gap-3 pt-2">
                 <Button asChild size="lg" className="w-full">
-                  <Link href="/contact">
+                  <Link href="/book">
                     <Icons.Rocket className="w-4 h-4 mr-2" />
                     {isArabic ? "ابدأ مشروعي" : "Start My Project"}
                   </Link>

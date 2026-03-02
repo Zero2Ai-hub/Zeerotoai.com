@@ -181,7 +181,7 @@ export function ProjectDetail({ project, isArabic }: ProjectDetailProps) {
               variant={hasValidDemoUrl ? "outline" : "default"}
               className={hasValidDemoUrl ? "border-primary/40 hover:border-primary hover:bg-primary/10 hover:text-primary" : "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:scale-105 transition-all"}
             >
-              <Link href="/contact">
+              <Link href="/book">
                 {isArabic ? "احصل على هذا المشروع" : "Get This Project"}
               </Link>
             </Button>
@@ -415,7 +415,7 @@ export function ProjectDetail({ project, isArabic }: ProjectDetailProps) {
                 size="lg"
                 className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               >
-                <Link href="/contact">
+                <Link href="/book">
                   {isArabic ? "احصل على هذا المشروع" : "Get This Project"}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
@@ -426,7 +426,7 @@ export function ProjectDetail({ project, isArabic }: ProjectDetailProps) {
                 variant="outline"
                 className="text-lg px-8 py-6 border-primary/40 hover:border-primary hover:bg-primary/10 hover:text-primary"
               >
-                <Link href="/contact">
+                <Link href="/book">
                   {isArabic ? "احجز مكالمة مجانية" : "Book a Free Call"}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
