@@ -42,15 +42,15 @@ export default async function ContactPage() {
         <section className="relative z-10 pt-32 pb-32 px-4">
           <div className="container mx-auto text-center">
             <div className="inline-block px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm mb-12">
-              <span>{isArabic ? "ابدأ رحلتك" : "Start Your Journey"}</span>
+              <span>{isArabic ? "تدقيق مجاني — 30 دقيقة" : "Free Automation Audit — 30 Minutes"}</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "لنبني شيئًا رائعًا معًا" : "Let's Build Something Great Together"}
+              {isArabic ? "اعرف أين تخسر الوقت" : "Find Out Where You're Losing Time"}
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {isArabic
-                ? "لديك مشروع في ذهنك؟ دعنا نتحدث عن كيفية أتمتة سير عملك وتحويل أفكارك إلى واقع"
-                : "Have a project in mind? Let's discuss how we can automate your workflow and turn your ideas into reality"}
+                ? "جلسة مجانية مدتها 30 دقيقة. نحدد العملية الأكثر استنزافاً لديك ونريك كيف تؤتمتها خلال 30 يوماً — بدون التزام"
+                : "Free 30-min session. We identify the most time-draining process in your business and show you exactly how to automate it in 30 days — no commitment"}
             </p>
           </div>
         </section>
