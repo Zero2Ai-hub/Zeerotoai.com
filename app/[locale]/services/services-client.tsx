@@ -119,7 +119,7 @@ export function ServicesClient({ services, isArabic }: ServicesClientProps) {
                 : "Let's discuss how we can help automate your workflow"}
             </p>
             <Link
-              href="/signup"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105"
             >
               {isArabic ? "احجز مكالمة مجانية" : "Book a Free Call"}

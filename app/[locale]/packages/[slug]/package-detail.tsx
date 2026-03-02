@@ -410,7 +410,7 @@ export function PackageDetail({ slug, isArabic }: PackageDetailProps) {
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl shadow-primary/40 text-lg h-14 px-8"
           >
-            <Link href="/signup" className="flex items-center gap-2">
+            <Link href="/contact" className="flex items-center gap-2">
               {isArabic ? "احصل على هذه الحزمة الآن" : "Get This Package Now"}
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -577,7 +577,7 @@ export function PackageDetail({ slug, isArabic }: PackageDetailProps) {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl shadow-primary/40 text-lg h-14 px-8"
               >
-                <Link href="/signup" className="flex items-center gap-2">
+                <Link href="/contact" className="flex items-center gap-2">
                   {isArabic ? "احصل على هذه الحزمة الآن" : "Get This Package Now"}
                   <ArrowRight className="w-5 h-5" />
                 </Link>

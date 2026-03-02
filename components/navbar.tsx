@@ -146,7 +146,7 @@ export function Navbar() {
                       </Link>
                     </Button>
                     <Button asChild variant="outline" size="sm">
-                      <Link href="/signup">
+                      <Link href="/contact">
                         Sign Up
                       </Link>
                     </Button>
@@ -253,7 +253,7 @@ export function Navbar() {
                           </Link>
                         </Button>
                         <Button asChild variant="outline" className="flex-1">
-                          <Link href="/signup">
+                          <Link href="/contact">
                             Sign Up
                           </Link>
                         </Button>

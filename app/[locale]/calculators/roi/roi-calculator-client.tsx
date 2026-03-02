@@ -399,7 +399,7 @@ export function RoiCalculatorClient({ isArabic }: RoiCalculatorClientProps) {
               {/* CTA Buttons */}
               <div className="flex flex-col gap-3 pt-4">
                 <Button asChild size="lg" className="w-full">
-                  <Link href="/signup">
+                  <Link href="/contact">
                     <Icons.Rocket className="w-4 h-4 mr-2" />
                     {isArabic ? "احصل على عرض أسعار دقيق" : "Get Accurate Quote"}
                   </Link>

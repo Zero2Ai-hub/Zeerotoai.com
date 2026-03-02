@@ -289,7 +289,7 @@ export function SideMenu() {
                           </Link>
                         </Button>
                         <Button asChild className="w-full">
-                          <Link href="/signup" onClick={() => setIsExpanded(false)}>
+                          <Link href="/contact" onClick={() => setIsExpanded(false)}>
                             Sign Up
                           </Link>
                         </Button>
