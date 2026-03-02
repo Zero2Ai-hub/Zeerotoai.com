@@ -7,6 +7,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Free Automation Audit | Zeerotoai",
   description: "Book your free 30-minute automation audit. We identify your highest-ROI automation and show you how to build it in 30 days.",
+  alternates: {
+    canonical: "https://www.zeerotoai.com/book",
+  },
 };
 
 export default async function BookPage() {
