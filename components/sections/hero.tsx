@@ -129,6 +129,21 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
+          {/* Live Systems strip */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.8 }}
+            className="flex items-center gap-2 text-xs text-primary/80 font-mono bg-primary/10 border border-primary/20 rounded-full px-4 py-2 w-fit"
+          >
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse inline-block" />
+            <span>
+              {isArabic
+                ? "الآن: 15 وكيل ذكاء اصطناعي · مشروعان حيّان · 37 مهارة مفتوحة"
+                : "Right now: 15 agents running across 2 live businesses · 37 open-source skills · Real ops, not demos"}
+            </span>
+          </motion.div>
+
           {/* SEO Keywords - Screen reader accessible */}
           <span className="sr-only">
             AI automation UAE, GCC automation, n8n agency, MCP agents, AI automation agency Dubai, 
