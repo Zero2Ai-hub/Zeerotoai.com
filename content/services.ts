@@ -114,6 +114,25 @@ export const services = [
     tags: ["WooCommerce", "Shopify", "Next.js", "Stripe", "Bolt.ai"]
   },
   {
+    key: "agent-commerce-ready",
+    id: "agent-commerce-ready",
+    icon: "Bot",
+    title: {
+      en: "Agent Commerce Ready",
+      ar: "متجر جاهز للوكلاء الذكيين",
+    },
+    description: {
+      en: "AI agents are already browsing stores, comparing products, and completing purchases autonomously. Configure your store to be discovered and bought from by AI agents — structured metadata, stablecoin checkout via MoonPay + Coinbase Commerce, and an agent-callable API on Base. First-mover window in UAE/GCC is open now.",
+      ar: "وكلاء الذكاء الاصطناعي يتصفحون المتاجر ويقارنون المنتجات ويكملون المشتريات تلقائياً. هيّئ متجرك ليكتشفه الوكلاء ويشتروا منه — بيانات منظّمة، ودفع بالعملات المستقرة عبر MoonPay وCoinbase Commerce، وAPI قابل للاستدعاء على Base. نافذة الريادة في الإمارات والخليج مفتوحة الآن.",
+    },
+    bullets: [
+      "Agent discovery layer — structured metadata + MCP-compatible product endpoint",
+      "Stablecoin checkout (USDC/USDT) via MoonPay or Coinbase Commerce — zero chargebacks",
+      "x402-compatible agent API on Base — 60–90 day head start in UAE/GCC"
+    ],
+    tags: ["Base", "MoonPay", "Coinbase Commerce", "x402", "MCP", "USDC"]
+  },
+  {
     key: "full-ops-stack",
     id: "full-ops-stack",
     icon: "Layers",
