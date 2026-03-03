@@ -6,7 +6,7 @@ import { ContactForm } from "./contact-form";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MessageCircle, Mail, CheckCircle2, Sparkles, Twitter, Linkedin, Youtube } from "lucide-react";
+import { MessageCircle, Mail, CheckCircle2, Sparkles, Twitter } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us - Let's Build Together",
@@ -146,24 +146,7 @@ export default async function ContactPage() {
                           >
                             <Twitter className="h-4 w-4 text-primary" />
                           </a>
-                          <a
-                            href={site.socials.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="LinkedIn"
-                            className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center border border-primary/30 hover:border-primary/60 transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
-                          >
-                            <Linkedin className="h-4 w-4 text-primary" />
-                          </a>
-                          <a
-                            href={site.socials.youtube}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="YouTube"
-                            className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary/20 flex items-center justify-center border border-primary/30 hover:border-primary/60 transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/30"
-                          >
-                            <Youtube className="h-4 w-4 text-primary" />
-                          </a>
+
                         </div>
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
