@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 import { ServicesPreview } from "@/components/sections/services-preview";
 import { WhyUs } from "@/components/sections/why-us";
 import { CaseStudy } from "@/components/sections/case-study";
-import { TechStack } from "@/components/sections/tech-stack";
+
 
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
@@ -35,8 +35,6 @@ export default function HomePage() {
         <WhyUs />
         <CircuitDivider />
         <CaseStudy />
-        <CircuitDivider />
-        <TechStack />
         <CircuitDivider />
         <CtaSection />
       </main>
