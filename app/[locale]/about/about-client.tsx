@@ -84,7 +84,7 @@ export function AboutClient({ isArabic }: AboutClientProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="flex flex-col sm:flex-row gap-4"
         >
           {stats.map((s, i) => (
             <motion.div
@@ -93,7 +93,7 @@ export function AboutClient({ isArabic }: AboutClientProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.07 }}
-              className="rounded-xl border border-primary/20 bg-card/60 p-6 text-center hover:border-primary/40 transition-colors"
+              className="flex-1 rounded-xl border border-primary/20 bg-card/60 p-6 text-center hover:border-primary/40 transition-colors"
             >
               <div
                 className="text-4xl font-black mb-1"
@@ -118,7 +118,7 @@ export function AboutClient({ isArabic }: AboutClientProps) {
           <h2 className="text-2xl md:text-3xl font-black mb-8 text-center">
             {isArabic ? "كيف نعمل" : "How We Work"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="flex flex-col md:flex-row gap-4">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -126,7 +126,7 @@ export function AboutClient({ isArabic }: AboutClientProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: i * 0.08 }}
-                className="group relative rounded-xl border border-primary/15 bg-card/60 hover:border-primary/40 hover:bg-card transition-all duration-300 p-6 overflow-hidden"
+                className="flex-1 group relative rounded-xl border border-primary/15 bg-card/60 hover:border-primary/40 hover:bg-card transition-all duration-300 p-6 overflow-hidden"
               >
                 <div className="text-5xl font-black mb-4 leading-none" style={{ color: "rgba(0,217,255,0.15)" }}>
                   {step.n}
@@ -154,7 +154,7 @@ export function AboutClient({ isArabic }: AboutClientProps) {
           <h2 className="text-xl font-black mb-6 text-center">
             {isArabic ? "ضماناتنا" : "Our Guarantees"}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="flex flex-col md:flex-row gap-6">
             {guarantees.map((g, i) => {
               const Icon = g.icon;
               return (
