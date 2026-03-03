@@ -81,7 +81,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group">
             <Image
-                src="/Logo-full.png"
+                src="/Logo-full-transparent.png"
                 alt={site.brand.name}
                 width={320}
                 height={80}

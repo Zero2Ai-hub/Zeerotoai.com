@@ -112,7 +112,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-wrap items-center gap-6 text-sm text-gray-300"
+            className="flex flex-wrap items-center gap-6 text-sm text-gray-300 mb-4"
           >
             <div className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-primary" />
@@ -126,6 +126,21 @@ export function Hero() {
               <MapPin className="w-4 h-4 text-primary" />
               <span>{isArabic ? "تشغيل في أسبوعين" : "Live in 2 weeks"}</span>
             </div>
+          </motion.div>
+
+          {/* Live proof stat */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.78, duration: 0.6 }}
+            className="flex items-center gap-2 text-xs text-green-400/90 font-mono"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
+            <span>
+              {isArabic
+                ? "هذا الأسبوع: تم تلقائيًا تنفيذ 2 طلبات — صفر تدخل يدوي"
+                : "This week: 2 orders auto-fulfilled — zero manual work"}
+            </span>
           </motion.div>
         </motion.div>
 
