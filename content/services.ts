@@ -16,7 +16,7 @@ export const services = [
       "AI-generated product titles, descriptions & SEO tags",
       "Variant mapping, image import & pricing rules — fully automated"
     ],
-    tags: ["your store", "your store", "Dropshipping suppliers", "n8n", "OpenAI"]
+    tags: ["WooCommerce", "Shopify", "CJ Dropshipping", "n8n", "OpenAI"]
   },
   {
     key: "order-fulfillment",
@@ -35,7 +35,7 @@ export const services = [
       "Tracking number sync back to store & customer notification",
       "Error alerts + retry logic — no silent failures"
     ],
-    tags: ["your store", "Dropshipping suppliers", "n8n", "Webhooks"]
+    tags: ["WooCommerce", "CJ Dropshipping", "n8n", "Webhooks"]
   },
   {
     key: "amazon-fba-ads",
@@ -92,7 +92,7 @@ export const services = [
       "Live order status lookup from your store platform",
       "Smart escalation to human agents — never drops the ball"
     ],
-    tags: ["Voiceflow", "WhatsApp", "your store", "RAG", "Arabic"]
+    tags: ["Voiceflow", "WhatsApp", "WooCommerce", "RAG", "Arabic"]
   },
   {
     key: "storefront-creation",
@@ -149,7 +149,7 @@ export const services = [
       "2-week deploy — faster than hiring one operations manager",
       "You own the system. We hand over full docs and training."
     ],
-    tags: ["your store", "Amazon", "TikTok", "Dropshipping suppliers", "n8n", "Full-Stack"]
+    tags: ["WooCommerce", "Amazon", "TikTok", "CJ Dropshipping", "n8n", "Full-Stack"]
   }
 ];
 
