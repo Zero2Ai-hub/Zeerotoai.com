@@ -37,18 +37,16 @@ export default async function PortfolioPage() {
         {/* Hero Section */}
         <section className="relative z-10 pt-32 pb-12 px-4">
           <div className="container mx-auto text-center">
-            <div className="inline-block mb-12">
-              <span className="px-8 py-4 rounded-full bg-primary/20 text-primary border border-primary/30 text-lg font-bold backdrop-blur-sm">
-                {isArabic ? "النتائج" : "Real Results"}
-              </span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-b from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
-              {isArabic ? "نتائج حقيقية" : "Real Results"}
+            <span className="inline-block px-5 py-2 rounded-full bg-primary/15 text-primary border border-primary/30 text-sm font-bold mb-6 tracking-wide">
+              {isArabic ? "أعمالنا" : "Our Work"}
+            </span>
+            <h1 className="text-4xl md:text-6xl font-black mb-5 bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent">
+              {isArabic ? "أنظمة حقيقية. نتائج حقيقية." : "Real Systems. Real Results."}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {isArabic
-                ? "حلول أتمتة حقيقية بنتائج قابلة للقياس، من الفكرة إلى التنفيذ الكامل"
-                : "We don't show mockups. These are live systems running for real stores."}
+                ? "لا نعرض نماذج. هذه أنظمة حية تعمل في متاجر حقيقية الآن."
+                : "No mockups. No case study theatre. These are live automations running right now."}
             </p>
           </div>
         </section>

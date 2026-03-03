@@ -2,10 +2,15 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
+
+const ACCENT_COLORS = [
+  { border: "rgba(0,217,255,0.5)",  glow: "rgba(0,217,255,0.15)",  text: "rgb(0,217,255)"   },
+  { border: "rgba(168,85,247,0.5)", glow: "rgba(168,85,247,0.12)", text: "rgb(168,85,247)"  },
+  { border: "rgba(34,197,94,0.5)",  glow: "rgba(34,197,94,0.12)",  text: "rgb(34,197,94)"   },
+];
+
+interface Metric { label: string; value: string }
 
 interface Project {
   slug: string;
@@ -14,6 +19,7 @@ interface Project {
   title: { en: string; ar: string };
   summary: { en: string; ar: string };
   metric: { en: string; ar: string };
+  metrics?: Metric[];
   tags: string[];
   href: string;
   demoUrl: string;
@@ -26,161 +32,143 @@ interface PortfolioGridProps {
 }
 
 export function PortfolioGrid({ projects, isArabic }: PortfolioGridProps) {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    show: { opacity: 1, y: 0, scale: 1 },
-  };
-
   return (
-    <section className="relative z-10 pt-8 pb-16 px-4">
-      <div className="container mx-auto max-w-7xl">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-8"
-        >
-          {projects.map((project, index) => {
-            // Special case: Last project (Zero2AI website) spans full width
-            const isLastProject = index === projects.length - 1;
-            
-            // Masonry pattern repeating every 6 cards:
-            // Row 1: [Wide Left (6 cols)] [Regular Right (4 cols)] = 60% / 40%
-            // Row 2: [Equal (5 cols)] [Equal (5 cols)] = 50% / 50%
-            // Row 3: [Regular Left (4 cols)] [Wide Right (6 cols)] = 40% / 60%
-            const position = index % 6;
-            let cardClass = "";
-            
-            if (isLastProject) {
-              // Full width for last project (100%)
-              cardClass = "md:col-span-2 lg:col-span-10";
-            } else if (position === 0) {
-              // Wide left (row 1) - 60%
-              cardClass = "md:col-span-2 lg:col-span-6";
-            } else if (position === 1) {
-              // Regular right (row 1) - 40%
-              cardClass = "md:col-span-2 lg:col-span-4";
-            } else if (position === 2 || position === 3) {
-              // Equal cards (row 2) - 50% each
-              cardClass = "md:col-span-1 lg:col-span-5";
-            } else if (position === 4) {
-              // Regular left (row 3) - 40%
-              cardClass = "md:col-span-2 lg:col-span-4";
-            } else if (position === 5) {
-              // Wide right (row 3) - 60%
-              cardClass = "md:col-span-2 lg:col-span-6";
-            }
+    <section className="relative z-10 pb-20 px-4">
+      <div className="container mx-auto max-w-5xl space-y-6">
 
-            return (
-              <motion.div key={project.id} variants={item} className={cardClass}>
-                  <Card className="h-full relative overflow-hidden border-2 border-primary/30 hover:border-primary/60 bg-card transition-all duration-300 hover:shadow-xl hover:shadow-primary/30 flex flex-col">
-                    <CardHeader className="relative z-10 space-y-4">
-                      <div className="flex items-start justify-between gap-2">
-                        <Badge className="bg-primary/20 text-primary border-primary/40 hover:bg-primary/30 font-bold text-xs px-3 py-1">
-                          {isArabic ? project.badge.ar : project.badge.en}
-                        </Badge>
+        {projects.map((project, i) => {
+          const color = ACCENT_COLORS[i % ACCENT_COLORS.length];
+          const primaryMetric = project.metrics?.[0];
+
+          return (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: i * 0.1 }}
+            >
+              <div
+                className="relative rounded-2xl overflow-hidden border bg-card/60 backdrop-blur-sm hover:bg-card/80 transition-all duration-300 hover:-translate-y-0.5 group"
+                style={{ borderColor: color.border, boxShadow: `0 0 0 0 ${color.glow}` }}
+                onMouseEnter={e => (e.currentTarget.style.boxShadow = `0 8px 40px ${color.glow}`)}
+                onMouseLeave={e => (e.currentTarget.style.boxShadow = `0 0 0 0 ${color.glow}`)}
+              >
+                <div className="flex flex-col md:flex-row">
+
+                  {/* Left — stat panel */}
+                  <div
+                    className="md:w-52 flex-shrink-0 flex flex-col items-center justify-center p-8 md:p-10 border-b md:border-b-0 md:border-r"
+                    style={{ borderColor: color.border, background: `linear-gradient(135deg, ${color.glow} 0%, transparent 100%)` }}
+                  >
+                    <div
+                      className="text-4xl md:text-5xl font-black mb-1 leading-none"
+                      style={{ color: color.text, textShadow: `0 0 20px ${color.text}` }}
+                    >
+                      {primaryMetric?.value ?? "✓"}
+                    </div>
+                    <div className="text-xs font-mono uppercase tracking-widest text-center mt-1" style={{ color: color.text, opacity: 0.6 }}>
+                      {primaryMetric?.label ?? "Live"}
+                    </div>
+                  </div>
+
+                  {/* Right — content */}
+                  <div className="flex-1 p-7 flex flex-col gap-4">
+                    {/* Badge + number */}
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="text-xs font-mono px-3 py-1 rounded-full border"
+                        style={{ color: color.text, borderColor: color.border, background: color.glow }}
+                      >
+                        {isArabic ? project.badge.ar : project.badge.en}
+                      </span>
+                      <span className="text-xs text-muted-foreground font-mono">#{String(i + 1).padStart(2, "0")}</span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-black text-foreground group-hover:text-primary transition-colors duration-300 leading-snug">
+                      {isArabic ? project.title.ar : project.title.en}
+                    </h3>
+
+                    {/* Summary — first sentence only */}
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                      {(isArabic ? project.summary.ar : project.summary.en).split('.')[0] + '.'}
+                    </p>
+
+                    {/* Secondary metrics row */}
+                    {project.metrics && project.metrics.length > 1 && (
+                      <div className="flex flex-wrap gap-4">
+                        {project.metrics.slice(1).map(m => (
+                          <div key={m.label} className="flex items-center gap-1.5">
+                            <span className="text-sm font-black" style={{ color: color.text }}>{m.value}</span>
+                            <span className="text-xs text-muted-foreground">{m.label}</span>
+                          </div>
+                        ))}
                       </div>
-                      
-                      <CardTitle className="text-2xl font-bold leading-tight">
-                        {isArabic ? project.title.ar : project.title.en}
-                      </CardTitle>
-                    </CardHeader>
+                    )}
 
-                    <CardContent className="relative z-10 flex-1 flex flex-col pb-4">
-                      <div className="space-y-4 flex-grow">
-                        <p className="text-muted-foreground leading-relaxed text-base">
-                          {isArabic ? project.summary.ar : project.summary.en}
-                        </p>
-
-                        {/* Metric highlight */}
-                        <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                          <div className="w-1 h-4 bg-primary rounded-full" />
-                          <span>{isArabic ? project.metric.ar : project.metric.en}</span>
-                        </div>
-
-                        {/* Tech stack */}
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.slice(0, 4).map((tag) => (
-                            <Badge
-                              key={tag}
-                              variant="outline"
-                              className="text-xs border-primary/40 text-muted-foreground hover:border-primary hover:text-primary transition-colors"
-                            >
-                              {tag}
-                            </Badge>
-                          ))}
-                          {project.tags.length > 4 && (
-                            <Badge
-                              variant="outline"
-                              className="text-xs border-primary/40 text-muted-foreground"
-                            >
-                              +{project.tags.length - 4}
-                            </Badge>
-                          )}
-                        </div>
+                    {/* Tags + CTA row */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mt-auto pt-2 border-t border-white/5">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.filter(Boolean).slice(0, 5).map(tag => (
+                          <span
+                            key={tag}
+                            className="text-xs px-2 py-0.5 rounded border border-white/10 text-muted-foreground"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-
-                      {/* Action buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-4">
-                        <Button asChild variant="outline" className="flex-1 group">
-                          <Link href={project.href}>
-                            {isArabic ? "استكشف المشروع" : "Explore Project"}
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                          </Link>
-                        </Button>
-                        <Button asChild className="flex-1">
-                          <Link href="/book">
-                            {isArabic ? "احصل على هذا المشروع" : "Get This Project"}
-                          </Link>
-                        </Button>
+                      <div className="flex items-center gap-3">
+                        <Link
+                          href={`/book`}
+                          className="flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-lg transition-all hover:scale-105"
+                          style={{ background: color.glow, color: color.text, border: `1px solid ${color.border}` }}
+                        >
+                          <Zap className="w-3 h-3" />
+                          {isArabic ? "احصل على هذا" : "Get This"}
+                        </Link>
+                        <Link
+                          href={project.href}
+                          className="flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {isArabic ? "التفاصيل" : "Details"}
+                          <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
                       </div>
-                    </CardContent>
+                    </div>
+                  </div>
+                </div>
 
-                    {/* Bottom glow */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-                  </Card>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                {/* bottom glow line */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: `linear-gradient(to right, transparent, ${color.text}, transparent)` }}
+                />
+              </div>
+            </motion.div>
+          );
+        })}
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 text-center"
+          transition={{ delay: 0.4 }}
+          className="text-center pt-8"
         >
-          <div className="inline-block p-8 rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20">
-            <h3 className="text-2xl font-bold mb-3">
-              {isArabic ? "هل لديك مشروع في ذهنك؟" : "Have a project in mind?"}
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              {isArabic
-                ? "دعنا نحول فكرتك إلى أتمتة عاملة"
-                : "Let's turn your idea into working automation"}
-            </p>
-            <Link
-              href="/book"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all font-semibold shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              {isArabic ? "احجز مكالمة مجانية" : "Book a Free Call"}
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <p className="text-muted-foreground text-sm mb-5">
+            {isArabic ? "لديك مشروع مشابه؟" : "Have a similar project in mind?"}
+          </p>
+          <Link
+            href="/book"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-primary text-background font-black text-base hover:bg-primary/90 transition-all hover:scale-105 shadow-xl shadow-primary/30"
+          >
+            {isArabic ? "احجز مكالمة مجانية" : "Book a Free Audit"}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
+
       </div>
     </section>
   );
 }
-
