@@ -144,6 +144,21 @@ export function Hero() {
             </span>
           </motion.div>
 
+          {/* Live Proof stat */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.1, duration: 0.8 }}
+            className="flex items-center gap-2 text-xs text-muted-foreground/70 font-mono mt-2"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
+            <span>
+              {isArabic
+                ? "2 طلب تم تنفيذه تلقائياً هذا الأسبوع — صفر عمل يدوي"
+                : "2 orders auto-fulfilled this week — zero manual work"}
+            </span>
+          </motion.div>
+
           {/* SEO Keywords - Screen reader accessible */}
           <span className="sr-only">
             AI automation UAE, GCC automation, n8n agency, MCP agents, AI automation agency Dubai, 
