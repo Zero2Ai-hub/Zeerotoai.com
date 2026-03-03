@@ -14,7 +14,7 @@ import { ServicesPreview } from "@/components/sections/services-preview";
 import { WhyUs } from "@/components/sections/why-us";
 import { CaseStudy } from "@/components/sections/case-study";
 import { TechStack } from "@/components/sections/tech-stack";
-import { PortfolioPreview } from "@/components/sections/portfolio-preview";
+
 import { CtaSection } from "@/components/sections/cta-section";
 import { CircuitDivider } from "@/components/circuit-divider";
 import { TrustedBy } from "@/components/sections/trusted-by";
@@ -37,9 +37,6 @@ export default function HomePage() {
         <CaseStudy />
         <CircuitDivider />
         <TechStack />
-        <CircuitDivider />
-        <CircuitDivider />
-        <PortfolioPreview />
         <CircuitDivider />
         <CtaSection />
       </main>
