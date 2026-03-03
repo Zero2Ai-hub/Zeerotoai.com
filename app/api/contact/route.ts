@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
         // 1. Send notification to your team
         await resend.emails.send({
           from: "notifications@updates.zeerotoai.com", // Your verified Resend domain
-          to: process.env.NOTIFICATION_EMAIL || "hello@zeerotoai.com", // Your team email
+          to: process.env.NOTIFICATION_EMAIL || "founder@zeerotoai.com",
           replyTo: validatedData.email,
           subject: `🔔 New Contact Form Submission from ${validatedData.name}`,
           text: `

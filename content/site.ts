@@ -113,6 +113,7 @@ export const site = {
     x: "https://x.com/ZeroToAI_",
     linkedin: "https://www.linkedin.com/in/zero2-ai-644136390/",
     youtube: "https://www.youtube.com/@Zero2Ai_Demos",
+    tiktok: "https://www.tiktok.com/@zeerotoai",
   },
   footer: {
     tagline: {

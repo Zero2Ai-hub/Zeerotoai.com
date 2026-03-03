@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
 import { routing } from '@/lib/routing';
 import { ThemeProvider } from '@/components/theme-provider';
 import { SideMenu } from '@/components/side-menu';
@@ -11,6 +12,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { inter, ibmPlexArabic } from '@/lib/fonts';
 import { site } from '@/content/site';
 import '../globals.css';
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 type Props = {
   children: React.ReactNode;
@@ -180,7 +183,8 @@ export default async function LocaleLayout({
     "sameAs": [
       site.socials.x,
       site.socials.linkedin,
-      site.socials.youtube
+      site.socials.youtube,
+      site.socials.tiktok,
     ],
     "areaServed": "Worldwide",
     "knowsAbout": [
@@ -223,6 +227,24 @@ export default async function LocaleLayout({
         {/* DNS Prefetch for faster resource loading (GLOBAL) */}
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+
+        {/* Google Analytics 4 — activates once NEXT_PUBLIC_GA_ID is set in Vercel */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
         
         {/* Structured Data for SEO */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
