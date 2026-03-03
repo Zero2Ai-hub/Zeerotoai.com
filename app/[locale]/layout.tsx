@@ -72,9 +72,9 @@ export const metadata: Metadata = {
     siteName: site.brand.name,
     images: [
       {
-        url: "/brand-banner.png",
+        url: "/og-image.jpg",
         width: 1200,
-        height: 630,
+        height: 628,
         alt: site.brand.name,
       },
     ],
@@ -84,8 +84,8 @@ export const metadata: Metadata = {
     title: `${site.brand.name} - AI Systems That Replace Your SaaS Stack — Built for UAE & GCC Businesses.`,
     description:
       "We build governed AI systems for UAE & GCC businesses that replace expensive SaaS stacks — owned by you, live in weeks.",
-    images: ["/brand-banner.png"],
-      creator: "@zero2ai",
+    images: ["/og-image.jpg"],
+    creator: "@ZeroToAI_",
   },
   robots: {
     index: true,
