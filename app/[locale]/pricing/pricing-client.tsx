@@ -2,267 +2,610 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { CheckCircle2, Zap, Rocket, Building2, ArrowRight, Clock, Shield, Package } from "lucide-react";
+import {
+  Zap,
+  Rocket,
+  Bot,
+  Layers,
+  Building2,
+  Wrench,
+  CheckCircle2,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
 
 interface PricingClientProps {
   isArabic: boolean;
 }
 
-const packages = [
+const tiers = [
   {
+    id: "first-automation",
     icon: Zap,
-    name: { en: "Starter Ops", ar: "العمليات الأساسية" },
-    price: { en: "From 3,000 AED", ar: "من 3,000 درهم" },
+    badge: null,
+    name: { en: "First Automation", ar: "أول أتمتة" },
+    price: { en: "2,500 AED", ar: "2,500 درهم" },
+    priceNote: { en: "one-time", ar: "دفعة واحدة" },
     timeline: { en: "Live in 7 days", ar: "تشغيل في 7 أيام" },
-    description: { en: "One core automation. Pick the operation costing you the most time.", ar: "أتمتة أساسية واحدة. اختر العملية التي تستهلك وقتك أكثر." },
+    description: {
+      en: "Pick one operation that's costing you the most time. We automate it, hand it over, you own it.",
+      ar: "اختر عملية واحدة تستهلك وقتك أكثر. نؤتمتها، نسلمها، وتصبح ملكك.",
+    },
     features: {
       en: [
-        "1 automated workflow (your choice)",
-        "Supplier → your store catalog sync OR",
-        "Order fulfillment automation OR",
+        "1 automated workflow — your choice",
+        "Catalog sync (supplier to store)",
+        "Order fulfillment automation",
         "Amazon ads daily optimizer",
+        "WhatsApp support bot",
         "Full handover + 30-min training",
         "You own everything — no monthly fees",
       ],
       ar: [
-        "سير عمل واحد آلي (اختيارك)",
-        "مزامنة your supplier إلى your store أو",
-        "أتمتة تنفيذ الطلبات أو",
+        "سير عمل واحد آلي — اختيارك",
+        "مزامنة كتالوج (من المورد إلى المتجر)",
+        "أتمتة تنفيذ الطلبات",
         "محسّن إعلانات أمازون اليومي",
+        "بوت دعم واتساب",
         "تسليم كامل + تدريب 30 دقيقة",
         "تملك كل شيء — بدون رسوم شهرية",
       ],
     },
+    accentColor: "border-primary/30",
     highlight: false,
-    cta: { en: "Start With One Automation →", ar: "ابدأ بأتمتة واحدة →" },
+    cta: { en: "Start With One Automation", ar: "ابدأ بأتمتة واحدة" },
   },
   {
+    id: "ops-stack",
     icon: Rocket,
-    name: { en: "Full Ops Stack", ar: "منظومة العمليات الكاملة" },
-    price: { en: "From 8,000 AED", ar: "من 8,000 درهم" },
-    timeline: { en: "Live in 2–3 weeks", ar: "تشغيل في 2-3 أسابيع" },
-    description: { en: "Your entire e-commerce operation automated end-to-end. The Tech1Mart package.", ar: "عملياتك التجارية الإلكترونية كاملاً من الألف إلى الياء. حزمة Tech1Mart." },
+    badge: null,
+    name: { en: "Ops Stack", ar: "منظومة العمليات" },
+    price: { en: "8,500 AED", ar: "8,500 درهم" },
+    priceNote: { en: "one-time", ar: "دفعة واحدة" },
+    timeline: { en: "Live in 14 days", ar: "تشغيل في 14 يوم" },
+    description: {
+      en: "Your entire store operation automated end-to-end. The exact system running Tech1Mart today.",
+      ar: "عمليات متجرك كاملة من الألف إلى الياء. النظام الدقيق الذي يشغّل Tech1Mart اليوم.",
+    },
     features: {
       en: [
-        "Supplier → store catalog auto-sync",
+        "CJ Dropshipping to WooCommerce/Amazon catalog sync",
         "Order fulfillment — zero manual processing",
-        "Amazon + daily ads optimizer",
+        "Amazon ads optimizer — daily bids + keywords",
         "TikTok AI video pipeline ($0.25/video)",
-        "Daily ops report → Telegram",
+        "Daily ops report to Telegram",
         "24/7 WhatsApp support agent (Arabic + English)",
         "Full handover + training",
         "You own everything — no monthly fees",
       ],
       ar: [
-        "مزامنة Dropshipping suppliers إلى your store",
+        "مزامنة CJ Dropshipping إلى WooCommerce/Amazon",
         "تنفيذ الطلبات — صفر معالجة يدوية",
-        "Amazon + محسّن إعلانات يومي",
+        "محسّن إعلانات أمازون — عروض يومية + كلمات مفتاحية",
         "خط إنتاج فيديو TikTok بالذكاء الاصطناعي (0.25$)",
-        "تقرير عمليات يومي → Telegram",
-        "وكيل دعم WhatsApp 24/7 (عربي + إنجليزي)",
+        "تقرير عمليات يومي على تيليغرام",
+        "وكيل دعم واتساب 24/7 (عربي + إنجليزي)",
         "تسليم كامل + تدريب",
         "تملك كل شيء — بدون رسوم شهرية",
       ],
     },
-    highlight: true,
-    cta: { en: "Automate My Full Store →", ar: "أتمتة متجري الكامل →" },
-    badge: { en: "Most Popular", ar: "الأكثر طلباً" },
+    roiNote: {
+      en: "40 hrs/week automated. At 50 AED/hr = 8,000 AED/month saved. Pays for itself in 32 days.",
+      ar: "40 ساعة أسبوعياً تلقائية. بمعدل 50 درهم/ساعة = 8,000 درهم/شهر وفر. يسدد تكلفته في 32 يوم.",
+    },
+    accentColor: "border-primary/40",
+    highlight: false,
+    cta: { en: "Automate My Store", ar: "أتمت متجري" },
   },
   {
-    icon: Building2,
-    name: { en: "Enterprise", ar: "المؤسسات" },
-    price: { en: "Custom", ar: "مخصص" },
-    timeline: { en: "Scoped together", ar: "نحدده معاً" },
-    description: { en: "Multi-store, multi-platform, or complex supply chain? Let's scope it.", ar: "متعدد المتاجر أو المنصات أو سلسلة توريد معقدة؟ دعنا نحدد النطاق." },
+    id: "agent-commerce",
+    icon: Bot,
+    badge: { en: "NEW — First in UAE/GCC", ar: "جديد — الأول في الإمارات/الخليج" },
+    name: { en: "Agent Commerce Ready", ar: "جاهز للتجارة الوكيلية" },
+    price: { en: "3,500 AED", ar: "3,500 درهم" },
+    priceNote: { en: "one-time", ar: "دفعة واحدة" },
+    timeline: { en: "Live in 7 days", ar: "تشغيل في 7 أيام" },
+    description: {
+      en: "AI agents are already browsing and buying. Configure your store to be visible — and purchasable — by them before your competitors do.",
+      ar: "وكلاء الذكاء الاصطناعي يتصفحون ويشترون الآن. اجعل متجرك مرئياً وقابلاً للشراء منهم قبل منافسيك.",
+    },
     features: {
       en: [
-        "Everything in Full Ops Stack",
-        "Multiple stores / platforms",
-        "Custom supply chain integrations",
-        "Dedicated build + support",
-        "SLA-backed deployment",
-        "Ongoing ops management (optional)",
+        "Structured metadata + JSON-LD schema for AI discovery",
+        "Agent-callable product API (x402 protocol)",
+        "MoonPay + Coinbase Commerce USDC checkout",
+        "Base network onchain commerce integration",
+        "AI-readable catalog format (MCP-compatible)",
+        "Test purchase walkthrough with live agent",
+        "You own everything — no monthly fees",
       ],
       ar: [
-        "كل شيء في منظومة العمليات الكاملة",
-        "متاجر / منصات متعددة",
-        "تكاملات سلسلة توريد مخصصة",
-        "بناء ودعم مخصصان",
-        "نشر مدعوم باتفاقية مستوى الخدمة",
-        "إدارة عمليات مستمرة (اختياري)",
+        "بيانات وصفية منظمة + مخطط JSON-LD لاكتشاف الذكاء الاصطناعي",
+        "API منتج قابل للاستدعاء (بروتوكول x402)",
+        "MoonPay + Coinbase Commerce دفع USDC",
+        "تكامل تجارة Base network على السلسلة",
+        "تنسيق كتالوج قابل للقراءة بالذكاء الاصطناعي",
+        "عملية شراء تجريبية مع وكيل حي",
+        "تملك كل شيء — بدون رسوم شهرية",
       ],
     },
-    highlight: false,
-    cta: { en: "Let's Talk →", ar: "تواصل معنا →" },
+    accentColor: "border-cyan-500/50",
+    highlight: true,
+    cta: { en: "Make My Store Agent-Ready", ar: "اجعل متجري جاهزاً للوكلاء" },
   },
-];
-
-const guarantees = [
-  { icon: Clock, en: "Live in 2 weeks or we work for free until it is.", ar: "تشغيل في أسبوعين أو نعمل مجاناً حتى يعمل." },
-  { icon: Shield, en: "You own 100% of what we build. No vendor lock-in, ever.", ar: "تملك 100% مما نبنيه. بدون قيود بائع أبداً." },
-  { icon: Package, en: "If it breaks, we fix it. No finger-pointing, no extra charge.", ar: "إذا تعطل، نصلحه. بدون تهرب، بدون رسوم إضافية." },
+  {
+    id: "full-stack",
+    icon: Layers,
+    badge: { en: "Best Value", ar: "أفضل قيمة" },
+    name: { en: "Full Stack", ar: "المنظومة الكاملة" },
+    price: { en: "11,500 AED", ar: "11,500 درهم" },
+    priceNote: { en: "one-time — saves 500 AED", ar: "دفعة واحدة — توفير 500 درهم" },
+    timeline: { en: "Live in 3 weeks", ar: "تشغيل في 3 أسابيع" },
+    description: {
+      en: "Ops Stack plus Agent Commerce Ready. Full operations automated — and positioned for the AI commerce era.",
+      ar: "Ops Stack بالإضافة إلى Agent Commerce Ready. العمليات كاملة مؤتمتة، ومُهيأة لعصر التجارة بالذكاء الاصطناعي.",
+    },
+    features: {
+      en: [
+        "Everything in Ops Stack",
+        "Everything in Agent Commerce Ready",
+        "Priority build — dedicated 3-week sprint",
+        "Combined handover + full team training",
+        "You own everything — no monthly fees",
+      ],
+      ar: [
+        "كل ما في Ops Stack",
+        "كل ما في Agent Commerce Ready",
+        "بناء أولوي — سبرينت مخصص 3 أسابيع",
+        "تسليم مشترك + تدريب كامل للفريق",
+        "تملك كل شيء — بدون رسوم شهرية",
+      ],
+    },
+    accentColor: "border-purple-500/50",
+    highlight: true,
+    cta: { en: "Get The Full Stack", ar: "احصل على المنظومة الكاملة" },
+  },
+  {
+    id: "enterprise",
+    icon: Building2,
+    badge: null,
+    name: { en: "Enterprise", ar: "المؤسسات" },
+    price: { en: "Custom", ar: "مخصص" },
+    priceNote: { en: "scoped per project", ar: "محدد حسب المشروع" },
+    timeline: { en: "Scoped together", ar: "يُحدد معاً" },
+    description: {
+      en: "Multi-store, complex supply chains, custom AI agents, SLA-backed support. Let's scope it together.",
+      ar: "متاجر متعددة، سلاسل توريد معقدة، وكلاء ذكاء اصطناعي مخصصة، دعم مضمون بـ SLA.",
+    },
+    features: {
+      en: [
+        "Multi-store automation",
+        "Custom AI agent development",
+        "Complex supply chain integration",
+        "SLA-backed support contract",
+        "Dedicated build team",
+        "Quarterly optimization reviews",
+      ],
+      ar: [
+        "أتمتة متاجر متعددة",
+        "تطوير وكلاء ذكاء اصطناعي مخصصة",
+        "تكامل سلاسل توريد معقدة",
+        "عقد دعم مضمون بـ SLA",
+        "فريق بناء مخصص",
+        "مراجعات تحسين ربع سنوية",
+      ],
+    },
+    accentColor: "border-primary/20",
+    highlight: false,
+    cta: { en: "Book a Scope Call", ar: "احجز مكالمة تحديد نطاق" },
+  },
 ];
 
 export function PricingClient({ isArabic }: PricingClientProps) {
   return (
-    <div className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-        <div className="absolute top-40 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-1/4 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
-      </div>
+    <section className="relative z-10 pt-28 pb-24 px-4">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="max-w-3xl mx-auto text-center mb-16"
+      >
+        <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
+          {isArabic ? "الأسعار" : "PRICING"}
+        </p>
+        <h1 className="text-3xl md:text-5xl font-black mb-5 leading-tight">
+          {isArabic
+            ? "تملك النظام. لا اشتراكات. لا قيود."
+            : "Own The System. No Subscriptions. No Lock-in."}
+        </h1>
+        <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          {isArabic
+            ? "ندفع مرة واحدة، تملك كل شيء. معظم عملائنا يسترجعون التكلفة خلال أول شهر."
+            : "Pay once. Own everything. Most clients recover the cost within the first month."}
+        </p>
+      </motion.div>
 
-      {/* Hero */}
-      <section className="relative z-10 pt-32 pb-16 px-4 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-block px-6 py-2 rounded-full bg-primary/20 text-primary border border-primary/30 text-sm font-bold mb-6">
-            {isArabic ? "حزم الأتمتة" : "🛒 Automation Packages"}
-          </span>
-          <h1 className="text-5xl md:text-7xl font-black mb-6 text-foreground">
-            {isArabic ? "استثمر في النتائج،" : "Invest in Results,"}
-            <br />
-            <span style={{ color: "rgb(0,217,255)" }}>
-              {isArabic ? "لا في الاشتراكات" : "Not Subscriptions"}
-            </span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
-            {isArabic
-              ? "نبني. نسلّم. تملك. بدون رسوم شهرية. بدون استشارات. فقط عمليات تعمل."
-              : "We build it. You own it. No monthly SaaS fees. No consulting retainers. Just operations that run."}
-          </p>
-          <p className="text-sm text-muted-foreground/60">
-            {isArabic ? "جميع الأسعار بالدرهم الإماراتي · يشمل التدريب والتسليم" : "All prices in AED · Includes handover & training · UAE/GCC focused"}
-          </p>
-        </motion.div>
-      </section>
+      {/* Tiers */}
+      <div className="max-w-6xl mx-auto space-y-6">
+        {/* Agent Commerce — Hero Card (full width) */}
+        {(() => {
+          const tier = tiers.find((t) => t.id === "agent-commerce")!;
+          const Icon = tier.icon;
+          return (
+            <motion.div
+              key={tier.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className={`relative rounded-2xl border-2 ${tier.accentColor} bg-card/60 p-8 overflow-hidden`}
+            >
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
 
-      {/* Packages */}
-      <section className="relative z-10 px-4 pb-24">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {packages.map((pkg, idx) => {
-              const Icon = pkg.icon;
+              <div className="relative flex flex-col md:flex-row md:items-start gap-8">
+                {/* Left: info */}
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-cyan-500/15 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    {tier.badge && (
+                      <span className="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-400 text-xs font-bold tracking-wide border border-cyan-500/30">
+                        {isArabic ? tier.badge.ar : tier.badge.en}
+                      </span>
+                    )}
+                  </div>
+
+                  <h2 className="text-2xl font-black mb-2">
+                    {isArabic ? tier.name.ar : tier.name.en}
+                  </h2>
+                  <p className="text-muted-foreground mb-5 max-w-lg">
+                    {isArabic ? tier.description.ar : tier.description.en}
+                  </p>
+
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {(isArabic ? tier.features.ar : tier.features.en).map((f, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Right: price + CTA */}
+                <div className="flex flex-col items-start md:items-end gap-4 min-w-[200px]">
+                  <div className="md:text-right">
+                    <div className="text-3xl font-black text-cyan-400">
+                      {isArabic ? tier.price.ar : tier.price.en}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {isArabic ? tier.priceNote.ar : tier.priceNote.en}
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {isArabic ? tier.timeline.ar : tier.timeline.en}
+                    </div>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500/15 border border-cyan-500/40 text-cyan-400 text-sm font-bold hover:bg-cyan-500/25 transition-colors whitespace-nowrap"
+                  >
+                    {isArabic ? tier.cta.ar : tier.cta.en}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })()}
+
+        {/* 2-col grid: First Automation + Ops Stack */}
+        <div className="flex flex-col md:flex-row gap-6">
+          {tiers
+            .filter((t) => t.id === "first-automation" || t.id === "ops-stack")
+            .map((tier, idx) => {
+              const Icon = tier.icon;
               return (
                 <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.15, duration: 0.5 }}
-                  className="relative flex flex-col"
+                  key={tier.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 + idx * 0.05 }}
+                  className={`flex-1 relative rounded-2xl border ${tier.accentColor} bg-card/60 p-6 flex flex-col`}
                 >
-                  {pkg.badge && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <span className="px-4 py-1 rounded-full text-xs font-black text-black" style={{ background: "rgb(0,217,255)" }}>
-                        {isArabic ? pkg.badge.ar : pkg.badge.en}
-                      </span>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <Icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-black text-base">
+                        {isArabic ? tier.name.ar : tier.name.en}
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        {isArabic ? tier.timeline.ar : tier.timeline.en}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <span className="text-2xl font-black text-foreground">
+                      {isArabic ? tier.price.ar : tier.price.en}
+                    </span>
+                    <span className="text-sm text-muted-foreground ml-2">
+                      {isArabic ? tier.priceNote.ar : tier.priceNote.en}
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {isArabic ? tier.description.ar : tier.description.en}
+                  </p>
+
+                  {/* ROI note for Ops Stack */}
+                  {"roiNote" in tier && tier.roiNote && (
+                    <div className="mb-4 p-3 rounded-lg bg-primary/5 border border-primary/15">
+                      <p className="text-xs text-primary font-medium">
+                        {isArabic ? tier.roiNote.ar : tier.roiNote.en}
+                      </p>
                     </div>
                   )}
-                  <div
-                    className="flex flex-col h-full rounded-2xl p-8 border transition-all duration-300"
-                    style={{
-                      background: pkg.highlight ? "linear-gradient(135deg, rgba(0,217,255,0.08), rgba(0,217,255,0.03))" : "rgba(255,255,255,0.02)",
-                      borderColor: pkg.highlight ? "rgba(0,217,255,0.4)" : "rgba(255,255,255,0.08)",
-                      boxShadow: pkg.highlight ? "0 0 40px rgba(0,217,255,0.1)" : "none",
-                    }}
+
+                  <ul className="space-y-2 mb-6 flex-1">
+                    {(isArabic ? tier.features.ar : tier.features.en).map((f, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-primary/30 text-sm font-bold hover:bg-primary/10 transition-colors"
                   >
-                    {/* Header */}
-                    <div className="mb-6">
-                      <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(0,217,255,0.15)" }}>
-                        <Icon className="w-6 h-6" style={{ color: "rgb(0,217,255)" }} />
-                      </div>
-                      <h3 className="text-2xl font-black text-foreground mb-1">{isArabic ? pkg.name.ar : pkg.name.en}</h3>
-                      <div className="text-3xl font-black mb-1" style={{ color: "rgb(0,217,255)" }}>{isArabic ? pkg.price.ar : pkg.price.en}</div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="w-3 h-3" />
-                        {isArabic ? pkg.timeline.ar : pkg.timeline.en}
-                      </div>
-                    </div>
-
-                    <p className="text-muted-foreground text-sm mb-6">{isArabic ? pkg.description.ar : pkg.description.en}</p>
-
-                    {/* Features */}
-                    <ul className="space-y-3 mb-8 flex-1">
-                      {(isArabic ? pkg.features.ar : pkg.features.en).map((f, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm">
-                          <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0" style={{ color: "rgb(0,217,255)" }} />
-                          <span className="text-foreground/80">{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* CTA */}
-                    <Link
-                      href="/book"
-                      className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-sm transition-all hover:scale-105"
-                      style={pkg.highlight
-                        ? { background: "rgb(0,217,255)", color: "#0a0a0f" }
-                        : { background: "rgba(0,217,255,0.1)", color: "rgb(0,217,255)", border: "1px solid rgba(0,217,255,0.3)" }
-                      }
-                    >
-                      {isArabic ? pkg.cta.ar : pkg.cta.en}
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
+                    {isArabic ? tier.cta.ar : tier.cta.en}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </motion.div>
               );
             })}
-          </div>
         </div>
-      </section>
 
-      {/* Guarantees */}
-      <section className="relative z-10 px-4 pb-24">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="rounded-2xl p-10 text-center"
-            style={{ background: "rgba(0,217,255,0.04)", border: "1px solid rgba(0,217,255,0.15)" }}
-          >
-            <h2 className="text-3xl font-black mb-2">{isArabic ? "ضماناتنا" : "Our Guarantees"}</h2>
-            <p className="text-muted-foreground mb-10">{isArabic ? "نضع المال حيث الكلام" : "We put our money where our mouth is."}</p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {guarantees.map((g, i) => {
-                const Icon = g.icon;
-                return (
-                  <div key={i} className="flex flex-col items-center gap-3 text-center">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(0,217,255,0.15)" }}>
-                      <Icon className="w-5 h-5" style={{ color: "rgb(0,217,255)" }} />
+        {/* Full Stack — hero card */}
+        {(() => {
+          const tier = tiers.find((t) => t.id === "full-stack")!;
+          const Icon = tier.icon;
+          return (
+            <motion.div
+              key={tier.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className={`relative rounded-2xl border-2 ${tier.accentColor} bg-card/60 p-8 overflow-hidden`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent pointer-events-none" />
+
+              <div className="relative flex flex-col md:flex-row md:items-start gap-8">
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-purple-500/15 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-purple-400" />
                     </div>
-                    <p className="text-sm text-foreground/80">{isArabic ? g.ar : g.en}</p>
+                    {tier.badge && (
+                      <span className="px-3 py-1 rounded-full bg-purple-500/15 text-purple-400 text-xs font-bold tracking-wide border border-purple-500/30">
+                        {isArabic ? tier.badge.ar : tier.badge.en}
+                      </span>
+                    )}
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/40 text-xs text-muted-foreground">
+                      <Sparkles className="w-3 h-3" />
+                      {isArabic ? "يشمل Agent Commerce Ready" : "Includes Agent Commerce Ready"}
+                    </div>
                   </div>
-                );
-              })}
+
+                  <h2 className="text-2xl font-black mb-2">
+                    {isArabic ? tier.name.ar : tier.name.en}
+                  </h2>
+                  <p className="text-muted-foreground mb-5 max-w-lg">
+                    {isArabic ? tier.description.ar : tier.description.en}
+                  </p>
+
+                  <ul className="space-y-2">
+                    {(isArabic ? tier.features.ar : tier.features.en).map((f, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm">
+                        <CheckCircle2 className="w-4 h-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-muted-foreground">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-col items-start md:items-end gap-4 min-w-[200px]">
+                  <div className="md:text-right">
+                    <div className="text-3xl font-black text-purple-400">
+                      {isArabic ? tier.price.ar : tier.price.en}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {isArabic ? tier.priceNote.ar : tier.priceNote.en}
+                    </div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {isArabic ? tier.timeline.ar : tier.timeline.en}
+                    </div>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-purple-500/15 border border-purple-500/40 text-purple-400 text-sm font-bold hover:bg-purple-500/25 transition-colors whitespace-nowrap"
+                  >
+                    {isArabic ? tier.cta.ar : tier.cta.en}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })()}
+
+        {/* Enterprise + Ops Care add-on: 2 col */}
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Enterprise */}
+          {(() => {
+            const tier = tiers.find((t) => t.id === "enterprise")!;
+            const Icon = tier.icon;
+            return (
+              <motion.div
+                key={tier.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.3 }}
+                className={`flex-1 relative rounded-2xl border ${tier.accentColor} bg-card/60 p-6 flex flex-col`}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Icon className="w-4 h-4 text-primary" />
+                  </div>
+                  <div>
+                    <div className="font-black text-base">
+                      {isArabic ? tier.name.ar : tier.name.en}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {isArabic ? tier.timeline.ar : tier.timeline.en}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mb-3">
+                  <span className="text-2xl font-black">
+                    {isArabic ? tier.price.ar : tier.price.en}
+                  </span>
+                  <span className="text-sm text-muted-foreground ml-2">
+                    {isArabic ? tier.priceNote.ar : tier.priceNote.en}
+                  </span>
+                </div>
+
+                <p className="text-sm text-muted-foreground mb-4">
+                  {isArabic ? tier.description.ar : tier.description.en}
+                </p>
+
+                <ul className="space-y-2 mb-6 flex-1">
+                  {(isArabic ? tier.features.ar : tier.features.en).map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-primary/30 text-sm font-bold hover:bg-primary/10 transition-colors"
+                >
+                  {isArabic ? tier.cta.ar : tier.cta.en}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            );
+          })()}
+
+          {/* Ops Care add-on */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
+            className="flex-1 relative rounded-2xl border border-green-500/30 bg-card/60 p-6 flex flex-col"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/3 via-transparent to-transparent pointer-events-none rounded-2xl" />
+            <div className="relative flex flex-col h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-9 h-9 rounded-xl bg-green-500/10 flex items-center justify-center">
+                  <Wrench className="w-4 h-4 text-green-400" />
+                </div>
+                <div>
+                  <div className="font-black text-base">
+                    {isArabic ? "Ops Care" : "Ops Care"}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {isArabic ? "إضافة اختيارية" : "Optional add-on"}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <span className="text-2xl font-black text-green-400">
+                  {isArabic ? "750 درهم/شهر" : "750 AED/mo"}
+                </span>
+              </div>
+
+              <p className="text-sm text-muted-foreground mb-4">
+                {isArabic
+                  ? "أنظمتك تعمل وحدها. Ops Care يبقيها حادة. إضافة لأي باقة."
+                  : "Your systems run themselves. Ops Care keeps them sharp. Add to any tier."}
+              </p>
+
+              <ul className="space-y-2 mb-6 flex-1">
+                {[
+                  isArabic ? "تحسين العطاءات والكلمات المفتاحية شهرياً" : "Monthly bid + keyword optimization",
+                  isArabic ? "فحص خط منتجات جديدة" : "New product pipeline check",
+                  isArabic ? "تحديثات المحتوى" : "Content updates",
+                  isArabic ? "دعم ذو أولوية" : "Priority support",
+                  isArabic ? "مراقبة صحة النظام" : "System health monitoring",
+                ].map((f, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl border border-green-500/30 text-green-400 text-sm font-bold hover:bg-green-500/10 transition-colors"
+              >
+                {isArabic ? "أضف Ops Care" : "Add Ops Care"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
 
-      {/* Final CTA */}
-      <section className="relative z-10 px-4 pb-32 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
-            {isArabic ? "غير متأكد من أين تبدأ؟" : "Not Sure Where to Start?"}
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
-            {isArabic
-              ? "احجز تدقيقاً مجانياً. نرسم لك بالضبط ما يجب أتمتته أولاً."
-              : "Book a free audit. We'll map exactly what to automate first — no commitment."}
-          </p>
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-lg transition-all hover:scale-105"
-            style={{ background: "rgb(0,217,255)", color: "#0a0a0f", boxShadow: "0 0 40px rgba(0,217,255,0.4)" }}
-          >
-            {isArabic ? "احجز التدقيق المجاني" : "Book Free E-commerce Audit"}
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <p className="text-sm text-muted-foreground mt-4">{isArabic ? "30 دقيقة · بدون التزام · مخصص لمتجرك" : "30 minutes · No commitment · UAE/GCC focused"}</p>
-        </motion.div>
-      </section>
-    </div>
+      {/* Bottom trust bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
+        className="max-w-3xl mx-auto mt-16 text-center"
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground mb-8">
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-primary" />
+            {isArabic ? "تملك كل شيء" : "You own everything"}
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-primary" />
+            {isArabic ? "بدون رسوم شهرية" : "No monthly fees"}
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-primary" />
+            {isArabic ? "بدون عقود" : "No contracts"}
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-primary" />
+            {isArabic ? "تشغيل في 14 يوم" : "Live in 14 days"}
+          </span>
+        </div>
+
+        <p className="text-muted-foreground text-sm mb-5">
+          {isArabic
+            ? "غير متأكد من أين تبدأ؟ احجز مراجعة مجانية لعملياتك."
+            : "Not sure where to start? Book a free ops audit."}
+        </p>
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-colors"
+        >
+          {isArabic ? "احجز مراجعة مجانية" : "Book Free Ops Audit"}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </motion.div>
+    </section>
   );
 }
