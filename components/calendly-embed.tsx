@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 interface CalendlyEmbedProps {
   url: string;
@@ -11,10 +11,17 @@ interface CalendlyEmbedProps {
 }
 
 export function CalendlyEmbed({ url, prefill }: CalendlyEmbedProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    // Load Calendly widget script
+    // Load Calendly stylesheet
+    const existingLink = document.querySelector('link[href*="calendly"]');
+    if (!existingLink) {
+      const link = document.createElement("link");
+      link.href = "https://assets.calendly.com/assets/external/widget.css";
+      link.rel = "stylesheet";
+      document.head.appendChild(link);
+    }
+
+    // Load Calendly widget script (data-url approach — most reliable)
     const existingScript = document.querySelector('script[src*="calendly"]');
     if (!existingScript) {
       const script = document.createElement("script");
@@ -22,34 +29,25 @@ export function CalendlyEmbed({ url, prefill }: CalendlyEmbedProps) {
       script.async = true;
       document.head.appendChild(script);
     }
+  }, []);
 
-    // Init inline widget after script loads
-    const initWidget = () => {
-      if (typeof (window as any).Calendly !== "undefined" && containerRef.current) {
-        (window as any).Calendly.initInlineWidget({
-          url: `${url}?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=00d9ff`,
-          parentElement: containerRef.current,
-          prefill: prefill || {},
-        });
-      }
-    };
+  // Build full URL with query params
+  const params = new URLSearchParams({
+    hide_gdpr_banner: "1",
+    background_color: "0a0f1e",
+    text_color: "ffffff",
+    primary_color: "00d9ff",
+  });
 
-    // If script already loaded
-    if (typeof (window as any).Calendly !== "undefined") {
-      initWidget();
-    } else {
-      const script = document.querySelector('script[src*="calendly"]');
-      if (script) {
-        script.addEventListener("load", initWidget);
-        return () => script.removeEventListener("load", initWidget);
-      }
-    }
-  }, [url]);
+  if (prefill?.name) params.set("name", prefill.name);
+  if (prefill?.email) params.set("email", prefill.email);
+
+  const fullUrl = `${url}?${params.toString()}`;
 
   return (
     <div
-      ref={containerRef}
       className="calendly-inline-widget w-full rounded-xl overflow-hidden"
+      data-url={fullUrl}
       style={{ minWidth: "320px", height: "700px" }}
     />
   );
