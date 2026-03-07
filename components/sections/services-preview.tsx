@@ -5,15 +5,28 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { site } from "@/content/site";
 import * as Icons from "lucide-react";
+import { FileText } from "lucide-react";
+
+const landingPagesCard = {
+  titleEn: "Converting Landing Pages",
+  titleAr: "صفحات هبوط تُحوِّل الزوار",
+  badge1: "FEATURED",
+  badge2: "From AED 1,500",
+  subtitle: "Clinics · Salons · Restaurants · Contractors",
+  descriptionEn: "Your old website is sending customers to your competitors. We build a fast, mobile-first page that actually converts — delivered in 5 days, no monthly fees, Arabic + English.",
+  descriptionAr: "موقعك القديم يُرسل عملاءك إلى منافسيك. نبني صفحة سريعة ومتوافقة مع الجوال تُحوِّل الزوار فعلاً — تسليم في 5 أيام، بدون رسوم شهرية، عربي وإنجليزي.",
+  bulletsEn: ["Delivered in 3–7 days", "Mobile-first + SEO optimized", "Arabic + English bilingual", "WhatsApp + booking integration", "From AED 1,500 — you own it"],
+  bulletsAr: ["تسليم في 3–7 أيام", "أولوية الجوال + محسّن لجوجل", "ثنائي اللغة عربي + إنجليزي", "تكامل واتساب + حجز مواعيد", "من 1,500 درهم — تملكها بالكامل"],
+  href: "/landing-pages",
+  ctaEn: "See Packages & Pricing",
+  ctaAr: "عرض الباقات والأسعار",
+};
 
 export function ServicesPreview() {
   const locale = useLocale();
   const isArabic = locale === "ar";
 
-  const agentCommerce = site.services.find(s => s.key === "agent-commerce-ready")!;
-  const otherServices = site.services.filter(s => s.key !== "agent-commerce-ready");
-
-  const AgentIcon = Icons[agentCommerce.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+  const allServices = site.services;
 
   return (
     <section className="py-16 bg-muted/30 relative overflow-hidden">
@@ -42,7 +55,7 @@ export function ServicesPreview() {
           </p>
         </div>
 
-        {/* Agent Commerce — Featured Hero Card */}
+        {/* Landing Pages — Featured Hero Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,38 +63,38 @@ export function ServicesPreview() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <Link href={`/${locale}/services#agent-commerce-ready`} className="block group">
+          <Link href={`/${locale}${landingPagesCard.href}`} className="block group">
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/60 bg-gradient-to-br from-primary/10 via-card to-primary/5 p-8 md:p-10 hover:border-primary hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300">
-              {/* NEW badge */}
+              {/* Badges */}
               <div className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full bg-primary text-background text-xs font-black tracking-widest uppercase">
-                  {isArabic ? "جديد" : "NEW"}
+                  {landingPagesCard.badge1}
                 </span>
                 <span className="px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-primary text-xs font-bold tracking-wide">
-                  {isArabic ? "الأول في الإمارات" : "First in UAE/GCC"}
+                  {landingPagesCard.badge2}
                 </span>
               </div>
 
               <div className="flex items-start gap-5 mb-5">
                 <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-xl shadow-primary/40 group-hover:scale-110 transition-transform duration-300">
-                  {AgentIcon && <AgentIcon className="h-8 w-8 text-background" />}
+                  <FileText className="h-8 w-8 text-background" />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-black text-white group-hover:text-primary transition-colors duration-300 mb-1">
-                    {isArabic ? agentCommerce.title.ar : agentCommerce.title.en}
+                    {isArabic ? landingPagesCard.titleAr : landingPagesCard.titleEn}
                   </h3>
                   <p className="text-sm text-primary/70 font-mono tracking-wide">
-                    {isArabic ? "MoonPay · Coinbase Commerce · Base · x402 · MCP" : "MoonPay · Coinbase Commerce · Base · x402 · MCP"}
+                    {landingPagesCard.subtitle}
                   </p>
                 </div>
               </div>
 
               <p className="text-base md:text-lg text-muted-foreground/90 group-hover:text-foreground/80 transition-colors mb-6 max-w-3xl leading-relaxed">
-                {isArabic ? agentCommerce.description.ar : agentCommerce.description.en}
+                {isArabic ? landingPagesCard.descriptionAr : landingPagesCard.descriptionEn}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
-                {agentCommerce.bullets?.map((bullet, i) => (
+                {(isArabic ? landingPagesCard.bulletsAr : landingPagesCard.bulletsEn).map((bullet, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm bg-primary/5 border border-primary/20 rounded-lg px-3 py-2">
                     <Icons.CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-foreground/80">{bullet}</span>
@@ -90,7 +103,7 @@ export function ServicesPreview() {
               </div>
 
               <div className="flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all">
-                <span>{isArabic ? "اعرف أكثر" : "Learn more"}</span>
+                <span>{isArabic ? landingPagesCard.ctaAr : landingPagesCard.ctaEn}</span>
                 <Icons.ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
 
@@ -108,7 +121,7 @@ export function ServicesPreview() {
           transition={{ duration: 0.4, delay: 0.1 }}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-10"
         >
-          {otherServices.map((service, idx) => {
+          {allServices.map((service, idx) => {
             const Icon = Icons[service.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
             return (
               <motion.div

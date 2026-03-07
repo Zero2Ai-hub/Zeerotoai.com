@@ -138,8 +138,8 @@ export function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
             <span>
               {isArabic
-                ? "هذا الأسبوع: تم تلقائيًا تنفيذ 2 طلبات — صفر تدخل يدوي"
-                : "This week: 2 orders auto-fulfilled — zero manual work"}
+                ? "هذا الأسبوع: 3 صفحات هبوط سُلِّمت — أنشطة تجارية تتلقى مكالمات من اليوم الأول"
+                : "This week: 3 landing pages delivered — businesses getting calls day 1"}
             </span>
           </motion.div>
         </motion.div>
@@ -169,8 +169,8 @@ export function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
             <span>
               {isArabic
-                ? "2 طلب تم تنفيذه تلقائياً هذا الأسبوع — صفر عمل يدوي"
-                : "2 orders auto-fulfilled this week — zero manual work"}
+                ? "هذا الأسبوع: 3 صفحات هبوط سُلِّمت — أنشطة تجارية تتلقى مكالمات من اليوم الأول"
+                : "This week: 3 landing pages delivered — businesses getting calls day 1"}
             </span>
           </motion.div>
 

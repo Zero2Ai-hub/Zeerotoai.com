@@ -4,8 +4,8 @@ import { Footer } from "@/components/footer";
 import { Hero } from "@/components/sections/hero";
 
 export const metadata: Metadata = {
-  title: "Zeerotoai — AI Automation for E-commerce | UAE & GCC",
-  description: "We automate your entire e-commerce operation — sourcing, listings, fulfillment, Amazon ads, TikTok content. UAE/GCC brands. Live in 2 weeks.",
+  title: "Zeerotoai — Converting Landing Pages for UAE & GCC | AED 1,500",
+  description: "Landing pages that get UAE businesses more customers. Mobile-first, Arabic + English, delivered in 5 days. Clinics, salons, restaurants, contractors. From AED 1,500.",
   alternates: {
     canonical: "https://www.zeerotoai.com",
   },

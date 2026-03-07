@@ -15,9 +15,9 @@ export const site = {
     ar: "ندير متجرك الإلكتروني بالكامل تلقائياً.",
   },
   meta: {
-    title: "Zeerotoai — E-commerce Automation for UAE & GCC",
+    title: "Zeerotoai — Converting Landing Pages for UAE Businesses | Delivered in 5 Days",
     description:
-      "We automate your entire e-commerce operation — sourcing, listings, fulfillment, Amazon ads, TikTok content. UAE/GCC brands. Live in 2 weeks. You own the system.",
+      "We build landing pages that get UAE businesses more customers. Fast, mobile-first, Arabic + English. From AED 1,500. Delivered in 5 days. Clinics, salons, restaurants, contractors.",
   },
   hero: {
     headline: {
@@ -25,34 +25,34 @@ export const site = {
       ar: "توقف عن إدارة متجرك. دع الذكاء الاصطناعي يفعل ذلك.",
     },
     headlineLine1: {
-      en: "Stop Running Your Store.",
-      ar: "توقف عن إدارة متجرك.",
+      en: "Your website is losing you customers.",
+      ar: "موقعك الحالي يُبعد عنك العملاء.",
     },
     headlineLine2: {
-      en: "Let AI Do It.",
-      ar: "دع الذكاء الاصطناعي يفعل ذلك.",
+      en: "We fix that in 5 days.",
+      ar: "نحل ذلك في 5 أيام.",
     },
     subheadline: {
-      en: "UAE/GCC e-commerce brands — we automate sourcing, listings, fulfillment, ads, and content. You own the system. We build it in 2 weeks.",
-      ar: "علامات التجارة الإلكترونية في الإمارات والخليج — نؤتمت المصادر والقوائم والتنفيذ والإعلانات والمحتوى.",
+      en: "We build converting landing pages for UAE/GCC businesses — clinics, salons, restaurants, contractors. Mobile-first. Arabic + English. From AED 1,500. No monthly fees.",
+      ar: "نبني صفحات هبوط تُحوِّل الزوار إلى عملاء لنشاطات الإمارات والخليج — عيادات، صالونات، مطاعم، مقاولون. من 1,500 درهم. بدون رسوم شهرية.",
     },
     credibility: {
       en: "Trusted by e-commerce brands across UAE & GCC",
       ar: "موثوق به من علامات التجارة الإلكترونية في الإمارات والخليج",
     },
     badge: {
-      en: "🛒 E-commerce Automation — UAE/GCC",
-      ar: "🛒 أتمتة التجارة الإلكترونية — الإمارات والخليج",
+      en: "📄 Landing Pages — Delivered in 5 Days · UAE & GCC",
+      ar: "📄 صفحات هبوط — تسليم في 5 أيام · الإمارات والخليج",
     },
   },
   cta: {
     primary: {
-      label: { en: "Automate My Store →", ar: "أتمت متجري →" },
-      href: "/contact",
+      label: { en: "Get My Landing Page →", ar: "احصل على صفحتك →" },
+      href: "/landing-pages",
     },
     secondary: {
-      label: { en: "See Real Results →", ar: "شاهد النتائج الحقيقية →" },
-      href: "/portfolio",
+      label: { en: "Book Free Call →", ar: "احجز مكالمة مجانية →" },
+      href: "/book",
     },
   },
   stats: [
@@ -64,6 +64,7 @@ export const site = {
   nav: [
     { slug: "/", en: "Home", ar: "الرئيسية" },
     { slug: "/services", en: "Services", ar: "الخدمات" },
+    { slug: "/landing-pages", en: "Landing Pages", ar: "صفحات الهبوط" },
     { slug: "/portfolio", en: "Results", ar: "النتائج" },
     { slug: "/pricing", en: "Pricing", ar: "التسعير" },
     { slug: "/about", en: "About", ar: "من نحن" },
