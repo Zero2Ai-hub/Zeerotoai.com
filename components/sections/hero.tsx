@@ -138,8 +138,8 @@ export function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse inline-block" />
             <span>
               {isArabic
-                ? "هذا الأسبوع: 3 صفحات هبوط سُلِّمت — أنشطة تجارية تتلقى مكالمات من اليوم الأول"
-                : "This week: 3 landing pages delivered — businesses getting calls day 1"}
+                ? "جديد: خدمة صفحات الهبوط متاحة الآن — من 1,500 درهم، تسليم خلال 5 أيام"
+                : "New: Landing Pages service live — from AED 1,500, delivered in 5 days"}
             </span>
           </motion.div>
         </motion.div>
@@ -169,8 +169,8 @@ export function Hero() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block" />
             <span>
               {isArabic
-                ? "هذا الأسبوع: 3 صفحات هبوط سُلِّمت — أنشطة تجارية تتلقى مكالمات من اليوم الأول"
-                : "This week: 3 landing pages delivered — businesses getting calls day 1"}
+                ? "جديد: خدمة صفحات الهبوط متاحة الآن — من 1,500 درهم، تسليم خلال 5 أيام"
+                : "New: Landing Pages service live — from AED 1,500, delivered in 5 days"}
             </span>
           </motion.div>
 
