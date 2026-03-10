@@ -107,6 +107,18 @@ export function Hero() {
             </Button>
           </motion.div>
 
+          {/* Copilot Cowork urgency nudge */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.62, duration: 0.7 }}
+            className="text-xs text-primary/80 mb-8 max-w-xl font-medium tracking-wide"
+          >
+            {isArabic
+              ? "مايكروسوفت تُطلق كوبايلوت لكل مقعد M365. نحن نبني ما لا يستطيع كوبايلوت فعله — مخصص، أنت تملكه، بدون رسوم شهرية."
+              : "Microsoft is shipping Copilot for every M365 seat. We build what Copilot can't — custom, yours, no monthly lock-in."}
+          </motion.p>
+
           {/* Trust strip */}
           <motion.div
             initial={{ opacity: 0 }}
