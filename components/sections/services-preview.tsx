@@ -177,6 +177,22 @@ export function ServicesPreview() {
           <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-2/3 h-12 bg-primary/30 blur-2xl rounded-full" />
         </motion.div>
 
+        {/* Platform independence trust signal */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="text-center text-sm text-muted-foreground/70 mt-10 flex items-center justify-center gap-2"
+        >
+          <Icons.ShieldCheck className="w-4 h-4 text-primary/60 flex-shrink-0" />
+          <span>
+            {isArabic
+              ? "أتمتتك تعمل على بنيتك التحتية. لا يمكن لأي منصة إيقافها."
+              : "Your automation runs on your infrastructure. No platform can turn it off."}
+          </span>
+        </motion.p>
+
       </div>
     </section>
   );
