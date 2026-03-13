@@ -115,8 +115,8 @@ export function Hero() {
             className="text-xs text-primary/80 mb-8 max-w-xl font-medium tracking-wide"
           >
             {isArabic
-              ? "مايكروسوفت تُطلق كوبايلوت لكل مقعد M365. نحن نبني ما لا يستطيع كوبايلوت فعله — مخصص، أنت تملكه، بدون رسوم شهرية."
-              : "Microsoft is shipping Copilot for every M365 seat. We build what Copilot can't — custom, yours, no monthly lock-in."}
+              ? "شركتك لديها Copilot بالفعل. نحن نربطه بكل شيء آخر — CRM، عملياتك، سير عملك في الإمارات."
+              : "Your company already has Copilot. We connect it to everything else — your CRM, your ops, your UAE workflow."}
           </motion.p>
 
           {/* Trust strip */}
