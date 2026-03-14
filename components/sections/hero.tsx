@@ -76,6 +76,18 @@ export function Hero() {
             {isArabic ? site.hero.subheadline.ar : site.hero.subheadline.en}
           </motion.p>
 
+          {/* Gartner stat — social proof */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-sm text-primary font-semibold mb-6"
+          >
+            {isArabic
+              ? "⏱ 40+ ساعة/شهر موفرة لكل فريق — جارتنر 2026"
+              : "⏱ 40+ hrs/month saved per team — Gartner 2026"}
+          </motion.p>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
