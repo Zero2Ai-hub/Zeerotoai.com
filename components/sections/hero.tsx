@@ -88,6 +88,18 @@ export function Hero() {
               : "⏱ 40+ hrs/month saved per team — Gartner 2026"}
           </motion.p>
 
+          {/* Governance trust signal */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.52, duration: 0.6 }}
+            className="text-xs text-gray-300/90 mb-5 max-w-xl font-medium"
+          >
+            {isArabic
+              ? "🛡 كل سير عمل يتضمن نقاط تحقق بشرية. أنت تبقى في السيطرة."
+              : "🛡 Every workflow includes human checkpoints. You stay in control."}
+          </motion.p>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
