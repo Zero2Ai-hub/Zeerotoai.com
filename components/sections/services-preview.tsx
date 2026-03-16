@@ -193,6 +193,22 @@ export function ServicesPreview() {
           </span>
         </motion.p>
 
+        {/* No vendor lock-in trust signal */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="text-center text-sm text-muted-foreground/70 mt-3 flex items-center justify-center gap-2"
+        >
+          <Icons.Unlock className="w-4 h-4 text-primary/60 flex-shrink-0" />
+          <span>
+            {isArabic
+              ? "نستخدم معايير مفتوحة. تملك كل ما نبنيه — بدون اشتراكات، بدون قيود."
+              : "We use open standards. You own everything we build — no subscriptions, no lock-in."}
+          </span>
+        </motion.p>
+
       </div>
     </section>
   );
