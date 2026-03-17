@@ -209,6 +209,22 @@ export function ServicesPreview() {
           </span>
         </motion.p>
 
+        {/* Integration maintenance hell trust signal */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="text-center text-sm text-muted-foreground/70 mt-3 flex items-center justify-center gap-2"
+        >
+          <Icons.Wrench className="w-4 h-4 text-primary/60 flex-shrink-0" />
+          <span>
+            {isArabic
+              ? "جربت n8n؟ Make؟ Zapier؟ تعمل حتى تتوقف. نحن نبني أتمتة تصمد أمام تغيرات المنصات."
+              : "You've tried n8n. Make. Zapier. They work until they don't. We build automations that survive platform changes."}
+          </span>
+        </motion.p>
+
       </div>
     </section>
   );
