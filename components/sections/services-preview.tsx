@@ -158,6 +158,22 @@ export function ServicesPreview() {
           })}
         </motion.div>
 
+        {/* Portfolio proof stat */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="text-center text-sm text-muted-foreground/80 mb-8 flex items-center justify-center gap-2"
+        >
+          <Icons.BarChart2 className="w-4 h-4 text-primary/70 flex-shrink-0" />
+          <span>
+            {isArabic
+              ? "58 أتمتة مبنية في التجارة الإلكترونية والذكاء الاصطناعي والعمليات. 28 مفتوحة المصدر على ClawHub."
+              : "58 automations built across e-commerce, AI agents, and ops. 28 open-source on ClawHub."}
+          </span>
+        </motion.p>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
