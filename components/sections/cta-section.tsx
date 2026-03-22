@@ -54,10 +54,15 @@ export function CtaSection() {
               : <span className="text-primary">Are You?</span>}
           </h2>
 
-          <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-200 leading-relaxed">
+          <p className="text-xl mb-6 max-w-2xl mx-auto text-gray-200 leading-relaxed">
             {isArabic
               ? "كل أسبوع تقضيه في العمليات اليدوية هو أسبوع يتقدمون فيه. ننشر في أسبوعين. احجز تدقيقك المجاني — سنرسم بالضبط ما يجب أتمتته أولاً."
               : "Every week you spend on manual ops is a week they're scaling ahead. We deploy in 2 weeks. Book your free audit — we'll map exactly what to automate first."}
+          </p>
+          <p className="text-sm mb-10 max-w-xl mx-auto text-primary font-semibold">
+            {isArabic
+              ? "✅ ضمان 14 يوماً للتشغيل — Stripe MPP جاهز — عمليات مُدارة بالكامل"
+              : "✅ 14-day go-live guarantee — Stripe agent-payment ready — fully managed ops"}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

@@ -9,9 +9,9 @@ import Link from "next/link";
 const metrics = [
   { icon: Clock, value: "40 hrs/wk", label: { en: "Saved every week", ar: "توفير أسبوعي" } },
   { icon: TrendingUp, value: "10×", label: { en: "Catalog capacity", ar: "طاقة الكتالوج" } },
-  { icon: ShoppingCart, value: "3", label: { en: "Amazon campaigns", ar: "حملات أمازون" } },
+  { icon: ShoppingCart, value: "5", label: { en: "Winning products validated Q2 2026", ar: "منتجات رابحة Q2 2026" } },
   { icon: Video, value: "$0.25", label: { en: "Per TikTok video", ar: "لكل فيديو TikTok" } },
-  { icon: Zap, value: "2 wks", label: { en: "To live", ar: "للتشغيل" } },
+  { icon: Zap, value: "14 days", label: { en: "Go-live guarantee", ar: "ضمان الإطلاق" } },
 ];
 
 export function CaseStudy() {
@@ -104,11 +104,13 @@ export function CaseStudy() {
                   "الطلبات تُنفَّذ ذاتياً — التتبع يُرسل تلقائياً",
                   "خط إنتاج TikTok ينشئ ويُنشر مقاطع الفيديو",
                   "عروض أسعار أمازون تُحسَّن كل صباح الساعة 9",
+                  "جاهز للدفع عبر الوكيل — Stripe MPP مدمج",
                 ] : [
                   "Dropshipping suppliers syncs catalog daily — automatically",
                   "Orders fulfill themselves — tracking pushed back automatically",
                   "TikTok pipeline generates and posts videos",
                   "Amazon bids optimize every morning at 9am",
+                  "Agent-payment ready — Stripe MPP integrated at checkout",
                 ]).map((point, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
