@@ -34,6 +34,14 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/khutbah',
+        destination: '/khutbah.html',
+      },
+    ];
+  },
   async headers() {
     return [
       {
