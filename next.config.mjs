@@ -26,6 +26,14 @@ const nextConfig = {
   compress: true,
   // Optimize for production
   productionBrowserSourceMaps: false,
+  async rewrites() {
+    return [
+      {
+        source: '/khutbah',
+        destination: '/khutbah.html',
+      },
+    ];
+  },
   async headers() {
     return [
       {

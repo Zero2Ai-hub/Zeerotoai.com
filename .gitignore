@@ -45,7 +45,7 @@ next-env.d.ts
 *~
 
 # Generated documentation (keep only source markdown)
-*.html
+# *.html
 *.pdf
 # Exception: Email attachments folder (needed for production)
 !email-attachments/*.pdf
